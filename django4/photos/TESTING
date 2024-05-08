@@ -1,0 +1,14 @@
+set initial file number (e.g., 0) in data/RENAME/last_number.txt, and run again
+copy file failed permissens 
+passed : file from the phone without coordinates
+
+Committing to: bzr+ssh://salicarium@192.168.1.9/home/salicarium/gitprojects/photodb_local/                                            
+added django4/photos/ABOUT                                                                                                            
+added django4/photos/TESTING                                                                                                          
+modified django4/photos/process.py
+modified django4/photos/urls.py
+modified django4/photos/views.py
+Committed revision 39.    
+
+potential error : must set last number correctly, e.g., >= last number of existed photo                                                                                                            
+

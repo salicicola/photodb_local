@@ -1,0 +1,28 @@
+<h2 style="max-width:50em">
+    <span style='white-space: nowrap;'>
+		The Vascular Plants of Massachusetts 		
+	</span>
+    <br/>
+    <span style="font-size:80%;font-weight:normal" title="#{{version}} ({{db_modified|date:'Y-m-d'}})">
+		Updated Taxonomy and Distribution (Work in Progress) 		 
+	</span>
+	<br/>	
+	<span style="font-size:80%;font-weight:normal">
+	{%if mode == 'tree' %}        
+		Flexible hierarchy. 
+		Links provided to families, genera, and, if present, other direct descendants of the genus above species level: subgenera,
+		sections, and occasionally unplaced taxa.
+		Editable version for administrators{%if state == 'MA' %}.{%else%} (may show all species in Salicicola DB, including those outside flora of MA.){%endif%}
+		Taxa (e.g., families) which do not have descendants in currently accepted classification are intentionally listed but not clickable.	
+		&#8212; Switch to <a style="font-weight:normal" href="/names/vascular/fixed/">simplified hierarchy</a> (fixed &amp; by family only)
+	{%else%}
+		Simplified Hierarchy (similar to one used in Checklist 2011).
+		Retrieve parts of the checklist by family.
+		Editable version for administrators{%if state == 'MA' %}.{%else%} (may show all species in Salicicola DB, including those outside flora of MA.){%endif%}
+		Families which do not have descendants in currently accepted classification are intentionally listed but not clickable.	
+		&#8212; Switch to <a style="font-weight:normal" href="/names/vascular/flexible/">flexible hierarchy</a> (parts of the checklist can be retrieved by families &amp; genera,
+		and if available, by subgenera, sections, etc.)
+	{%endif%}
+  </span>
+</h2>
+

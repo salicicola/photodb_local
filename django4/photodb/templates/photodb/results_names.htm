@@ -1,0 +1,39 @@
+<html>
+{%load humanize%}
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+		<h2>
+			Salicicola Photo Gallery &#8212; Query Results &#8212; Prototype (Using Cached Index)
+			<br/>
+			Searched by Latin name [{{latname}}]
+			&#8212; {{names|length}} names with {{photos|intcomma}} photos found
+		</h2>
+		<ol>
+			{%for rec in names %}
+{%if 'sp.' in rec.name and rec.pubimages == 0 %}
+
+{%else%}
+{%if rec.category == 'other' and rec.pubimages == 0 %} <!-- XXX: to check category is correct -->
+{%else%}
+			<li>
+				{%if rec.pubimages %}
+					<a title="{{rec.category}}, {{rec.classification}} classifications available" target='view' href='/photodb/gallery/view/{{rec.spid}}/'>{{rec.long_name}}</a> ({{rec.pubimages}} published images)
+				{%else%}
+					{{rec.long_name}} (no published photos)
+				{%endif%}
+&#8212; {%if rec.status == 'synonym' %} synonym {%else%} {{rec.status}} name {%endif%}
+
+			</li>	
+{%endif%}
+{%endif%}		
+			{%endfor%}
+		</ol>
+		<hr/>Prototype #{{version}}: sometimes displayed names may be incorrect. Links used newer classification.<br/>
+	</body>
+</html>
+

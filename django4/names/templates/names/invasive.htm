@@ -1,0 +1,176 @@
+<html>
+    <head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{%include 'names/head'%}
+		<style type="text/css">
+		a {
+		text-decoration:none;
+		}
+
+		@media only screen and (min-width: 990px) {
+			td.left {
+				width:17em;
+			}
+			td.right {
+				width:40em;
+			}
+		}
+		</style>
+    </head>
+	<body>
+		{%include 'names/common_head' %}
+		<h2 style="max-width:50em">
+    		<span style='white-space: nowrap;' title="filter: {{show}}: {{metarecs|length}} taxa">
+				Invasive Vascular Plants of Massachusetts <!--&#8212; {{metarecs|length}} Species--><br/>
+                <span style="font-weight:normal;font-size:90%">
+				{%if show == 'all'%} <!-- in url all ? -->
+					Shows all plants with at least one of two fields not empty: invasive by Salicicola and/or by MIPAG
+				{%elif show == 'official'%} <!-- in url: mipag-->
+					Filtered. Only plants accepted by MIPAG are shown
+				{%elif show == 'invasive'%}  <!-- in url ??? -->
+					Filtered. Only plants accepted by MIPAG as 'Invasive' are shown
+				{%elif show == 'likely'%}
+					Filtered. Only plants defined by MIPAG as 'Likely invasive' are shown
+				{%elif show == 'potentially'%}
+					Filtered. Only plants defined by MIPAG as 'Potentially invasive' are shown
+				{%elif show == 'rejected'%}
+					Filtered. Only plants defined by MIPAG as 'Do not list at this time' are shown
+				{%elif show == 'mipagall'%}
+					Filtered. Only plants considered by MIPAG are shown
+
+				{%elif show == 'other'%} <!-- other/notofficial -->
+					Filtered. Only plants not accepted by MIPAG are shown
+                {%else%}
+                    Filtered: <span style="color:red">template error: unnknonw {{show}} attribute</span>
+				{%endif%}	
+                </span>			
+			</span>
+			<br/>
+			<span style="font-weight:normal;font-size:90%">Click on the Latin name to see photos (not available for all species)</span>
+            <br/>
+<span style="font-weight:normal;font-size:80%">
+            Available:
+            [<a href="/names/vascular/invasive/all/">all records, i.e., not filtered</a>] <!-- 122  -->
+            [<a href="/names/vascular/invasive/other/">Salicicola and rejected by MIPAG</a>] <!-- 45  -->
+            <br/>MIPAG only: 
+            [<a href="/names/vascular/invasive/invasive/">invasive] <!-- 42  -->
+            [<a href="/names/vascular/invasive/potentially/">potentially invasive</a>] <!-- 3  -->
+            [<a href="/names/vascular/invasive/likely/">likely invasive</a>] <!-- 32  -->
+            [<a href="/names/vascular/invasive/rejected/">rejected</a>] <!-- 20  -->
+            [<a href="/names/vascular/invasive/mipagall/">all in MIPAG</a>] <!-- 97  -->
+</span>
+		</h2>
+<div class="debug" style="padding-left:1em;color:black;display:none"> 
+    <ol><b>TEMP/TODO NOTES</b> (remove when published on the Web): 
+<!--    <li> to show internal and external links and notes only if they are present</li>
+    <li> to use modified SpeciesAnnotation for both kind of links</li>
+    <li> to use InvasiveMeta only for external sites IDs : then can generate external links (not in use now)</li>
+-->
+    <li> to allow [salicicola-]invasive field be empty or having value 'Introduced'</li>
+    <li> to add subheader with explanations, and</li>
+<!--    <li> to add links to other filtered views [optional?]</li> -->
+    <li> to check all categories of MIPAG defined species</li>
+    <li> to show in gray species without photos at salicicola</li>
+<!--    <li> suppresst equal</li>
+    <li> dedicated page </li>-->
+    </ol>
+    <div style="padding-left:1em;padding-bottom:2ex" title="Notes for developers and/or admins [names.version: ##{{version}}]">
+    Technically,  <i>InvasiveVascularPlants</i> module located in the core package 'names' and use SQLite table <b>names_name</b> 
+    (field 'caption' will be shown as 'Notes'),
+    <b>names_speciesmeta</b> (which has two relevant fields for invasive status: 'invasive_mipag' and 'invasive'[_salicicola]), and 
+    table <b>names_speciesannotation</b>:
+    field 'page' used for internal (dedicated) webpage (presumably only one page for a species) and value must starts with '/',
+    and field 'url' for external links (may have numerous annotation records for the same plant species),
+    in both cases flag 'kind' must be 'invasive_link';
+    besides it needs files 'invasive.py (with referenced checklist.py) and templates/names/invasive.htm.
+    Presence of 'townmapper' (needed for town level maps) and 'photodb' apps optional (if missing, 
+    links may lead to another server, e.g., web based salicicola.com (or 172.104.19.75) but availability of photos cannot be checked.
+    For sake of simplicity,
+    <i>edit</i> links provided for any authenticated, even if not authorized user (who could not actually add or edit records).
+    </div>
+</div>
+		<div>
+			{%for rec in metarecs %}
+{%if not rec.species.excluded %} <!-- excluding var vegetus -->
+				<div style="padding-left:2ex" id="{{rec.species.longname|safe}}">
+					<a target="_blank" href="{{server}}/photodb/gallery/view/{{rec.species.pk}}/">{{rec.species.longname|safe}}</a>
+					{{rec.species.authors}}
+					{%if rec.species.colnames%}
+						[{{rec.species.colnames}}] 
+					{%endif%}
+					&#8212; [<a target="tmap" href="{{mapserver}}/townmapper/spid/{{rec.species.pk}}/">map by town</a>] 
+                        {% for ann in rec.species.nameannotation_set.all%}
+                            {%if ann.page %}
+                            [<a href="/{{ann.page}}">dedicated page</a>]
+                            {%endif%}
+                        {%endfor%}
+					<div style="padding-left:2ex;"> 
+					<table border="0">
+						<tr>
+							<td nowrap="true" class="left">
+								MA Counties
+							</td>
+							<td class="right">
+								{%for c in tcounties %}
+									<span title="{{c.1}}" style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{c.0}}</span>
+								{%endfor%}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span title="MIPAG: {{rec.invasive_mipag}}">
+									<b>MIPAG</b>: {{rec.invasive_mipag}}
+								</span>
+							</td>
+							<td>
+								{% with rec.counties as list %}
+									{% for i in list.split %}
+										{%if i == '*'%}
+											<span style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center"> &nbsp; </span>
+										{%else%}
+											<span style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{ i }}</span>
+										{%endif%}
+									{%endfor%}
+								{% endwith %}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+                                    {%if rec.invasive == rec.invasive_mipag %}
+                                        <!-- skip equal -->
+                                    {%else%}
+									    <b>Salicicola</b>: {{rec.invasive}} <br/>                                   
+                                        {%if rec.species.caption %}    
+                                        {%endif%}
+                                    {%endif%}
+                                    {%if rec.species.caption %}
+                                    <b>Notes</b>: {{rec.species.caption|safe}}<br/>
+                                    {%endif%}
+                                    
+                                    <b>External links</b>:
+                                    {% for ann in rec.species.nameannotation_set.all %}
+                                        {%if ann.url %}
+                                            [<a target="_blank" href="{{ann.url}}"> * </a>] 
+                                        {%endif%}
+                                    {%endfor%}
+{%if user.is_authenticated%}
+    <br/>
+    [<a target="edit" href="/names/edit/name/{{rec.species.pk}}/">Edit</a>: change invasive status or add a note]
+    [<a target="annotate" href="/admin/names/nameannotation/add/?_changelist_filters=q%3D{{rec.species.pk}}&amp;plant={{rec.species.pk}}">Annotate</a>: 
+    add external url with kind = 'invasive link']
+{%endif%}
+							</td>
+                        </tr>
+					</table>
+					</div>
+				</div>
+{%endif%}
+			{%endfor%}
+		</div>
+		<hr/> 
+			<!-- FIXME Generated in {{secs}}+ seconds-->
+		<br/>
+	</body>
+</html>

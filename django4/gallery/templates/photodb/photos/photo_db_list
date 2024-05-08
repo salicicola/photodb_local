@@ -1,0 +1,127 @@
+<table border="0" width="100%" style="padding-left:2em;">
+	<tr>
+		<td valign="top" width="25%" style="background-color:#EEEEEE;padding:1ex"> 
+        {%if public%}
+            <i>{{gen.0}} {{sp.0}}</i> {{sp.2}}
+        {%else%}
+			<i><a target="_blank" href="/photodb/edit/name/{{sp.3}}">{{gen.0}} {{sp.0}}</a></i> {{sp.2}} 
+        {%endif%}
+
+		{%for syn in sp.4 %} 
+		    <div style="padding-left:2ex;text-indent:-1ex;padding-bottom:0;margin-bottom:0">						
+{%if authorized %}
+    {%if legacy %}
+        {%if syn.sal_latname %}
+	    =  <i><a target="_blank" href="/photodb/edit/name/{{syn.pk}}">{%if syn.sal_latname%}{{syn.sal_latname}}{%else%}XXX{%endif%}</a></i>
+	   {{syn.sal_authors}}
+        {%endif%}
+     {%else%}
+     {%if syn.latname %}
+	= <i><a target="_blank" href="/photodb/edit/name/{{syn.pk}}">{%if syn.latname%}{{syn.latname}}{%else%}XXX{%endif%}</a></i>
+        {{syn.authors}}
+     {%endif%}
+{%endif%}
+{%else%}
+     {%if legacy %}
+         {%if syn.sal_latname %}
+             =  <i>{%if syn.sal_latname%}{{syn.sal_latname}}{%else%}XXX{%endif%}</i>
+             {{syn.sal_authors}}
+         {%endif%}
+      {%else%}
+          {%if syn.latname %}
+             = <i>{%if syn.latname%}{{syn.latname}}{%else%}{%endif%}</i>
+             {{syn.authors}}
+          {%endif%}
+       {%endif%}
+{%endif%}
+			</div>
+		{%endfor%}
+        {%if sp.1 %}
+            <div style="padding-left:5ex;text-indent:-2ex;padding-top:0;margin-top:0">
+                <b>{{sp.1}}</b>
+            </div>
+        {%endif%} 
+            <div style="padding-left:5ex;text-indent:-2ex;padding-top:0;margin-top:0">
+				{% if sp.7.invasive %}   
+					<b style="color:red">{{sp.7.invasive}}</b>
+{%comment%}
+                    {%if 'Nuisance' in sp.7.invasive%}
+                        <b style="color:red">{{sp.7.invasive}}</b>
+ {%elif 'Potentially' in sp.7.invasive %}
+<b style="color:red">Potentially invasive</b>
+                    {%else%}
+                        <b style="color:red">Invasive</b>
+                    {%endif%}	
+{%endcomment%}
+
+				{%else%} 
+						{%if sp.7.introduced %} 
+							{%if sp.7.introduced == "exotic" %}
+								Exotic
+							{%elif sp.7.introduced == "domestic" %}
+								Domestic
+							{%elif sp.7.introduced == "cultivated" %}
+								Cultivated
+							{%elif sp.7.introduced == "introduced" %}
+								Introduced
+							{%else%}
+								{{sp.7.introduced|title}}
+							{%endif%}
+		                {%else%}
+		                    Native
+							{%if sp.7.rare %}
+								&#8212; {%if sp.7.rare == 'E'%}
+									Endangered
+								 	{%elif sp.7.rare == 'T'%}
+									Threatened
+								 	{%elif sp.7.rare == 'SC'%}
+									Special Concern
+								 	{%elif sp.7.rare == 'WL'%}
+									Watch-Listed
+									{%elif sp.7.rare == 'H'%}
+									Historic
+									{%else%}
+									{{sp.7.rare}}
+								{%endif%}
+							{%endif%}
+						{%endif%} 
+				{%endif%}
+{%if sp.9 %}
+	<br/>{{sp.9|safe}}
+{%endif%}
+</div>
+		</td>
+		<td valign="top">
+			{%for photo in sp.6%}     <!-- legacy {{fam.3}}-->
+                        {%if legacy%}
+     			<a target="edit" href="/photodb/{{TDM}}gallery/view/legacy/{{sp.3}}/{{photo.imid}}"> 
+                        {%else%}
+                        <a target="edit" href="/photodb/{{TDM}}gallery/view/{{sp.3}}/{{photo.imid}}">
+                        {%endif%}
+{%if photo.nr <= 0 %}
+<img alt="{{photo.nr}}" height="100" style="border: 3px solid black;" title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/> 
+{%else%}
+					{%if photo.nr < 100 %}
+<img alt="{{photo.nr}}" height="100" style="border: 2px solid green;" title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/> 
+					{%else%}
+<img alt="{{photo.nr}}" height="100" style="border: 4px solid red;" title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/>
+					{%endif%}
+{%endif%}
+				</a>                                   
+			{%endfor%}
+
+			{%for photo in sp.8%}  
+				{%if legacy %}   
+     			<a target="edit" href="/photodb/gallery/view/legacy/{{sp.3}}/{{photo.imid}}">
+				{%else%}
+<a target="edit" href="/photodb/gallery/view/{{sp.3}}/{{photo.imid}}">
+				{%endif%}
+
+<img alt="{{photo.nr}}" height="100" style="border: 3px solid black;" title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/> 
+
+{%endfor%}
+
+		</td>
+	</tr>
+</table>
+<!-- replace {{edit-domain to /static -->

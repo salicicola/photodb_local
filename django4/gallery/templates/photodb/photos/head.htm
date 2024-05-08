@@ -1,0 +1,16 @@
+		<h2>
+			Salicicola Photos 
+				{%if exclude %}
+					not from {{area}}
+				{%else%}
+					{%if area %}
+						from {{area}}
+					{%endif%}
+				{%endif%}
+				{%if start == 1 and ends == 25 %}
+
+				{%else%}
+				<!--&#8212; Filtered-->
+				{%endif%}
+		</h2>
+

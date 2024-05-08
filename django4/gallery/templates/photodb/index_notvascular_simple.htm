@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Massachusetts Plant Gallery</title>
+        <link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        <style type="text/css">
+            div {
+                padding-left: 1.5em;
+            }
+            div.container {
+                padding: 0;
+                margin:0;
+            }
+        </style>
+        <script type="text/javascript" src="/static/scripts/menu.js"></script><script>
+			function show_hide(cObj, idvalue) {
+				current = document.getElementById(idvalue).style.display;
+				if (current=='none') {
+					document.getElementById(idvalue).style.display='block';
+					cObj.src="/static/images/uarrow.gif";
+				}
+				else {
+					document.getElementById(idvalue).style.display='none';
+					cObj.src="/static/images/darrow.gif";
+				}
+			}		
+						
+			function expandClass(thisTag, tag) {
+			  var els = document.getElementsByTagName(tag);
+				for (i = 0; i < els.length; i++) {
+				  var ele = els[i]; 
+					if (ele.className=='container') {	
+					  current = ele.style.display;
+					  if (current=='none') {
+						  ele.style.display='block';
+							thisTag.innerHTML = 'Collapse list';
+						}
+						else {
+						  ele.style.display='none';
+							thisTag.innerHTML = 'Expand list';
+						}
+				  }
+				}
+				els = document.getElementsByTagName('IMG');
+				for (i = 0; i < els.length; i++) {
+				  var ele = els[i];
+					if (ele.className=='switchview') {
+				    if(ele.src.indexOf("/static/images/uarrow.gif") != -1) {
+						  ele.src="/static/images/darrow.gif";
+						}
+						else {
+						  ele.src="/static/images/uarrow.gif";
+						}
+				  }
+				}
+			}
+						
+	    </script>
+    </head>
+	<body bgcolor="#F0FFF0" onload="show_all()">
+		<script>headerWriteText('PlantGallery', true)</script>
+		<div style="padding-left: 1.2em; padding-top: 1em; font-size:150%"><b>Eastern Massachusetts Non-Vascular Plants and Lichens</b></div>
+		<div style="padding-left:3.5em; padding-top: 1em; padding-bottom: 1em; font-size:90%"><a href="/static/photos/copyright.html">About. Copyright Notice and Acknowledgements</a><br><br></div>
+        <div>    
+			<span style="font-size: 75%; text-decoration: underline" onMouseOver="this.style.color='red'" 
+                    onMouseOut="this.style.color='#8B0000'" onClick="expandClass(this, 'DIV')">Expand list
+            </span>
+        </div>
+        <div>
+            {%for group in groups%}
+				{% if group.fams|length %}
+			        <h3>{{group.name|safe}} ({{group.species}} species, {{group.published}} images) </h3>
+			        {%for fam in group.fams%}
+				        <div>
+					        <a style="font-weight: bold;" href="/photodb/gallery/view/{{fam.fid}}/">{{fam.latname}}</a> 
+					        &nbsp; 
+					        <b>{{fam.total_species}}</b> species 
+		                     <img class="switchview" vspace="0" hspace="0" border="0" 
+		                        onClick="show_hide(this, {{fam.fid}})" src="/static/images/darrow.gif" 
+		                        style="height: 1ex; padding:0; margin:0; border-width:0"/>
+					        <div class="container" id="{{fam.fid}}" style="display: none">
+						    {%for gen in fam.genera %}
+							    <div> 
+								<a style="font-weight: bold;" target="_blank" href="/photodb/gallery/view/{{gen.gid}}/" >{{gen.latname}}</a> &nbsp; 
+								{%for spe in gen.species %}
+									<div id="{{spe.pnid}}" style="display: block">
+										<b> 
+		                                <a style="font-weight: bold; text-decoration: underline" 
+		                                        target="_blank" href="/photodb/gallery/view/{{spe.pnid}}/">{{spe.latname}}</a> <!-- FIXED was: /photodb/gallery/view/{{spe.pnid}}/ -->
+										</b>
+											&#8212; {{spe.published}} published photos 
+									</div> 
+								{%endfor%}
+							    </div>
+						    {%endfor%}          														      
+					    </div>
+				    </div>
+			    {%endfor%}
+			{% endif %}
+        {%endfor%}
+        </div>
+    </body>
+</html>

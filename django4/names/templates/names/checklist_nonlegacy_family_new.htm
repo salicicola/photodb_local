@@ -1,0 +1,160 @@
+<html>
+    <head>
+		{%include 'names/head'%}
+		<style type="text/css">
+		a {
+		text-decoration:none;
+		}
+		</style>
+    </head>
+	<body>
+		{%include 'names/common_head' %}
+		<h2 style="max-width:50em">
+    		<span style='white-space: nowrap;'>
+				The Vascular Plants of Massachusetts 		
+			</span>
+    		<br/>
+    		<span style="font-size:80%;font-weight:normal" title="#{{version}} ({{db_modified|date:'Y-m-d'}})">
+				Updated Taxonomy and Distribution (Work in Progress) 		 
+			<br/>
+			Simplified hierarchy (similar to one used in Checklist 2011)
+			<br/>
+			Switch to <a style="font-weight:normal" href="/names/vascular/flexible/{{family.fam.pnid}}">flexible hierarchy</a>
+			{%if photodb_installed %}
+			
+			or  <a style="font-weight:normal" href="/photodb/checklist/{{family.fam.pnid}}/">checklist view</a> (with more details)
+			{%endif%}
+			</span>
+		</h2>
+<!-- XXX can link to gallery ? -->
+		{%if user.is_authenticated %}             
+		<div style="padding-left:2ex" id="{{family.fam.latname}}">
+			{%if authorized%}
+				<a href="{{server}}/photodb/gallery/view/{{family.fam.pnid}}/">{{family.fam.latname}}</a> 
+			{%else%}
+				<a href="/photodb/gallery/view/{{family.fam.pnid}}/">{{family.fam.latname}}</a> 
+			{%endif%}
+            [<a target="edit" href='/names/edit/name/{{family.fam.pk}}/'>edit</a>]
+            {%if family.fam.caption %}
+                <div style="padding-left:2ex">
+                    {{family.fam.caption|safe}}
+                </div>
+            {%endif%}
+			{%for genus in family.genera %}
+			{%if genus.species %}
+			<div style="padding-left:2ex" id="{{genus.genus.latname}}" title="{{genus.species|length}}">
+					{%if authorized%}
+						<a href="{{server}}/photodb/gallery/view/{{genus.genus.pk}}/"><i>{{genus.genus.latname}}</i></a> 
+					{%else%}
+						<a href="/photodb/gallery/view/{{genus.genus.pk}}/"><i>{{genus.genus.latname}}</i></a>  
+					{%endif%}
+                    [<a target="edit" href='/names/edit/name/{{genus.genus.pk}}/'>edit</a>] 
+                    {%if genus.genus.caption %}
+                        <div style="padding-left:2ex">
+                            {{genus.genus.caption|safe}}
+                        </div>
+                    {%endif%}
+					{%for species in genus.species %}
+					{%if not species.species.excluded %} <!-- XXX : excluded, not disabled flag -->
+						<div style="padding-left:2ex" id="{{genus.genus.latname}}:{{species.species.latname}}">
+							{%if authorized%}
+								{%if species.images%}
+									<a href="{{server}}/photodb/gallery/view/{{species.species.pk}}/">{{species.longname|safe}}</a>
+								{%else%}
+									<a style="color:gray" href="{{server}}/photodb/gallery/view/{{species.species.pk}}/">{{species.longname|safe}}</a>
+								{%endif%}
+							{%else%}
+								{%if species.images%}
+									<a href="/photodb/gallery/view/{{species.species.pk}}/">{{species.longname}}</a> 
+								{%else%}
+									<a style="color:gray" href="/photodb/gallery/view/{{species.species.pk}}/">{{species.longname|safe}}</a> 
+								{%endif%}
+							{%endif%}
+							{{species.authors}}
+							{%if species.colnames%}
+								[{{species.colnames}}] 
+							{%endif%}
+							{%if authorized%}
+								[<a target="edit" href='/names/edit/name/{{species.species.pk}}/'>edit</a>]
+							{%endif%}
+<!--							<span title="total {{species.all_images}} photos">{{species.images}} 
+								published image{%if species.images == 1%}{%else%}s{%endif%}</span> 
+									&#8212; 
+-->
+									[{%if species.external_sample %}<a target="_blank" href="/admin/names/nameannotation/?q={{species.species.pnid}}">view</a> /
+									 {%endif%}<a target="annotate" href="/admin/names/nameannotation/add/?_changelist_filters=q%3D{{species.species.pnid}}&plant={{species.species.pnid}}">add</a>
+									annotation(s)]
+{%comment%}
+							<!--   FIXME so far ALL should be published and surely be less than 900 -->
+							{%if perms.names.add_annotation %}									 
+                                    {%if islocal %}
+                                        {%if species.external_cached %}
+                                            {%for url in species.external_cached %}
+                                                {%if forloop.counter < 4 %}
+                                                <img src="{{url}}" title="{{url}}"  style="height:14ex;margin-right:1px;float:right" border="1"
+                                                     onclick="x=open('{{url}}', 'image', 'width=600px');x.focus()" /> <!-- FIXME -->
+                                                {%endif%}
+                                            {%endfor%}
+                                        {%endif%}
+                                    {%endif%}
+							{%endif%}
+						<!-- end -->
+{%endcomment%}
+							{%for syn in species.synonyms%}
+								{%if syn.latname %}
+									<div style="padding-left:2ex">
+										= <i>{{syn.latname}}</i> {{syn.authors}} 
+										{%if authorized%}
+											[<a target="edit" href='/names/edit/name/{{syn.pk}}/'>edit</a>] 
+										{%endif%}									
+									</div>
+								{%endif%}
+							{%endfor%}
+							<div style="padding-left:2ex">
+								{%include 'names/list_meta_new.htm' %}
+								{%if user.is_authenticated %}
+                                    {%if authorized %} <!-- removed checking explicit user -->
+									{%if species.species.note %}
+			 							<div style="padding-left:2ex">{{species.species.note|safe}}</div>
+									{%endif%}
+                                    {%endif%}
+			  					{%endif%}
+								{%if species.species.caption %}
+									<div style="padding-left:2ex"><b>Public Notes</b>: {{species.species.caption|safe}}</div>
+								{%endif%}
+									{%if species.external_photos %} <!--  or species.external_notes -->
+									<div style="padding-left:2ex;"> <!-- background-color:yellow -->
+										<table border="0">
+	  										<tr>
+												<td>External photos</td>
+												<td>
+													{% for url in species.external_photos %}
+														[<a target="_blank" href="{{url}}"> {{forloop.counter}} </a>]
+													{%endfor%}	
+													<!--{% for note in species.external_notes %}
+														{{note|safe}}
+													{%endfor%} -->
+												</td>
+											</tr>
+										</table> 
+									</div>   
+									{%endif%}    
+					</div>
+				</div>
+			{%endif%}
+			{%endfor%}
+			</div>
+			{%endif%}
+			{%endfor%}
+		</div>
+		{%endif%}
+		<hr/> 
+		{%if user.is_authenticated %}
+			Generated in {{secs}}+ seconds
+            [logged as <i>{{user.username}}</i>] 
+		{%else%}
+			[<a href="/admin/login/?next={{request.path}}">Login</a>] 
+		{%endif%}
+		<br/>
+	</body>
+</html>

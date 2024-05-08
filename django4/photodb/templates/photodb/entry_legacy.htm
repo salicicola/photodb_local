@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+	    body {
+		background-color:lightgreen;    
+	    }
+	    td {
+	    	background-color:#AAAAAA;  
+	    	padding-left:5px;
+	    }
+	    .track {
+	    }
+			.readonly {
+					color:#777777;
+			}
+    </style>
+    <script type="text/javascript" src="/static/scripts/photos/entry/files_json.js"></script> <!-- XXX was -->
+    <script type="text/javascript" src="/static/scripts/photos/entry/names.js"></script>
+    <script type="text/javascript" src="/static/scripts/photos/entry/tracker.js"></script>
+{% include 'photodb/entry_legacy_script' %} 
+  </head>
+  <body onload="ini();fill(fnum);setCamera();setGPS()">
+		<h2 style="margin-bottom:0">New Photos -- Initial Entry Form</h2>
+		<h3 style="margin-top:0;margin-bottom:0">
+			Prototype: using Django, XSLT &amp; AJAX without external libraries
+		</h3>
+		<form method="POST" action="" id="form1">
+{% csrf_token %}
+  	<div id="helpForm">
+  		Select
+  		location
+			<select  name="LCID" id="LCID"  > <!-- onchange="fillLocation(this)" -->
+{%include 'photodb/locations_options'%}			
+			</select>			
+			[<span id="status"></span>]
+			[<span id="town"></span>]
+			[<span id="ops"></span>]
+  	</div>
+  	<div id="divForm"  style="float:left">
+  		<table border="0">
+  			<tr>
+  				<td class="readonly" >SysID </td>
+  				<td>
+  					<input readonly="true" name="SysID" id="SysID"/> 
+  					<input style="margin-right:3px;float:right;color:red;font-weight:bold" type="button" value="Delete photo" onclick="delete_photo()"/>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td class="readonly">PhotoID </td>
+  				<td><input readonly="true" name="PHID" id="PHID"/><input readonly="true" name="extensions" id="extensions" size="5"/></td>
+  			</tr>
+  			<tr>
+  				<td class="readonly">Created </td>
+  				<td>
+						<input readonly="true" name="created" id="created"/>
+						<span style="color:white" onclick="ds = document.getElementById('nr').style.visibility; 
+							if (ds == 'hidden') {
+								document.getElementById('nr').style.visibility = 'visible';
+							} 
+							else {
+								document.getElementById('nr').style.visibility = 'hidden';
+							}
+							">
+						 .
+						</span>
+						<select name="nr" id="nr" style="visibility:visible">
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="0">for record only</option>
+						</select>
+					</td>
+  			</tr>
+  			<tr>
+  				<td>Taken By <span style="color:red"> * </span></td>
+  				<td><input name="createdBy" id="createdBy"/></td>
+  			</tr>  			
+
+
+  			<tr>
+  				<td>Tags<span style="color:red"></span></td>
+  				<td><input name="tags" id="tags" size="40"/></td>
+  			</tr>  			
+  			<tr>
+  				<td class="readonly">Camera </td>
+  				<td><input readonly="true" name="camera" id="camera"/>
+<!-- FIXME: patch 
+<script type="text/javascript">
+	url="/photodb/entry/getgid/"+ pnid;
+	html_text= "<a href="+url+">XXX</a>";
+    alert(html_text);
+	document.write(html_text);
+</script>
+
+<span onclick="spid=document.getElementById('PNID').value;;document.getElementById('getfor').innerHTML=''+spid;url='/photodb/entry/getgid/'+spid;window.open(url, 'gid', 'width=50,height=50')">get genus ID for <b id="getfor"></b></span> []
+-->
+Identified to
+<u onclick="fam_indet()">family</u> / <u onclick="genus_indet()">genus</u> 
+[spid <b id="getfor">?</b>]
+
+				</td>
+  			</tr>
+  			<!--<tr>
+  				<td>Location <span style="color:red"> * </span></td>
+  				<td>
+  					<input class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOldLocation(this)" readonly="true" id="location"/>
+  					<input class="track" oldvalue="" onchange="track(changed)" readonly="true" name="LCID" id="LCID" size="15"/>
+  				</td>
+  			</tr>-->
+  			<tr>
+  				<td valign="top">Plant Name / ID <span style="color:red"> * </span></td>
+  				<td valign="top">
+  						<input autocomplete="off" class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOldName(this)" onkeyup="updateSelect(this)" id="latname"/>
+							<input class="track" oldvalue="" onchange="track(changed)"  name="FID" id="FID" size="5"/>
+							<input class="track" oldvalue="" onchange="track(changed)"  name="PNID" id="PNID" size="5"/>
+							<span style="color:red"> * </span>
+  					<span id="x" style="position:absolute;left:20em;z-index:10"></span>	<!-- XXX -->
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>Caption</td>
+  				<td>
+  					<input size="40" class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOld(this)" name="caption" id="caption"/> 
+  				</td>
+  			</tr>
+   			<tr>
+  				<td>Note/Comments</td>
+  				<td><input class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOld(this)" name="comments" id="comments"/> (not for display)</td>
+  			</tr> 	
+  			
+   			<tr>
+  				<td>Reintroduced</td>
+  				<td>
+  					<select name="reintroduced" id="reintroduced">
+  						<option value="">  </option>
+  						<option value="SD">SD</option>
+  						<option value="CT">CT</option>
+  						<option value="PT">PT</option>
+  					</select>
+<!-- older version corrected -->
+  					<a id="map_gps" target="_blank" href="#"></a>
+  				</td>
+  			</tr> 	
+  			
+  			
+  			<tr>
+  				<td class="readonly">GPS </td>
+  				<td id="td_gps" title="">
+						<input readonly="true" class="track" oldvalue="" onchange="track(changed);setIndID()" ondblclick="retriveOld(this)" name="gps" id="gps" /> 
+						+/-
+						<input size="6" class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOld(this)" name="gps_error" id="gps_error" />
+						[<span 
+							style="color:darkred;font-weight:bold" 
+							title="GPS field readonly, use this field if GPS is wrong or too approximate" 
+							onclick="alert(this.title)"> ? </span>]
+						[<span "color:darkred;font-weight:bold"
+										onclick="x = document.getElementById('gps'); alert(x.getAttribute('readonly')); x.setAttribute('readonly', 0); alert(x.getAttribute('readonly'));"> M </span>]
+					</td>
+  			</tr>  
+  			<tr>
+  				<td>HerbNum</td>
+  				<td>
+  					<input class="track" onchange="track(changed);setIndID()" oldvalue="" ondblclick="retriveOld(this)" name="herbNum" id="herbNum"/> 
+						<!-- onchange="track(changed)" -->
+						(with UID as prefix?)
+  				</td>
+  			</tr> 
+  			<tr>
+  				<td>IndID </td>
+  				<td>
+  					<input class="track" oldvalue="" onchange="track(changed)" ondblclick="retriveOld(this)" name="IndID" id="IndID"/> 
+						(set auto if left empty)
+  				</td>
+  			</tr> 
+  			<tr>
+  				<td class="readonly">Origin Path</td>
+  				<td>
+  					<input readonly="true" size="40" value="" name="path" id="path"/> 
+  				</td>
+  			</tr> 				
+  			<tr>
+  				<td><input type="submit" onclick="saveForm();return false" value="Save"/></td> <!-- onclick="saveForm();return false" -->
+  				<td>
+						<input style="margin-left:3px;float:left" type="button" value="Skip -- Next photo" onclick="trackValues();next()"/>
+						<input style="margin-right:3px;float:right" type="button" value="Previous photo" onclick="trackValues();prev()"/>
+					</td>
+  			</tr>
+				<tr>
+					<td colspan="2" style="font-size:75%">
+<br/>
+					
+					</td>
+				</tr>
+  		</table>
+  	</form>
+  	</div>
+  	<div id="divImage"  style="float:left">
+  		<img id="img1" width="600" src="" 
+  		onclick="imid=document.getElementById('PHID').value;window.open('/servlet/GetImage?id='+imid, 'show', 'height=800,width=900').focus()"/>
+  	</div><!-- window.open(this.src, 'show', 'height=800,width=900').focus() -->
+
+  
+  </body>
+</html>

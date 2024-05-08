@@ -1,0 +1,46 @@
+{%for gen in fam.4 %} 
+    {%if gen.5 %}  
+        <div style="padding-left:0" id="{{gen.0}}">
+		<b><i title="{{gen}}">{{gen.0}}</i> <!--[{{fam.0}}]-->
+			{%if authorized and user.is_authenticated %}
+			[<a target="edit" href="/admin/names/name/{{gen.3}}/change/">edit</a>]
+		        {%endif%}
+		</b>
+
+{%if gen.7 %}
+  <table border="0" width="100%" style="padding-left:2em;">
+	<tr>
+        <td valign="top" width="25%" style="background-color:#EEEEEE;padding:1ex" title="">Unidentified</td>
+        <td valign="top">
+			{%for photo in gen.7%}
+                <a target="edit" href="/photodb/gallery/view/{{gen.3}}/{{photo.imid}}">
+                    <img alt="{{photo.nr}}" height="100" style="border: 3px solid black;" 
+                        title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" 
+                        src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/> 
+                </a>
+            {%endfor%}
+        </td>
+    </tr>
+  </table>
+{%endif%}
+
+            {%for sp in gen.4 %}
+                {%if total_photos < max_thums %} {%comment%} thumbs and edit_domain and {%endcomment%} <!-- FIXME what to include   -->
+                    {%include 'photodb/photos/photo_db_thums' %}
+                {%else%}
+                    <div>
+                        <i>{{sp.0}}</i> 
+                        {{sp.2}} 
+                        {%if sp.1 %}
+                            ({{sp.1}})
+                        {%endif%}
+                        &#8212;
+                        photos: 
+                        {%include 'photo_db_list' %}
+                    </div>
+                {%endif%}
+            {%endfor%}
+        </div>
+    {%endif%}
+{%endfor%}
+

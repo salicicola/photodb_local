@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="vascular plants, Pteridophytae, ferns, conifers, monocots, Dicotyledonae, Dicots,  Massachusetts, photos, images"/>
+		<title>Salicicola Photo  Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        {% include 'photodb/photos/style.htm' %}
+        {% include 'photodb/photos/script.htm' %}
+	</head>	
+	<body bgcolor="#F0FFF0" onload="show_all()">
+        {% include 'photodb/photos/header.htm' %}
+        {% load humanize %}
+        {% include 'photodb/photos/head.htm' %}        
+		<div style="padding-left:2.0em; padding-top: 1em; max-width:60em;font-size:90%"> <!-- padding-bottom: 1em; -->
+            {% include 'photodb/photos/subhead.htm' %}
+        </div>
+        <div style="margin-top:1ex;padding-left:0.7em;font-size:95%">
+            This is a special version for single species (variety, subspecies) grouped by individual/populationID,<br/>
+            bulk re-identification is not yet fully implemented: should run on the main/local branch manually (see stub)<br/>
+            (be sure, that indID is set &amp; correct &#8212; checking that it refers to a single species will be done automatically).<br/>
+            <span title="photos with attribute nr <=0 not shown (considered deleted)">
+            Images with green border&#8212;published, black&#8212;not published, red&#8212;marked unverified (and not published).
+            </span>
+        </div>
+		{% for group in tree%}
+            {%if group.5 %}
+		        <div style="margin-top:2ex">
+                    <div id="{{group.3}}" style="display:none">
+                        {%for fam in group.4 %}
+                            {%if fam.5 %}
+                                <div>
+                                    <b>{{fam.0}}</b>
+                                 <div id="{{fam.3}}" style="display:none">
+    {%for gen in fam.4 %} 
+        {%if gen.5 %}  
+            <div style="padding-left:0">
+		    <b><i title="{{gen}}">{{gen.0}}</i>
+			    {%if authorized %} <!--XXX never authorized in view -->
+			    [<a target="edit" href="/admin/names/name/{{gen.3}}/change/">edit</a>]
+		        {%endif%}
+		    </b>
+                {%for sp in gen.4 %} <!-- FIXME max_thums not needed -->
+                        {%include 'photodb/photos/photo_db_thums_inids' %}
+                {%endfor%}
+            </div>
+        {%endif%}
+    {%endfor%}
+
+                                        
+                                 </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+            {%endif%}       
+        {%endfor%}
+        {% include 'photodb/photos/footer.htm' %}
+	</body>
+</html>

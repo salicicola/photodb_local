@@ -1,0 +1,28 @@
+<html>
+    <head>
+	    {%include 'names/head'%}
+    </head>
+	<body style="padding:1em;">
+		{%include 'names/common_head' %}
+		{%include 'names/checklist_header' %}
+			{%for group in tree %}
+				<h3>
+					{{group.higher.latname}} {%if group.higher.colnames %} &#8212; {{group.higher.colnames}} {%endif%}
+				</h3>
+				{%for fam in group.fams %}
+					<div style="padding-left:1em" id="{{fam.fam.latname}}">
+						{%if fam.species %}
+                    		<a title="{{fam.genera|length}}::{{fam.species}}" target="_blank" href="/names/vascular/fixed/{{fam.fam.pnid}}/">{{fam.fam.latname}}</a>
+						{%else%}
+							<span title="no relevant species: {{fam.species}} spp in {{fam.genera|length}} genera">{{fam.fam.latname}}</span>
+						{%endif%}
+					</div>
+				{%endfor%}
+			{%endfor%}
+			{%include "names/checklist_index_footer"%}
+	</body>
+</html>
+
+
+
+

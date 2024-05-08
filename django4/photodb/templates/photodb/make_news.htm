@@ -1,0 +1,125 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link href="/static/CSS/georss.css" rel="stylesheet" type="text/css">
+      <style type="text/css">
+					body {
+						font-size:0.83em;
+					}
+	  </style>
+   </head>
+   <body>
+	  {% load humanize %}
+      <div id="logo"><a href="http://www.salicicola.com">Plant Gallery Update</a>
+         						&nbsp;
+         						{{pubdate}}
+         						&nbsp; - &nbsp;
+         						(previous update <a href="index{{numeric_prev}}.html">{{prev}}</a>)
+      </div>
+      <div class="Snippet" style="border-width:0; background-color:#FFF; margin:1em">
+         <div class="titleWithLine"> </div>
+         <div style="padding-right:1em">
+            <div>
+				contains {{photos_total|intcomma}} photos of {{species_total|intcomma}} species<br>
+<br><b>Species or subspecies/varieties added</b> <br/>
+<!--
+TODO: delete or move items "from Colorado": add link to slideshow or list of CO species : cf. http://192.168.1.9:9090/photodb/flora/CO. <br/>
+<span style="font-weight:70%">Species from Colorado <a href="#">incorporated into the main database</a> from <a href="#">slide show (2017)</a> excluded from this list<br/><span>
+-->
+Species labeled 'Cultivated' or 'Exotic' (excluded from the Massachusetts County Checklist) may <!--<span style="font-decoration:line-through">occasionally</span>--> be included in gallery views of pertinent genera and families.
+<!--
+<br><b>Species or varieties added:</b>
+(Species labeled 'Cultivated' or 'Exotic' may be occasionally included in gallery views of pertinent genera and families. They are, obviously, not included in the Massachusetts County Checklist.)
+-->
+<!--(species marked <i>cultivated</i> or <i>exotic</i> aren't listed in Massachusetts Flora Checklist)-->
+				<br/><br/>
+			</div>
+
+            <div>
+                <a href="/photodb/gallery/view/14004/">Cardamine occulta Hornem. </a> 
+                (hidden bittercress, nursery bittercress) — 31 images
+               	<span class="comments">
+				    — introduced 
+				    — <b>renamed</b> (= <i>Cardamine flexuosa</i> auct. New England) 
+				</span>
+            </div>
+
+            {% for item in items %}
+            {%if item.1.existed %}{%else%}
+            <div>
+                <a href="/photodb/gallery/view/{{item.1.plant.pk}}/">{{item.0}}</a> 
+                {{item.1.plant.authors}}
+                ({{item.1.plant.colnames}}) &#8212; {{item.1.images|length}} image{%if item.1.images|length == 1%}{%else%}s{%endif%}
+               	<span class="comments">
+{%if item.1.planted == item.1.images|length %}
+	{%if item.1.meta.introduced %}&#8212; {{item.1.meta.introduced}} {%endif%}
+	{%if item.1.meta.rare %} &#8212; 
+		{%if item.1.meta.rare == 'E' %} species <b>Endangered</b>{%endif%}
+		{%if item.1.meta.rare == 'T' %} species <b>Threatened</b>{%endif%}
+		{%if item.1.meta.rare == 'SC' %} species <b>Special Concern</b>{%endif%}
+		{%if item.1.meta.rare == 'WL' %} species <b>Watch-Listed</b>{%endif%}
+		{%if item.1.meta.rare == 'H' %} species <b>Historic</b>{%endif%}
+	{%endif%}
+	(cultivated plants)
+{%else%}
+				{%if item.1.meta.introduced %}&#8212; {{item.1.meta.introduced}} {%endif%}
+				{%if item.1.meta.rare %} &#8212; 
+					{%if item.1.meta.rare == 'E' %} species <b>Endangered</b>{%endif%}
+					{%if item.1.meta.rare == 'T' %} species <b>Threatened</b>{%endif%}
+					{%if item.1.meta.rare == 'SC' %} species <b>Special Concern</b>{%endif%}
+					{%if item.1.meta.rare == 'WL' %} species <b>Watch-Listed</b>{%endif%}
+					{%if item.1.meta.rare == 'H' %} species <b>Historic</b>{%endif%}
+				{%endif%}
+{%endif%}
+				{%if item.1.meta.caption %}&#8212; {{item.1.meta.caption}}{%endif%}
+				{%if item.1.newname %}&#8212; <b>renamed or re-identified old records</b>{%endif%}
+
+{%if item.1.area %}
+ &#8212; <b>{{item.1.area}}</b>
+{%endif%}
+
+				</span>
+            </div>
+            {%endif%}
+
+            {%endfor%}
+<!--<div>
+<br/><b>Debug/FIXME: ! 10 more spp if using new_plants()</b> <pre>
+1 new Pseudotsuga menziesii ssp. glauca <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/301951/">see</a>
+2 Calendula officinalis
+3 new Hieracium kalmii  <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/16722/">see</a>
+4 new Echinacea pallida <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/13199/">see</a>
+5 Gaillardia pulchella
+6 new Quercus ×stelloides <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/13796/">see</a>
+7 new Persicaria coccinea <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/301920/">see</a>
+8 new ×Sorbaronia fallax <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/12986/">see</a>
+9 Prunus cerasifera
+10 new Galium album <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/12883/">see</a>
+11 new Salix ×sepulcralis  <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/16781/">see</a>
+12 new Viola blanda var. palustriformis <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/301282/">see</a>
+13 new Calycanthus floridus var. glaucus <a target="_blank" href="http://localhost:9090/photodb/gallery/simple/16045/">see</a>
+14 Chrysanthemum ×morifolium
+15 Platycodon grandiflorus
+16 Anisocampium niponicum
+17 Pinus sylvestris <b>--- missing cultivar .. in Latin name</b>
+18 Salix pentandra
+19 Salix aurita
+</pre></div>
+-->
+            <div><br><b>Photographs added to the following taxa</b><br><br></div>
+            {%for item in items%}
+            {%if item.1.existed %}
+            <div><i> {{item.0}}</i> <!-- cultivar should starts with ' -->
+                {%for imid in item.1.images %}
+               			[<a href="/photodb/gallery/view/{{item.1.plant.pk}}/{{imid}}">{{forloop.counter}}</a>]
+                {%endfor%}
+               	new image{%if item.1.images|length == 1%}{%else%}s{%endif%}
+            {%endif%}
+            {%endfor%}
+            </div>
+        </div>
+     <div id="footer"></div>
+      <hr>
+   </body>
+</html>
+

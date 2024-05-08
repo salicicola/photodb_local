@@ -1,0 +1,26 @@
+<html>
+{% load humanize %}
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+{% include 'photodb/results_header.htm' %}
+		<ol>
+			{%for r in recs %}
+{% if r.published %}
+			<li> 
+<a href="/photodb/gallery/view/{{r.spid}}/">{{r.latname}} ({{r.colnames}}) 
+&#8212; {{r.published}} published photo{%if r.published == 1 %}{%else%}s{%endif%}
+			</li>	
+{%endif%}
+			{%endfor%}
+		</ol>
+		<hr/>Version #{{version}} 
+        <br/>
+	</body>
+</html>
+

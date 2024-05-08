@@ -1,0 +1,89 @@
+		<script type="text/javascript">
+		function show_hide(cObj, idvalue) {
+							current = document.getElementById(idvalue).style.display;
+							if (current=='none') {
+								document.getElementById(idvalue).style.display='block';
+								cObj.src="/static/images/uarrow.gif";
+							}
+							else {
+								document.getElementById(idvalue).style.display='none';
+								cObj.src="/static/images/darrow.gif";
+							}
+						}	
+			function show_all() {
+				docs = document.getElementsByTagName("div")
+				for (i = 0; i < docs.length; i++) {
+				   doc = docs[i];
+				   if (doc.style.display=='none') {
+				   	  doc.style.display = 'block';   
+				   }
+				   
+				}
+			}
+			
+			function expand(expand) {
+				docs = document.getElementsByTagName("div")
+				for (i = 0; i < docs.length; i++) {
+				   doc = docs[i];
+				   if (doc.style.display=='none') {
+				   	  doc.style.display = 'block';   
+				   }
+				   else {
+				      if ((doc.style.display=='block')) {
+				   	   doc.style.display = 'none';
+				   	  }
+				   }
+				   
+				}
+			}
+				
+			
+			function headerWriteText(string, isLink) {
+				alert("start function");
+	var str = '<table bgcolor="#8B0000" border="0" width="100%" cellspacing="0" style="background-color: #8B0000;">' +
+            '<tbody valign="top" style="background-color: #8B0000;"><tr>' +
+            '<td bgcolor="#8B0000" nowrap style="padding-top: 0px; height: 40px; margin-top: 0px; ' +
+	    'vertical-align: middle; text-align:left; background-color: #8B0000; ' +
+	    'font-size: 30pt; color: #F0FFF0;"><a href="/" style="color: white; ' +
+	    'text-decoration: none;"><img border="0" height=40" alt="" src="/images/Salicicola__40.gif"></a></td>' +
+	    '<td align="right" bgcolor="#8B0000" nowrap style="padding-top: 0px; height: 40px; margin-top: 0px; ' +
+	    'vertical-align: middle; text-align:right; background-color: #8B0000; '+
+	    'font-size: 30pt; color: #F0FFF0;"><img  border="0" src="/images/' +
+	    string +
+	    '__40.gif" height=40"></td></tr></tbody></table>';
+	    alert(str);
+   	    document.writeln(str);
+	    alert("there");
+	    /*
+'<table border="0" width="100%" cellspacing="0" style="background-color: #8B0000;">' +
+            '<tbody valign="top"><tr>' +
+            '<td nowrap style="padding-top: 0px; height: 60px; margin-top: 0px; ' +
+	    'vertical-align: middle; text-align:left; background-color: #8B0000;' +
+	    'font-size: 30pt; color: #F0FFF0;"><a href="/" style="color: white; ' +
+	    'text-decoration: none;"><span style="color: white; font-weight: bold; ' +
+	    'vertical-align: top;"> &nbsp; &nbsp; &nbsp; Salicicola</span></a></td>' +
+	    '<td nowrap style="padding-top: 0px; height: 60px; margin-top: 0px; ' +
+	    'vertical-align: middle; text-align:right; background-color: #8B0000;' +
+	    'font-size: 30pt; color: #F0FFF0;"><span style="font-size:30pt">' +
+	    string +
+	    '&nbsp; &nbsp; &nbsp; </span></td></tr></tbody></table>';
+
+
+*/	
+/*	
+var str = '\n<center><h2 class="header" ><i><big>\n';
+ if (isLink == true) { 
+	str += '<a class="header" href="/index.html">Salicicola</a></big>\n'; 
+	}
+ else { 
+	str += 'Salicicola</big>'; 
+	}
+ if (string.length>0) {
+  str += '<br />' + string;
+ }
+ str += '</i></h2></center><hr />\n';
+ document.writeln(str);
+*/
+};
+		</script>
+

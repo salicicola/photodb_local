@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="vascular plants, Pteridophytae, ferns, conifers, monocots, Dicotyledonae, Dicots,  Massachusetts, photos, images"/>
+		<title>Salicicola Photo  Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        		<style type="text/css">
+		body {
+	        background-color: #F0FFF0;
+	        margin-top: 10px;
+		    color: #8B0000; 
+        }
+        a:link {
+	        color: #8B0000; 
+	        background-color: transparent;
+        }
+        a:visited {
+	        color: gray; /* #D2691E; */
+	        background-color: transparent;
+        }
+        a:active {
+	        color: #ff0000; 
+	        background-color: transparent;
+        }
+        a:hover {
+	        color: #ff0000; 
+	        background-color: transparent;
+        }
+		div, h2 {
+				margin-left:1ex;	
+		}
+        h2, h3 {
+            margin-bottom:0px;
+        }
+        img.switchview {
+            height: 1ex; padding:0; margin:0; border-width:0;
+        }
+		</style>
+        {% include 'photodb/photos/script.htm' %}
+	</head>	
+	<body bgcolor="#F0FFF0" onload="show_all()">
+        <table style="background-color: #8B0000;" width="100%" cellspacing="0" border="0" bgcolor="#8B0000">
+		    <tbody style="background-color: #8B0000;" valign="top">
+			<tr>
+				<td style="padding-top: 0px; height: 40px; margin-top: 0px; vertical-align: middle; text-align:left; background-color: #8B0000; font-size: 30pt; 
+					color: #F0FFF0;" nowrap="" bgcolor="#8B0000">
+					&nbsp;Salicicola
+				</td>
+				<td style="padding-top: 0px; height: 40px; margin-top: 0px; vertical-align: middle; text-align:right; background-color: #8B0000; font-size: 30pt; 
+				color: #F0FFF0;" nowrap="" bgcolor="#8B0000" align="right">
+				Photo Gallery: Animals &nbsp;
+				</td>
+			</tr>
+		</tbody>
+	    </table>
+        {% load humanize %}
+		<div style="padding-left:2.0em; padding-top: 1em; max-width:60em;font-size:100%"> 
+            <b>Notes</b>: 
+            {{total_photos|intcomma}} image{%if total_photos == 1%}{%else%}s{%endif%} illustrating {{total_species|intcomma}}
+            {%if total_species == 1%} taxon {%else%} taxa (at genus, species, or subspecies level){%endif%}
+            {%if public %}
+                &#8212; mode: <i>view only</i>
+            {%else%}
+                &#8212; logged as <i>{{request.user.username}}</i>
+            {%endif%}
+        </div>
+        <h2 style="padding-left:5px;">{{data.upper.latname}} {%if data.upper.colnames %}&#8212; {{data.upper.colnames}} {%endif%}</h2>
+        {%for fam in data.fams %}
+            <div style="margin-top:2ex;padding-left:10px;">
+		    <b style="font-size:120%">{{fam.family.latname}} {%if fam.family.colnames%} &#8212; {{fam.family.colnames}} {%endif%}</b>
+              &nbsp;
+              <img class="switchview" vspace="0" hspace="0" border="0" onClick="show_hide(this, {{fam.family.pk}})" 
+				   src="/static/images/darrow.gif" style="height: 1ex; padding:0; margin:0; border-width:0"/>
+              <div id="{{fam.family.pk}}">
+              {%for g in fam.genera %}
+                <div style="margin-top:2ex">
+                    <b style="font-size:110%">{{g.genus.latname}}</b>
+                    {%for sp in g.species %}
+                        {%if sp.images %}
+                        <div style="margin-top:2ex">
+                        <table border="0" width="100%" style="padding-left:0em;">
+	                        <tr>
+		                        <td valign="top" width="25%" style="background-color:#EEEEEE;padding:1ex">
+                                    {%if public%}
+                                        <i>{{g.genus.latname}} {{sp.species.latname}}</i> 
+                                    {%else%}
+			                            <i><a target="_blank" href="/photodb/edit/name/{{sp.species.pk}}">{{g.genus.latname}} {{sp.species.latname}}</a></i> 
+                                    {%endif%}
+				    {%if sp.species.colnames %} <br/> <b>{{sp.species.colnames}}</b> {%endif%}
+<br/> 
+{%if sp.meta.rare %}
+ <b>
+   {%if sp.meta.rare == 'E'%}
+		Endangered
+	 	{%elif sp.meta.rare == 'T'%}
+		Threatened
+	 	{%elif sp.meta.rare == 'SC'%}
+		Special Concern
+	 	{%elif sp.meta.rare == 'WL'%}
+		Watch-Listed
+		{%elif sp.meta.rare == 'H'%}
+		Historic
+		{%else%}
+		{{sp.meta.rare}}
+	{%endif%}
+ </b>
+{%else%}
+    {%if sp.meta.invasive%}
+        {%if 'Nuisance' in sp.meta.invasive%}
+            <b style="color:red">{{sp.meta.invasive}}</b>
+        {%else%}
+            <b style="color:red">Invasive</b>
+        {%endif%}
+    {%else%}
+        {%if sp.meta.introduced%}
+			{%if sp.meta.introduced == "exotic" %}
+				Exotic
+			{%elif sp.meta.introduced == "domestic" %}
+				Domestic
+			{%elif sp.meta.introduced == "cultivated" %}
+				Cultivated
+			{%elif sp.meta.introduced == "introduced" %}
+				Introduced
+			{%else%}
+				{{sp.meta.introduced|title}}
+			{%endif%}
+        {%else%}
+            Native
+        {%endif%}
+    {%endif%}
+{%endif%}
+                                </td>
+		                        <td valign="top">
+			                        {%for image in sp.images%}  
+                                        <a target="edit" href="/photodb/gallery/view/{{sp.species.pk}}/{{image.imid}}">{%if image.nr < 100 %}
+
+                                        <img alt="{{image.nr}}" height="100" style="border: 2px solid green;min-width:100px;min-height:100px" 
+									     title="XXX: {{image}} XXX {{image.nr}}: {{image.imid}} {{image.location}}" 
+                                            src="/static/thm/photos/{{image.imid|slice:"0:6"}}/{{image.imid}}.jpg"/>
+{%else%} {%if public %} {%else%}
+<img alt="{{image.nr}}" height="100" style="border: 4px solid red;" title="{{image.nr}}: {{image.imid}} {{image.location}}" src="/static/thm/photos/{{image.imid|slice:"0:6"}}/{{image.imid}}.jpg"/>{%endif%}
+{%endif%}</a>
+                                    {%endfor%}
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+              {%endfor%}
+              </div>
+            </div>
+        {%endfor%}
+     	<hr align="left" width="35%"/>
+		<i style="font-size:90%">Powered by Python {{python_version}} and Django {{django_version}} &#8212; version {{version|safe}}</i>
+        <span style="font-size:90%">[photodb: <i>{{revision}}</i>]</span>
+		<br/>
+	</body>
+</html>

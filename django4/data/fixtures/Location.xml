@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+ <object model="common.location" pk="MA.AAR.Bos.200600100">
+  <field name="alias" type="CharField">AA-JP</field>
+  <field name="long_name" type="CharField">Arnold Arboretum, Jamaica Plain, Boston</field>
+  <field name="public_name" type="CharField">Arnold Arboretum, Jamaica Plain, Boston</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Boston</field>
+  <field name="village" type="CharField">Jamaica Plain</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.ALR.Cam.2007061701">
+  <field name="alias" type="CharField">Alewife Reservation, Cambridge</field>
+  <field name="long_name" type="CharField">Alewife Reservation, Cambridge</field>
+  <field name="public_name" type="CharField">Alewife Reservation, Cambridge</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Cambridge</field>
+  <field name="village" type="CharField">Cambridge</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BDC.Ply.2016090501">
+  <field name="alias" type="CharField">Plymouth: Beaver Dam C.A.</field>
+  <field name="long_name" type="CharField">Beaver Dam Conservation Area, Plymouth</field>
+  <field name="public_name" type="CharField">Beaver Dam Conservation Area, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BDC.Ply.2016090502">
+  <field name="alias" type="CharField">Plymouth: Beaver Dam C.A.: Little Island Pond</field>
+  <field name="long_name" type="CharField">Little Island Pond, Beaver Dam Conservation Area, Plymouth</field>
+  <field name="public_name" type="CharField">Little Island Pond, Beaver Dam Conservation Area, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Bos.30703406">
+  <field name="alias" type="CharField">BHR-Readville (Fowl Meadow)</field>
+  <field name="long_name" type="CharField">Fowl Meadow, Blue Hills Reservation, Readville, Boston</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Readville, Boston</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Boston</field>
+  <field name="village" type="CharField">Readville</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2009-04-26T03:50:06+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Can.17222821">
+  <field name="alias" type="CharField">BHR-C-Ponkapoag Pond W</field>
+  <field name="long_name" type="CharField">W Ponkapoag Pond, Blue Hills Reservation, Canton</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Canton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Canton</field>
+  <field name="village" type="CharField">Canton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-11-21T04:13:41+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Can.200601100">
+  <field name="alias" type="CharField">BHR-C-Ponkapoag Bog</field>
+  <field name="long_name" type="CharField">BHR-C-Ponkapoag Bog</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Canton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Canton</field>
+  <field name="village" type="CharField">Canton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Can.200601300">
+  <field name="alias" type="CharField">BHR-C-Ponkapoag Swamp</field>
+  <field name="long_name" type="CharField">BHR-C-Ponkapoag Swamp</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Canton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Canton</field>
+  <field name="village" type="CharField">Canton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Can.200601520">
+  <field name="alias" type="CharField">BHR-C-Neponset RR-Fowl Meadow</field>
+  <field name="long_name" type="CharField">BHR-C-Neponset RR-Fowl Meadow, Canton</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Canton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Canton</field>
+  <field name="village" type="CharField">Canton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Ded.51957780">
+  <field name="alias" type="CharField">BHR-D-Neponset R.-Fowl Meadow</field>
+  <field name="long_name" type="CharField">Blue Hills Reservation, Neponset R., Dedham</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Neponset R., Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2009-12-28T04:49:40+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.200601510">
+  <field name="alias" type="CharField">BHR-M-Neponset RR-Fowl Meadow</field>
+  <field name="long_name" type="CharField">BHR-M-Neponset RR-Fowl Meadow</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField">Milton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.200602500">
+  <field name="alias" type="CharField">BHR-M-Chickatawbut Rd</field>
+  <field name="long_name" type="CharField">BHR-M-Chickatawbut Rd</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField">Milton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.200603000">
+  <field name="alias" type="CharField">BHR-M-Hillside St</field>
+  <field name="long_name" type="CharField">BHR-M-Hillside St</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField">Milton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.200604000">
+  <field name="alias" type="CharField">BHR-M-Unquity Dumpster</field>
+  <field name="long_name" type="CharField">BHR-M-Unquity Dumpster</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField">Milton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.2014102403">
+  <field name="alias" type="CharField"><None></None></field>
+  <field name="long_name" type="CharField"><None></None></field>
+  <field name="public_name" type="CharField"><None></None></field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">2</field>
+  <field name="modified" type="DateTimeField"><None></None></field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Mlt.201600710">
+  <field name="alias" type="CharField">BHR-M-E of Rt 28</field>
+  <field name="long_name" type="CharField">BHR Milton E of Rt 28</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField">Milton</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.200604900">
+  <field name="alias" type="CharField">BHR-Q-betw Rt 28 and pipeline</field>
+  <field name="long_name" type="CharField">BHR-Q-betw Rt 28 and pipeline</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField">Quincy</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2006060091">
+  <field name="alias" type="CharField">BHR-Q-Blue Hills Reservoir</field>
+  <field name="long_name" type="CharField">BHR, Quincy: Blue Hills Reservoir</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Reservoir, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField">Quincy</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2014052001">
+  <field name="alias" type="CharField">BHR-Q-Tucker Hill</field>
+  <field name="long_name" type="CharField">Tucker Hill, Blue Hills Reservation, Quincy</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField">Quincy</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-12-05T06:05:56+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2014102405">
+  <field name="alias" type="CharField"><None></None></field>
+  <field name="long_name" type="CharField"><None></None></field>
+  <field name="public_name" type="CharField"><None></None></field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">2</field>
+  <field name="modified" type="DateTimeField"><None></None></field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2016020610">
+  <field name="alias" type="CharField">BHR-Q-Great Dome with Little Dome</field>
+  <field name="long_name" type="CharField">Great Dome with Little Dome, Blue Hills Reservation, Quincy</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2010-05-31T23:21:48+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2016101901">
+  <field name="alias" type="CharField">BHR-Q-Furnace Brook Wetlands (L.Site))</field>
+  <field name="long_name" type="CharField">Middle Furnace Brook Wetlands, Blue Hills Reservation, Quincy</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-05-31T23:21:48+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2016101902">
+  <field name="alias" type="CharField">BHR-Q-Furnace Brook Lower</field>
+  <field name="long_name" type="CharField">Lower Furnace Brook, Blue Hills Reservation, Quincy</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2010-05-31T23:21:48+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Qui.2017070701">
+  <field name="alias" type="CharField">BHR-Q-Chickatawbut proseka</field>
+  <field name="long_name" type="CharField">Chickatawbut Hill proseka [houstonia site) Hill, Blue Hills Reservation, Quincy</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Quincy</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="village" type="CharField">Quincy</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-12-05T06:05:56+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.BHR.Ran.200605700">
+  <field name="alias" type="CharField">BHR-R-Ponkapoag Pond-NE</field>
+  <field name="long_name" type="CharField">BHR-R-Ponkapoag Pond-NE</field>
+  <field name="public_name" type="CharField">Blue Hills Reservation, Randolph</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Randolph</field>
+  <field name="village" type="CharField">Randolph</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Bar.Brn.2014050100">
+  <field name="alias" type="CharField">Bourne: North</field>
+  <field name="long_name" type="CharField">Northern Bourne</field>
+  <field name="public_name" type="CharField">Northern Bourne</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Bourne</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Bar.Fal.201110011">
+  <field name="alias" type="CharField">Falmouth Sippewisset</field>
+  <field name="long_name" type="CharField">Falmouth, Sippewisset</field>
+  <field name="public_name" type="CharField">Sippewisset, Falmouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Falmouth</field>
+  <field name="village" type="CharField">Falmouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-02T00:35:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Bar.Fal.201110022">
+  <field name="alias" type="CharField">Falmouth Crane WMA: Quail Area</field>
+  <field name="long_name" type="CharField">Falmouth, Crane WMA, Quail Area</field>
+  <field name="public_name" type="CharField">Crane WMA (Quail Area), Falmouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Falmouth</field>
+  <field name="village" type="CharField">Falmouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-02T00:35:15+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Ber.Lee.2011111115">
+  <field name="alias" type="CharField">Lee, E of Laurel Lake, XXX area,</field>
+  <field name="long_name" type="CharField">Lee, E of Laurel Lake, XXX area,</field>
+  <field name="public_name" type="CharField">East of Laurel Lake, Lee</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lee</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Ber.Pit.2011111111">
+  <field name="alias" type="CharField">Pittsfield, SW of Mud Pond, NE of Richmond Pond, at farm entrance near small unnamed pond</field>
+  <field name="long_name" type="CharField">Pittsfield, SW of Mud Pond, NE of Richmond Pond, at farm entrance near small unnamed pond, opposite Camp Marion White</field>
+  <field name="public_name" type="CharField">Southwest of Mud Pond, Pittsfield</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Pittsfield</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField">42.415,-73.311</field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Ber.Shf.2011111106">
+  <field name="alias" type="CharField">Sheffield, Schenob Brook Fen (Kelsey Rd., roadside at Dry Brook)</field>
+  <field name="long_name" type="CharField">Sheffield, Schenob Brook Fen (Kelsey Rd., roadside at Dry Brook)</field>
+  <field name="public_name" type="CharField">Schenob Brook Fen, Sheffield</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Sheffield</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Ber.Shf.2011111107">
+  <field name="alias" type="CharField">Sheffield, Foley Rd.</field>
+  <field name="long_name" type="CharField">Sheffield, Foley Rd.</field>
+  <field name="public_name" type="CharField">Foley Rd., Sheffield</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Sheffield</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Ber.Shf.2011111108">
+  <field name="alias" type="CharField">Sheffield, Foley Rd., Salisbury Rd. intersect.</field>
+  <field name="long_name" type="CharField">Sheffield, Foley Rd., Salisbury Rd. intersect.</field>
+  <field name="public_name" type="CharField">Foley Rd./Salisbury Rd. intersection, Sheffield</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Sheffield</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.CUT.Ded.2006072001">
+  <field name="alias" type="CharField">Cutler Pk-Dedham-SE Cutler Pk</field>
+  <field name="long_name" type="CharField">Cutler Pk-Dedham-SE Cutler Pk</field>
+  <field name="public_name" type="CharField">Cutler Park, Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField">Dedham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-07-23T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.CUT.Nee.200607105">
+  <field name="alias" type="CharField">Cutler Pk-Needham-SW Cutler Pk</field>
+  <field name="long_name" type="CharField">Cutler Pk-Needham-SW Cutler Pk</field>
+  <field name="public_name" type="CharField">Cutler Park, Needham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Needham</field>
+  <field name="village" type="CharField">Needham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-07-23T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.CUT.Nee.200607302">
+  <field name="alias" type="CharField">Cutler Pk-Needham-N Cutler Pk</field>
+  <field name="long_name" type="CharField">Cutler Pk-Needham-N Cutler Pk</field>
+  <field name="public_name" type="CharField">Cutler Park, Needham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Needham</field>
+  <field name="village" type="CharField">Needham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-07-23T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.CUT.Nee.20070609383">
+  <field name="alias" type="CharField">Cutler Park: Central</field>
+  <field name="long_name" type="CharField">Cutler Park Central, Needham</field>
+  <field name="public_name" type="CharField">Cutler Park, Needham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Needham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-06-06T19:26:33.531000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.CUT.Xxx.200607102">
+  <field name="alias" type="CharField">Cutler Pk S Cutler Pk: Farm</field>
+  <field name="long_name" type="CharField">Cutler Pk S Cutler Pk: Farm/Parking</field>
+  <field name="public_name" type="CharField">Territory of former Kennedy Farm, Cutler Park, Needham/Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Needham, Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-07-23T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.ELM.Ply.201109051">
+  <field name="alias" type="CharField">Ellisville Marsh (marsh)</field>
+  <field name="long_name" type="CharField">Plymouth-Ellisville Marsh (marsh)</field>
+  <field name="public_name" type="CharField">Ellisville Marsh, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-09-05T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Frn.Hea.20070609374">
+  <field name="alias" type="CharField">Heath: Avery Brook</field>
+  <field name="long_name" type="CharField">Avery Brook, Heath</field>
+  <field name="public_name" type="CharField">Avery Brook, Heath</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Heath</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T14:46:18.796000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Frn.Hea.20070609375">
+  <field name="alias" type="CharField">Heath: powerline</field>
+  <field name="long_name" type="CharField">Heath: Hosmer Rd.: powerline</field>
+  <field name="public_name" type="CharField">Hosmer Rd., Heath</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Heath</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T14:46:18.796000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Frn.Hea.20070609376">
+  <field name="alias" type="CharField">Heath: Hosmer Rd.</field>
+  <field name="long_name" type="CharField">Heath: Hosmer Rd.</field>
+  <field name="public_name" type="CharField">Hosmer Rd., Heath</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Heath</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T14:46:18.796000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LAU.Lee.2018060152">
+  <field name="alias" type="CharField">Laurel Lake: NE (Lee)</field>
+  <field name="long_name" type="CharField">Laurel Lake, northeast (Lee)</field>
+  <field name="public_name" type="CharField">Laurel Lake, Lee</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lee</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2018-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LAU.Lee.2018060153">
+  <field name="alias" type="CharField">Laurel Lake: SE: Highlawn Farm (Lee)</field>
+  <field name="long_name" type="CharField">Laurel Lake, southeast (Lee)</field>
+  <field name="public_name" type="CharField">Laurel Lake, Lee</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lee</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2018-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LAU.Lee.2018060154">
+  <field name="alias" type="CharField">Laurel Lake: WE (Lee)</field>
+  <field name="long_name" type="CharField">Laurel Lake, southwest (Lee: Edith Wharton Park)</field>
+  <field name="public_name" type="CharField">Laurel Lake, Lee</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lee</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2018-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LAU.Len.2018060151">
+  <field name="alias" type="CharField">Laurel Lake: NE (Lenox)</field>
+  <field name="long_name" type="CharField">Laurel Lake, northeast (Lenox)</field>
+  <field name="public_name" type="CharField">Laurel Lake, Lenox</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lenox</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2018-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LAU.Len.2018060155">
+  <field name="alias" type="CharField">Laurel Lake: NE (Lenox)</field>
+  <field name="long_name" type="CharField">Laurel Lake, northwest (Lenox: Edith Wharton Park)</field>
+  <field name="public_name" type="CharField">Laurel Lake, Lenox</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lenox</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2018-11-15T16:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.LDP.Ply.2016070101">
+  <field name="alias" type="CharField">Long Duck Pond Pres. Lots</field>
+  <field name="long_name" type="CharField">Long Duck Pond Preserve Lots, Plymouth</field>
+  <field name="public_name" type="CharField">Long Duck Pond Preserve Lots, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2016-07-21T12:49:39+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Car.20070609051">
+  <field name="alias" type="CharField">Myles SF-Carver-E of Crane Brook</field>
+  <field name="long_name" type="CharField">Myles Standish State Forest, E of Crane Brook, Carver</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest E of Crane Brook, Carver</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Carver</field>
+  <field name="village" type="CharField">Carver</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Car.20070609052">
+  <field name="alias" type="CharField">Myles SF-Carver-Lost Horse Bog</field>
+  <field name="long_name" type="CharField">Myles Standish State Forest, Lost Horse Bog, Carver</field>
+  <field name="public_name" type="CharField">Lost Horse Bog, Myles Standish State Forest, Carver</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Carver</field>
+  <field name="village" type="CharField">Carver</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Car.20070609381">
+  <field name="alias" type="CharField">Myles SF-Carver-Halfway Pond Rd.</field>
+  <field name="long_name" type="CharField">Halfway Pond Rd, Myles Standish State Forest, Carver</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Carver</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Carver</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-29T16:55:30.140000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.17367229">
+  <field name="alias" type="CharField">Myles SF-Plymouth-Three-Cornered Pond Rd. (W)</field>
+  <field name="long_name" type="CharField">Myles Standish St F-Plymouth-Three-Cornered Pond Rd. (W)</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-11-22T20:20:29+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.17367555">
+  <field name="alias" type="CharField">Myles SF-Plymouth-Three-Cornered Pond Rd. (E)</field>
+  <field name="long_name" type="CharField">Myles Standish St F-Plymouth-Three-Cornered Pond Rd. (E)</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-11-22T20:25:55+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.20060852">
+  <field name="alias" type="CharField">Myles SF-Plymouth-Snake Hill Rd</field>
+  <field name="long_name" type="CharField">Myles Standish St F, Plymouth-Snake Hill Rd</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.200608802">
+  <field name="alias" type="CharField">Myles SF-Plymouth-South Line Rd</field>
+  <field name="long_name" type="CharField">Myles Standish St F-Plymouth-South Line Rd</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.2007060914">
+  <field name="alias" type="CharField">Myles SF-Plymouth-Three-Cornered/Round Pond</field>
+  <field name="long_name" type="CharField">Myles Standish State Forest, Plymouth: Three-Cornered/Round Pond</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF.Ply.200806151">
+  <field name="alias" type="CharField">Myles SF-Plymouth-off Alden Rd.</field>
+  <field name="long_name" type="CharField">Myles Standish St F-Plymouth-off Alden Rd.</field>
+  <field name="public_name" type="CharField">Myles Standish State Forest, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-15T23:06:12+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF_MWR.Plm.20070609377">
+  <field name="alias" type="CharField">Massasoit NWR: large</field>
+  <field name="long_name" type="CharField">Massasoit NWR: large, Plymouth</field>
+  <field name="public_name" type="CharField">Massasoit Wildlife Refuge, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T16:50:33.984000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF_MWR.Plm.20070609378">
+  <field name="alias" type="CharField">Massasoit NWR: west</field>
+  <field name="long_name" type="CharField">Massasoit NWR: west, Plymouth</field>
+  <field name="public_name" type="CharField">Massasoit Wildlife Refuge, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T16:50:33.984000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF_MWR.Plm.20070609379">
+  <field name="alias" type="CharField">Massasoit NWR: east</field>
+  <field name="long_name" type="CharField">Massasoit NWR: east</field>
+  <field name="public_name" type="CharField">Massasoit Wildlife Refuge, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-05-15T16:50:33.984000+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.MSF_Pond.Ply.201809051">
+  <field name="alias" type="CharField">MSF: Cattle Pond</field>
+  <field name="long_name" type="CharField">Cattle Pond, Myles Standish SF, Plymouth</field>
+  <field name="public_name" type="CharField">Cattle Pond, Myles Standish SF, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2014-06-24T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Mid.Aub.202204201">
+  <field name="alias" type="CharField">Mt. Auburn Cemetery, Watertown</field>
+  <field name="long_name" type="CharField">Mount Auburn Cemetery, Watertown</field>
+  <field name="public_name" type="CharField">Mount Auburn Cemetery, Watertown</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Watertown</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2022-04-24T16:20:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Mid.Cam.2016081701">
+  <field name="alias" type="CharField">Cambridge: Fresh Pond, vic</field>
+  <field name="long_name" type="CharField">Fresh Pond vicinity, Cambridge</field>
+  <field name="public_name" type="CharField">Fresh Pond vicinity, Cambridge</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Cambridge</field>
+  <field name="village" type="CharField">Cambridge</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Mid.Lex.202305261">
+  <field name="alias" type="CharField">Lexington: Parker Meadow and bikeway</field>
+  <field name="long_name" type="CharField">Parker Meadow and bikeway, Lexington</field>
+  <field name="public_name" type="CharField">Parker Meadow and bikeway, Lexington</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Lexington</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2023-05-26T22:25:02+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Midd.Lin.20150612201">
+  <field name="alias" type="CharField">Minuteman Nat. Hist. Park: Lincoln</field>
+  <field name="long_name" type="CharField">Minuteman National Hist. Park, Lincoln</field>
+  <field name="public_name" type="CharField">Minuteman National Hist. Park, Lincoln</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Lincoln</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2015-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Midd.Sud.25345811">
+  <field name="alias" type="CharField">Sudbury: Allowance Brook floodplain</field>
+  <field name="long_name" type="CharField">Allowance Brook floodplain, Sudbury</field>
+  <field name="public_name" type="CharField">Allowance Brook floodplain, Sudbury</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Sudbury</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2009-02-23T04:36:51+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nan.Nnt.2014060101">
+  <field name="alias" type="CharField">Nantucket: Stanford Farm/Ram Pasture</field>
+  <field name="long_name" type="CharField">Stanford Farm/Ram Pasture, Nantucket</field>
+  <field name="public_name" type="CharField">Nantucket</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Nantucket</field>
+  <field name="town" type="CharField">Nantucket</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2014-06-05T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Ded.202001011">
+  <field name="alias" type="CharField">Wilson Mt. Res. Dedham</field>
+  <field name="long_name" type="CharField">Wilson Mountain Reservation, Dedham</field>
+  <field name="public_name" type="CharField">Wilson Mountain Reservation, Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2020-01-18T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Ded.2020010111">
+  <field name="alias" type="CharField">Wilson Mt. Reservation: Field/Meadow</field>
+  <field name="long_name" type="CharField">Field/Meadow at Wilson Mt. Reservation, Dedham</field>
+  <field name="public_name" type="CharField">Meadow at Wilson Mt. Reservation, Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">NO</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2023-08-27T20:16:11+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Ded.202104181">
+  <field name="alias" type="CharField">Dedham: MIT Endicott House</field>
+  <field name="long_name" type="CharField">Dedham</field>
+  <field name="public_name" type="CharField">Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2021-04-18T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Ded.202104183">
+  <field name="alias" type="CharField">Dedham: Endicotts's property</field>
+  <field name="long_name" type="CharField">Dedham</field>
+  <field name="public_name" type="CharField">Dedham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2021-04-18T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Hol.200607600">
+  <field name="alias" type="CharField">Holbrook Commuter R Station</field>
+  <field name="long_name" type="CharField">Holbrook Commuter R Station</field>
+  <field name="public_name" type="CharField">Holbrook</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Holbrook</field>
+  <field name="village" type="CharField">Holbrook</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Mlt.202305131">
+  <field name="alias" type="CharField">Pine Tree Brook Greenway, Milton</field>
+  <field name="long_name" type="CharField">Pine Tree Brook Greenway, Milton</field>
+  <field name="public_name" type="CharField">Pine Tree Brook Greenway, Milton</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2023-05-13T20:53:21+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Ran.200611402">
+  <field name="alias" type="CharField">Randolph-Center Street</field>
+  <field name="long_name" type="CharField">Randolph Center Street</field>
+  <field name="public_name" type="CharField">Center St., Randolph</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Randolph</field>
+  <field name="village" type="CharField">Randolph</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Wey.2008020981">
+  <field name="alias" type="CharField">Weymouth: Abigail Adams Park</field>
+  <field name="long_name" type="CharField">Weymouth: Abigail Adams Park</field>
+  <field name="public_name" type="CharField">Abigail Adams Park, Weymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Weymouth</field>
+  <field name="village" type="CharField">Weymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Nrf.Wey.2017072601">
+  <field name="alias" type="CharField">Weymouth: Great Esker Park</field>
+  <field name="long_name" type="CharField">Great Esker Park, Weymouth</field>
+  <field name="public_name" type="CharField">Great Esker Park, Weymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Weymouth</field>
+  <field name="village" type="CharField">Weymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Hin.2008020982">
+  <field name="alias" type="CharField">Hingham: Stodder's Neck Park</field>
+  <field name="long_name" type="CharField">Hingham: Stodder's Neck Park</field>
+  <field name="public_name" type="CharField">Stodder's Neck Park, Hingham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hingham</field>
+  <field name="village" type="CharField">Hingham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Hin.2016112801">
+  <field name="alias" type="CharField">Hewitts Cove, Hingham</field>
+  <field name="long_name" type="CharField">Hewitts Cove, Hingham</field>
+  <field name="public_name" type="CharField">Hewitts Cove, Hingham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hingham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Hns.20170909021">
+  <field name="alias" type="CharField">Hanson: Burrage Pond Area: WCA</field>
+  <field name="long_name" type="CharField">Burrage Pond vicinity (Smith Nawazelski Conservation Area), Hanson</field>
+  <field name="public_name" type="CharField">Burrage Pond Area, Hanson</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hanson</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2017-09-09T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Hns.20170909022">
+  <field name="alias" type="CharField">Burrage Pond Area vicinity, Hanson</field>
+  <field name="long_name" type="CharField">Burrage Pond Area vicinity, Hanson</field>
+  <field name="public_name" type="CharField">Burrage Pond Area, Hanson</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hanson</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2017-09-09T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Hns.20170909023">
+  <field name="alias" type="CharField">Burrage Pond WMA, Hanson</field>
+  <field name="long_name" type="CharField">Burrage Pond WMA, Hanson</field>
+  <field name="public_name" type="CharField">Burrage Pond WMA, Hanson</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hanson</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2017-09-09T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Mid.2017090801">
+  <field name="alias" type="CharField">Middleborough: Assawompset Pond</field>
+  <field name="long_name" type="CharField">Assawompset Pond, Middleborough</field>
+  <field name="public_name" type="CharField">Assawompset Pond, Middleborough</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Middleborough</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-27T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Mid.2017090802">
+  <field name="alias" type="CharField">Middleborough: Pocksha Pond (North)</field>
+  <field name="long_name" type="CharField">Pocksha Pond (North), Middleborough</field>
+  <field name="public_name" type="CharField">Pocksha Pond, Middleborough</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Middleborough</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-27T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.20140607">
+  <field name="alias" type="CharField">Plymouth-Old Cemetery</field>
+  <field name="long_name" type="CharField">Plymouth-Old Cemetery.</field>
+  <field name="public_name" type="CharField">Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.2015061301">
+  <field name="alias" type="CharField">Plymouth: White Horse Beach</field>
+  <field name="long_name" type="CharField">White Horse Beach, Plymouth</field>
+  <field name="public_name" type="CharField">White Horse Beach, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField"><None></None></field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.20160729030">
+  <field name="alias" type="CharField">Plymouth-Great South Pond</field>
+  <field name="long_name" type="CharField">Plymouth: Great South Pond</field>
+  <field name="public_name" type="CharField">Great South Pond, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2008-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.2017072101">
+  <field name="alias" type="CharField">Plymouth-Alper Preserver</field>
+  <field name="long_name" type="CharField">Alper Preserve, Plymouth</field>
+  <field name="public_name" type="CharField">Alper Preserve, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.2017072102">
+  <field name="alias" type="CharField">Plymouth-Little Herring Pond</field>
+  <field name="long_name" type="CharField">Little Herring Pond, Plymouth</field>
+  <field name="public_name" type="CharField">Little Herring Pond, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.2017072103">
+  <field name="alias" type="CharField">Plymouth-Triangle Pond (off Little Herring)</field>
+  <field name="long_name" type="CharField">Triangle Pond (W of Little Herring Pond), Plymouth</field>
+  <field name="public_name" type="CharField">Triangle Pond (W of Little Herring Pond), Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Ply.2017072104">
+  <field name="alias" type="CharField">Plymouth-Pickerel Pond WildLand Trust</field>
+  <field name="long_name" type="CharField">Pickerel Pond WildLand Trust, Plymouth</field>
+  <field name="public_name" type="CharField">Pickerel Pond WildLand Trust Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Roc.201709231">
+  <field name="alias" type="CharField">Rochester: Linum site</field>
+  <field name="long_name" type="CharField">Rochester</field>
+  <field name="public_name" type="CharField">Rochester</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Rochester</field>
+  <field name="village" type="CharField">Rochester</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2017-06-14T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.War.2014120303">
+  <field name="alias" type="CharField">Wareham: Onset Beach</field>
+  <field name="long_name" type="CharField">Wareham: Onset Beach</field>
+  <field name="public_name" type="CharField">Onset Beach, Wareham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Wareham</field>
+  <field name="village" type="CharField">Wareham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2015-02-06T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.War.201808261">
+  <field name="alias" type="CharField">Wareham: Horseshoe Pond / Conant Hill and vic.</field>
+  <field name="long_name" type="CharField">Horseshoe Pond / Conant Hill and vic., Wareham</field>
+  <field name="public_name" type="CharField">Horseshoe Pond / Conant Hill and vic., Wareham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Wareham</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2010-06-30T02:20:11+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm.Wbr.2017060302">
+  <field name="alias" type="CharField">West Bridgewater: fields and meadows off Scotland..</field>
+  <field name="long_name" type="CharField">Fields and meadows off Scotland St., West Bridgewater</field>
+  <field name="public_name" type="CharField">Fields and meadows off Scotland St., West Bridgewater</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Bridgewater</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2014-06-24T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Plm_Pond.Ply.2016101601">
+  <field name="alias" type="CharField">Plymouth: Pondlet and bog NW Great Island Pond</field>
+  <field name="long_name" type="CharField">Pondlet and bog NW Great Island Pond, Plymouth</field>
+  <field name="public_name" type="CharField">Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-04-23T00:28:05+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Suf.Bos.20220824">
+  <field name="alias" type="CharField">Boston Back Bay Fens</field>
+  <field name="long_name" type="CharField">Back Bay Fens, Boston</field>
+  <field name="public_name" type="CharField">Back Bay Fens, Boston</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Boston</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField"><None></None></field>
+  <field name="modified" type="DateTimeField">2022-08-26T11:02:10+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [generic]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [generic]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-04T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110041">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [newly abandoned cranberry plantation]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [newly abandoned cranberry plantation]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110042">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [old cranberry bog]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [old cranberry bog]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110044">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [sand pit]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [sand pit]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110045">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [drained pond]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [drained pond]</field>
+  <field name="public_name" type="CharField">Drained pond, Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110048">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [dam]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [dam]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField">41.90125 -70.57226; 41.90134 -70.5716; 41.90135 -70.57066;</field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-02-22T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110049">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [the Arm]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [the Arm]</field>
+  <field name="public_name" type="CharField">The Arm, Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField">41.90248 -70.56630; 41.90157 -70.56517; 41.90018 -70.56458; 41.89935 -70.56342; 41.89951 -70.56316; 41.90090 -70.56329; 41.90142 -70.56325; 41.90206 -70.56403; 41.90240 -70.56528; 41.90265 -70.56575</field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-02-22T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201110050">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [H.tomentosa/C.dumosum]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [Hudsonia/C.dumosum site]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-02-22T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201201311">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [forest]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [forest]</field>
+  <field name="public_name" type="CharField">Mixed forest, Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2012-01-31T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201301111">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [red maple swamp]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [red maple swamp]</field>
+  <field name="public_name" type="CharField">Red maple swamp, Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201302021">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [Mars]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [Mars]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-04T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201302202">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [open wetland]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [open wetland]</field>
+  <field name="public_name" type="CharField">Open wetland, Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-04T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM.Ply.201302204">
+  <field name="alias" type="CharField">Tidmarsh Farms, Plymouth [Beaver Dam Rd.]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms, Plymouth [Beaver Dam Rd.]</field>
+  <field name="public_name" type="CharField">Beaver Dam Rd., Tidmarsh Farms, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2013-02-04T05:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM_VIC.Ply.2015050002">
+  <field name="alias" type="CharField">Tidmarsh Farms vicinity, Plymouth [bog #2]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms vicinity, Plymouth [bog #2]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms vicinity, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.TDM_VIC.Ply.2015050003">
+  <field name="alias" type="CharField">Tidmarsh Farms vicinity, Plymouth [bog #3]</field>
+  <field name="long_name" type="CharField">Tidmarsh Farms vicinity, Plymouth [bog #3]</field>
+  <field name="public_name" type="CharField">Tidmarsh Farms vicinity, Plymouth</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="village" type="CharField">Plymouth</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2011-10-04T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.WSP.Hin.2016052801.1">
+  <field name="alias" type="CharField">Hingham: pondlet S of Fulling Millpond</field>
+  <field name="long_name" type="CharField">Pondlet S of Fulling Millpond, Hingham</field>
+  <field name="public_name" type="CharField">George Washington Forest and vicinity, Hingham</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hingham</field>
+  <field name="village" type="CharField">Hingham</field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2016-05-30T04:00:00+00:00</field>
+ </object>
+ <object model="common.location" pk="MA.Wor.Grn.58317932">
+  <field name="alias" type="CharField">Gardner: L. Wampanoag Wildlife Sanct.</field>
+  <field name="long_name" type="CharField">Lake Wampanoag Wildlife Sanctuary, Gardner:</field>
+  <field name="public_name" type="CharField">Lake Wampanoag Wildlife Sanctuary, Gardner</field>
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Gardner</field>
+  <field name="village" type="CharField"><None></None></field>
+  <field name="coordinates" type="CharField"><None></None></field>
+  <field name="is_active" type="IntegerField">1</field>
+  <field name="modified" type="DateTimeField">2010-03-11T19:32:12+00:00</field>
+ </object>
+</django-objects>

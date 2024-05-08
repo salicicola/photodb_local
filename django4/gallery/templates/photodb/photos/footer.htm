@@ -1,0 +1,9 @@
+		<hr align="left" width="35%"/>
+		<i style="font-size:90%">Powered by Python {{python_version}} and Django {{django_version}} &#8212; version {{version|safe}}</i>
+        <span style="font-size:90%">[photodb: <i>{{revision}}</i>]</span>
+        {%if debug_ends %}
+            &#8212; <span style="font-size:90%">generated <i>{{debug_ends}}</i></span>
+            <span style="display:none">[{{time_spent}}]</span>
+        {%endif%}
+		<br/>
+

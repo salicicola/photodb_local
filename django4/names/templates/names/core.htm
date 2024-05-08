@@ -1,0 +1,98 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Salicicola Core (MA Vascular Plants Checklist and Invasive Plants)</title>
+      <style type="text/css">
+						body {
+						margin: 0;
+						border: 0;
+						padding: 0;  /* no effect */
+						color: #8B0000; 
+						background-color: #F0FFF0;
+					}
+					table {
+						margin: 0px;
+						padding: 10px;
+						border: 0px;
+					}
+					table.header {
+						margin: 0px;
+						padding: 0px;
+						border: 0px;
+					}
+					A:link {
+						color: #8B0000; 
+						background-color: transparent;
+						/* text-decoration: none; */
+					}
+					A:visited {
+						color: #8B0000; 
+						background-color: transparent;
+						/* text-decoration: none; */
+					}
+					A:active {
+						color: #ff0000; 
+						background-color: transparent;
+						/* text-decoration: none; */
+					}
+					A:hover {
+						color: #ff0000; 
+						background-color: transparent;
+						/* text-decoration: none; */
+					}
+	#wrapper {
+			width: 1004px;   /* 972px; */
+			margin: 0 auto;
+			color:#8B0000; 
+			background-color: #F0FFF0;
+		}
+				</style>
+                <!--<script language="JavaScript" type="text/javascript" src="/scripts/menu.js"></script>
+                <script language="JavaScript" type="text/javascript" src="/scripts/scripts05.js"></script>-->
+   </head>
+   <body>
+	<div id="wrapper">
+      <table class="header" border="0" width="100%" cellspacing="0" style="background-color: #8B0000;">
+         <tbody valign="top" style="background-color: #8B0000;">
+            <tr>
+               <td nowrap style="padding-top: 0px; height: 40px; margin-top: 0px; vertical-align: middle; text-align:left; background-color: #8B0000; font-size: 30pt; color: #F0FFF0; padding-left:10px">
+					<a href="/" style="color: white; text-decoration: none;"><img height="40" border="0" alt="Salicicola" src="/images/Salicicola__40.gif"></a>
+			   </td>
+               <td nowrap style="padding-top: 0px; height: 40px; margin-top: 0px; vertical-align: middle; text-align:right; background-color: #8B0000; font-size: 30pt; color: #F0FFF0; padding-right:10px">
+					<!--<img height="40" border="0" alt="Projects" src="/images/Projects__40.gif">-->
+			   </td>
+            </tr>
+         </tbody>
+      </table>
+	  <div style="padding-left:1ex;padding-right:10px">
+	  	<h2> Salicicola Core (<i>Names</i> Package)</h2>
+	  	<div>
+			It includes SQLite tables defined in names/models.py: names_name, names_speciesmeta, names_nameannotation, and names_commonname.
+		    The latter serves as index and maybe removed in future versions (or left empty). 
+			The possibility to report bugs disabled in this configuration.
+			<br/><br/>
+			Editing records available by standard <a style="color:red" href="/admin/">Django Admin</a> interface or special form to edit two linked tables simultaneously.
+			<br/><br/>
+			The obligatory modules include files: views.py, checklist.py, and invasive.py, together with referenced files in "templates/names" folder,
+			as well as supporting files in /static/* or data/static/* folders.
+			<br/><br/>			
+			They will allow to view updated version of <a  style="color:red" href="/names/vascular/fixed/">The Vascular Plants of Massachusetts. A County Checklist</a>
+			(simplified, without recently added county records),
+			together and its subsets of <a  style="color:red" href="/names/vascular/invasive/">invasive plants</a>.
+			If running as standalone application, all links may still work but lead to salicicola server (i.e., access to Internet is needed).
+			<br/><br/>
+			Using most of these features, needs a login with proper permissions.
+			If running this app first time, a temporary user name 'admin' with a password 'admin' may be supplied;
+			otherwise, run a command in application ROOT directory: python manage.py createsuperuser and follow instructions
+			(replace python to python3 if necessary).
+	  	</div>
+		<hr align="left" width="25%"/>
+		{%if user.is_authenticated %}
+			Logged as {{user.username}}
+		{%else%}
+			<a href="/admin/login/?next=/">Login</a>
+		{%endif%}
+	  </div>
+	</div>
+  </body>
+</html>

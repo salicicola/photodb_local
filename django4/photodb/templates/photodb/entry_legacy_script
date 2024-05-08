@@ -1,0 +1,536 @@
+<script type="text/javascript">
+		do_ident = false;
+		try {
+			ident;
+			alert("using journal entries to autocomplete names");
+			do_ident = true;
+			//alert(captions);
+		}
+		catch (e) {
+			alert("journal entries not available");
+		}
+
+		var H = new Array();
+		
+		var PATH = ''; // "/TDM/TEST/";/media/data/data/NewPhotos21/20211015
+		//alert(PATH);
+		// for a field form
+    function input_trim(inp) {
+			x = inp.value;
+			x = x.replace(/^\s+/, '');
+			x = x.replace(/\s+$/, '');
+			x = x.replace(/\s+/, ' ');
+			inp.value = x;
+		}
+    function sTrim(x) {
+			x = x.replace(/^\s+/, '');
+			x = x.replace(/\s+$/, '');
+			x = x.replace(/\s+/, ' ');
+			return x;
+		}
+    
+    var created_by = "AZ";
+
+	fnum = 0;
+//	alert(phids[fnum]);
+	limit = phids.length;
+	classTracker = "track";
+	function fill(fnum) {
+		//alert(jpg_files[phids[fnum]][0]);
+		var photo_id = phids[fnum];
+		// document.getElementById('img1').src = photo_id + jpg_files[photo_id][0] + ".jpg?path=" + PATH; 	// old version using external location
+		document.getElementById('img1').src = photo_id + jpg_files[photo_id][0] + ".jpg?path=data/static/small/"; // + photo_id; 	//width=600;			//new versiopn, using small image (since Samsung images were not treated well
+		// e.g., photos/20141006olymp7507.jpg?path=/media/WD250GB/NewPhotos14/20141006
+		document.getElementById("PHID").value=photo_id;
+		vers = "";
+		for (i = 0; i < jpg_files[phids[fnum]].length; i++) {
+			vers += " " + jpg_files[phids[fnum]][i];	
+		}
+		vers = sTrim(vers);
+		document.getElementById("extensions").value = vers;
+		document.getElementById("SysID").value = new Date().getTime();
+		document.getElementById("created").value = photo_id.substring(0, 4) + '-' +
+			photo_id.substring(4, 6) + '-' + photo_id.substring(6, 8);
+			
+		document.getElementById("createdBy").value = created_by;
+		setIdent()
+	}
+	function setIdent() {
+		if (do_ident) {
+			try {
+				photo_id = document.getElementById("PHID").value;
+				parsed = ident[photo_id].split('.');
+				fid = parsed[0];
+				pnid = parsed[1];
+				herb = parsed[2];
+                //alert('in setIdent() ' + fid + ':' + pnid + ':' + herb)
+				if (fid && pnid) {
+					found = null;
+					recs = xData.getElementsByTagName('PNID');
+                    //alert (xData.getElementsByTagName('PNID'))
+					for (rec in recs) {
+						 try {
+							field = recs[rec];
+							value = field.firstChild.nodeValue;
+                        	//alert(value);
+                         }
+                         catch (e) {
+							alert("debug catched [no suitable name] " + e); // 
+                            value = '';
+						 }
+						latname = colname = '';
+						if (value == pnid) {
+                            //alert(value);
+							par = field.parentNode;
+							try {
+								latname = par.getElementsByTagName('latname')[0].firstChild.nodeValue;
+								colname = par.getElementsByTagName('colname')[0].firstChild.nodeValue;
+								colname = ' (' + colname + ')'
+							}
+							catch (e) {}
+							s = latname + colname;
+							s = sTrim(s);
+							document.getElementById('latname').value = s;
+							break;
+						}
+					}
+					document.getElementById('FID').value=fid;
+					document.getElementById('PNID').value=pnid;
+				}
+				if (herb) {
+					document.getElementById('herbNum').value=herb;
+					//alert('set herb:' + herb);
+				}
+				if (indids) {
+					//alert('indids present');
+					var photo_id = document.getElementById("PHID").value;
+					var indid = indids[photo_id];
+					//alert(photo_id + ":" + indid);
+					document.getElementById('IndID').value = indid;
+				}
+				try {
+					if (captions) {
+						value = captions[photo_id];
+						if (typeof(value) == 'undefined') {}
+						else {
+							//alert('captions present and not undefined: ' + captions[photo_id]);
+							document.getElementById('caption').value = captions[photo_id];
+						}
+					}
+				}
+				catch(e) {}
+			}
+			catch (e) {
+				alert(e);
+			}
+		}
+	}
+	function next(locIndex) {
+		document.forms[0].reset();
+		//alert('reset in next('+locIndex+')');
+		fnum ++;
+        //alert('fnum += in next()');
+		if (fnum < limit) {
+			fill(fnum);
+            //alert('filled form : called fill(fnum)');
+			setCamera();
+            //alert('set camera : called setCamera()');
+			setGPS();
+            //alert('set GPS : called setGPS() will call setLCID(' + locIndex + ') and say "all set" if OK');
+			setLCID(locIndex);
+			//setIdent();
+//			alert('all set');
+		}
+		else {
+			alert("Last photo, press Enter and wait");
+			//location.href="/photodb/" // photos/entry/verify
+            location.href="/photos/entry/done/"
+		}
+	}    
+
+	function prev() {
+		if (fnum > 0) {
+			document.forms[0].reset();
+			//alert('reset');
+			fnum --;
+			if (fnum < limit) {
+				fill(fnum);
+				setCamera();
+				setGPS();
+				setLCID(locIndex);
+				//alert('all set');
+			}
+			else {			}
+		}
+		else {
+			alert("This is a first photo");
+		}
+	} 
+
+	
+	function setLCID(locIndex) {
+		if (locIndex) {
+			obj = document.getElementById('LCID')
+			obj.options[locIndex].selected = true;
+		}
+	}
+	
+	
+	function fillLocation(o) {
+		v = o.value;
+		for (i = 0; i < o.options.length; i++) {
+//			alert(i);
+			if (o.options[i].selected == true) {
+				//alert(i + ": " + o.options[i].text);
+				document.getElementById('location').value = o.options[i].text;
+				document.getElementById('LCID').value = v;
+				break;
+			}
+		}
+	}
+	function fillName(o) {
+		v = o.value;
+		for (i = 0; i < o.options.length; i++) {
+			if (o.options[i].selected == true) {
+				values = v.split('/');
+				//alert(values);
+				document.getElementById('latname').value = o.options[i].text;
+				document.getElementById('FID').value = values[0];
+				document.getElementById('PNID').value = values[1];
+				break;
+			}
+		}
+	}
+
+	var current_lcid = "";
+	function setGPS() {
+		photoID = document.getElementById("PHID").value;
+//alert("in setGPS(): got " + photoID);
+        inid = document.getElementById("IndID").value;
+//alert("in setGPS(): got " + inid);
+		gps_id = gpsdata[photoID];
+//alert("in setGPS(): got " + gps_id);
+		o = document.getElementById("LCID");
+//alert("reach " + o);
+		options = o.options;
+//alert("reach " + options);
+		var selIdx = 0;
+	    var url = '';
+
+		// new
+		if (inid) {
+//alert("reach if");
+var link = document.getElementById('map_gps');
+try {
+			var parsed = inid.split('.');				
+			xy = parsed[3].split('-')
+			var lat = parsed[2] + "." + xy[0]
+			var lon = "-" + xy[1] + "." + parsed[4]
+			url = "http://mapper.acme.com/?ll=" + lat + "," + lon + "&z=17&t=M&marker0=" + lat + "%2C" + lon;
+			link.setAttribute('href', url);
+alert('set by inid ' + url)
+}
+catch (e) {
+alert("234 catched " + e);
+}
+		}
+		// reset if available
+
+		if (gps_id) {
+//alert("reach second if");
+try {
+			//alert(gps_id); // would say undefined
+			document.getElementById('gps').value = gps_id;
+link = document.getElementById('map_gps');			
+			var lat = gps_id.split('-')[0];
+			var lon = '-' + gps_id.split('-')[1];
+			//alert(lat + " " + lon);
+			url = "http://mapper.acme.com/?ll=" + lat + "," + lon + "&z=17&t=M&marker0=" + lat + "%2C" + lon;
+//alert('will set by gps ' + url);
+			link.setAttribute('href', url);
+}
+catch (e) {
+alert("253 catched " + e);
+}
+		}
+try {
+link = document.getElementById('map_gps'); // FIXED
+		if (url) {
+			link.innerHTML='view on the map';
+		}
+		else{
+			link.innerHTML='';
+            link.setAttribute('href', '#');
+		}
+}
+
+catch (e) {
+alert ("275 catched " + e);
+}
+
+		
+		herb_id = H[photoID];
+		if (herb_id) {
+			document.getElementById('herbNum').value = herb_id;
+		}
+		//////
+		//alert("DEBUG:... " + ops_data);
+		x = "";
+		x += town_data[photoID] + ": ";
+		x += ops_data[photoID];
+		document.getElementById('td_gps').setAttribute('title', x);
+		//alert('DEBUG END:' + x);
+		document.getElementById('town').innerHTML = town_data[photoID];		
+		document.getElementById('ops').innerHTML = ops_data[photoID];	
+		///////
+		lcid = lcid_data[photoID];
+		se = document.getElementById('status');
+		if (lcid) {
+			if (current_lcid != lcid) {
+					alert("location ID will be set to " + lcid);
+					current_lcid = lcid;
+					se.style.backgroundColor = 'red';
+			}
+			else {
+				se.style.backgroundColor = 'transparent';
+			}
+			//alert(lcid);
+			//window.statusbar = lcid;
+			//window.DefaultStatus = lcid
+			for (i = 0; i < options.length; i++) {
+					value = options[i].value;
+					if (value == lcid) {
+//							alert('found');
+							options[i].setAttribute("selected", 1);
+//							alert("set to options");
+							se.innerHTML = lcid;
+//							alert("set to span");
+//							alert(options[i].innerHTML + "\n" + options[i].getAttribute('selected'));
+//alert(selIdx + " " + o.selectedIndex);
+							selIdx = i;
+							o.selectedIndex = selIdx;
+							//alert(selIdx + " " + o.selectedIndex);
+//alert(selIdx);
+					}
+					else {
+						if (options[i].getAttribute('selected')) {
+//								alert('should remove attribute\n' + options[i].innerHTML);
+								options[i].removeAttribute('selected');
+								//options[i].setAttribute("selected", 0);
+								//alert('removed' + options[i].getAttribute('selected'));
+						}
+					} 
+					
+			}
+//			alert(o.innerHTML);
+//o.selectedIndex = selIndex;
+		}
+
+		else {
+			//alert("No lcid, check location manually!");
+			current_lcid = "";
+			se.innerHTML = " ??? ";
+			se.style.backgroundColor = 'red';
+			//selIdx = i;
+/*			for (i = 0; i < options.length; i++) {
+				if (options[i].getAttribute('selected')) {
+					options[i].removeAttribute('selected');
+					alert('removed');
+				}				
+			}
+			alert("reset"); */
+		}
+		//		alert(selIdx);
+		//o.optionsSelected = selIdx;
+	}
+	
+	/** prototype, rewrite it via EXIF */
+	function setCamera() {
+		//alert('start');
+		photoID = document.getElementById("PHID").value;
+		//alert(photoID);
+		if (photoID.indexOf('$') > 0 ) {
+			cameraName = photoID.substring(9, 14);
+		}
+		else {
+			cameraName = photoID.substring(8, 13);
+		}
+		document.getElementById('camera').value = cameraName;
+	}
+	
+	function setIndID() {
+		h = document.getElementById('herbNum').value;// trim XXXXXXXXXXXXXXXXXX
+		p = document.getElementById('PNID').value;
+		g = document.getElementById('gps').value;
+		//alert (h.length + ' ' + p.length + ' ' + g.length);	
+		if ( !p.length) {
+			//alert('Plant Name is not filled');
+			return;
+		}
+		else {
+			if (h.length + g.length == 0) {
+				//alert('error');
+				return;
+			}
+			else {
+				if (h.length) {
+					idvalue = "ind." + p + "." + h;
+				}
+				else {
+					idvalue = "ind." + p + "." + g;
+				}
+				document.getElementById('IndID').value = idvalue;
+			}
+		}
+	}
+
+	var tracker = null;
+	var changed = "red";
+	var saved = "";
+
+	function ini () {
+		tracker = document.getElementById('SysID');
+		//alert(tracker);
+	}
+	
+  function retriveOldName(o) {
+		if (o.oldvalue) {
+			o.value=o.oldvalue;
+			track( changed );
+			var oFID = document.getElementById('FID');
+			var old = oFID.oldvalue;
+			oFID.value = old;	
+			oPNID = document.getElementById('PNID');
+			old = oPNID.oldvalue;
+			oPNID.value = old;	
+		}
+		else {  } // alert('debug') // bug FIXED ?
+  }
+	
+
+  function retriveOldLocation(object) {
+    object.value=object.oldvalue;
+    track( changed );
+		oLocID = document.getElementById('LCID');
+		var old = oLocID.oldvalue;
+		oLocID.value = old;
+  }
+	
+	
+	
+	function saveForm() {
+	//alert('running saveForm')
+	//trackValues();
+	//alert('run trackValues first')
+		idx = document.getElementById('LCID').options.selectedIndex;
+		//alert(idx);
+		if (document.getElementById('LCID').value && document.getElementById('PNID').value && document.getElementById('FID').value && document.getElementById('latname').value ) {
+			trackValues();
+			var xhr = getXHR();
+			if (xhr) {
+				var url = "/photodb/entry/savephoto?";
+				var f = document.getElementById('form1');
+				for (var i = 0; i < f.elements.length; i++) {
+					if (f.elements[i].name) {
+						url += f.elements[i].name + '=' + escape(f.elements[i].value) + '&';
+					}
+				}
+				url = url.substring(0, url.length-1);
+//				alert(url);
+				xhr.open("GET", url, false);
+				xhr.send(null);
+				if (xhr.status == 200) {
+						alert('record saved');
+						next(idx);
+                        //alert("last executing line");
+				}
+				else {
+					alert("Error processing: " + xhr.status + " (" + xhr.statusText + ")");
+				}
+			}
+		}
+		else {
+			alert('fill all necessary fields');
+			alert(document.getElementById('LCID').value + " \n " + document.getElementById('PNID').value + " \n " + document.getElementById('FID').value + " \n " + document.getElementById('latname').value)
+		}
+	}
+	
+	
+	
+	function delete_photo() {
+		idx = document.getElementById('LCID').options.selectedIndex;
+		var url = document.getElementById('img1').src;
+		url = url.split('?')[0];
+		toks = url.split('/')
+		file = toks[toks.length - 1];
+		fid = file.split('.')[0]
+		//alert('perhaps not implemented yet: ' + fid)
+		trackValues();
+		var xhr = getXHR();
+		//alert (xhr);
+		if (xhr) {
+			//alert (xhr);
+			url = "/photodb/delete/" + fid;
+			alert(url);
+			xhr.open("GET", url, false);
+			xhr.send(null);
+			if (xhr.status == 200) {
+					//alert('original image moved to \'deleted\', small ones not touched');
+					next(idx);
+					//next()
+			}
+			else {
+				alert("Error processing: " + xhr.status + "(" + xhr.statusText + ")");
+			}			
+		}
+	}
+
+
+// added
+function genus_indet() {
+	spid = document.getElementById("PNID").value;
+    if (spid) {
+        latname = document.getElementById('latname').value;
+        genname = latname.split(' ')[0]
+        //alert(latname);
+		//alert(genname);
+        document.getElementById('getfor').innerHTML=''+spid;
+		var xhttp;    
+		xhttp = new XMLHttpRequest();
+		//alert (xhttp);
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+		        //
+		  		document.getElementById("PNID").value = this.responseText;
+ 				document.getElementById('latname').value = genname + " unidentified";
+			}
+		};
+		xhttp.open("GET", '/photodb/entry/getgid/'+spid, true);
+		xhttp.send();
+	}
+}
+function fam_indet() {
+	spid = document.getElementById("PNID").value;
+    alert('will get fid for ' + spid)
+    if (spid) {
+        //latname = document.getElementById('latname').value;
+        //genname = latname.split(' ')[0]
+        document.getElementById('getfor').innerHTML=''+spid;
+        alert('set backup: ' + spid)
+		var xhttp;    
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+		        alert('getting fid')
+		  		document.getElementById("PNID").value = this.responseText;
+ 				document.getElementById('latname').value = "identified to family";
+			}
+		};
+		xhttp.open("GET", '/photodb/entry/getfid/'+spid, true);
+		xhttp.send();
+	}
+}
+
+
+	
+    </script>

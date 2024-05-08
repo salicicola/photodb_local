@@ -1,0 +1,110 @@
+<html>
+	<head>
+		{%include 'names/head'%}
+		<script type="text/javascript">
+			function collapse_expand(o, name) {
+				var ref = name+':genera';
+				d=document.getElementById(ref);
+				if (d.style.display=='block') {
+					d.style.display='none';
+					//o.innerHTML = 'expand';
+				}
+				else {
+					d.style.display='block';
+					//o.innerHTML = 'collapse';
+				}
+			}
+			function collapse_expand_all() {
+				divs = document.getElementsByTagName('div');
+				for (i=0; i < divs.length; i++) {
+					d = divs[0];
+					if (d.className == 'genera') {;
+						if (d.style.display=='block') {
+							d.style.display=='none';
+						}
+						else {
+							d.style.display=='block';
+						}			
+					}
+				}
+			}
+			function expandClass(thisTag, tag) {
+			  var els = document.getElementsByTagName(tag);
+				for (i = 0; i < els.length; i++) {
+				  var ele = els[i]; 
+					if (ele.className=='container') {	
+					  //alert(ele);
+					  current = ele.style.display;
+					  if (current=='none') {
+						  ele.style.display='block';
+							thisTag.innerHTML = 'Collapse List';
+						}
+						else {
+						  ele.style.display='none';
+							thisTag.innerHTML = 'Expand List';
+						}
+				  }
+				}
+			}
+		</script>
+	</head>
+	<body style="padding:1em;">
+		{%include 'names/common_head' %}
+		{%include 'names/checklist_header' %}
+		<h3 style="margin-bottom:2ex;" onclick="expandClass(this, 'DIV')">Expand/Collapse List</h3>
+		{%for group in tree %}
+			<h3>{{group.higher.latname}} {%if group.higher.colnames %} &#8212; {{group.higher.colnames}} {%endif%}</h3>
+			{%for fam in group.fams %}
+				<div style="padding-left:1.5em" id="{{fam.fam.latname}}">
+					{% if fam.genera %}
+						{%if state %}
+							<a title="{{fam.genera|length}}:{{fam.species}}" target="_blank" href="/names/vascular/flexible/{{fam.fam.pk}}/">{{fam.fam.latname}}</a>
+						{%else%}
+							<a title="{{fam.genera|length}}:{{fam.species}}" target="_blank" href="/names/vascular/flexible/{{fam.fam.pk}}/">{{fam.fam.latname}}</a>
+						{%endif%}
+					{%else%}
+						<span title="{{fam.genera|length}}:{{fam.species}}">{{fam.fam.latname}}</span>
+					{%endif%}
+					&nbsp;&nbsp;
+					{% if fam.genera %}
+						<img class="switchview" onclick="collapse_expand(this, '{{fam.fam.latname}}')" src="/static/images/udarrow.gif" style="height: 1.2ex; padding:0; margin:0; border-width:0" vspace="0" hspace="0" border="0"> 
+					{%endif%}
+					<div style="margin:0;padding:0;display:none" id="{{fam.fam.latname}}:genera" class="container">
+						{% for genus in fam.genera %}
+                        	{%if genus.species %}
+								<div style="padding-left:1.5em" id="{{genus.latname}}">
+									<span>
+										{%if state %}
+											<a target="_blank" href="/names/vascular/flexible/{{genus.pnid}}/">{{genus.latname}}</a>
+										{%else%}
+											<a target="_blank" href="/names/vascular/flexible/{{genus.pnid}}/">{{genus.latname}}</a>
+										{%endif%}
+                                    	({{genus.species}} species)
+									</span>
+                            		{%if genus.subgenera %}
+                                		{%for subgenus in genus.subgenera%}
+		                                	<div  style="padding-left:1.5em" id="{{genus.latname}}:{{subgenus.latname}}">
+		                                    	<span>
+											    	{%if state %}
+											        	<a target="_blank" href="/names/vascular/flexible/{{subgenus.pnid}}/">{{subgenus.latname}}</a>
+											    	{%else%}
+											        	<a target="_blank" href="/names/vascular/flexible/{{subgenus.pnid}}/">{{subgenus.latname}}</a>
+		                                        	{%endif%}
+		                                    	</span>
+		                                	</div>
+                                		{%endfor%}
+                            		{%endif%}
+								</div>
+                        	{%endif%}
+						{%endfor%}
+					</div>
+				</div>
+			{%endfor%}
+		{%endfor%}
+		{%include "names/checklist_index_footer"%}
+	</body>
+</html>
+
+
+
+

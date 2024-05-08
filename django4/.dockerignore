@@ -1,0 +1,15 @@
+**/.bzr
+**/.bzrignore
+**/.git
+**/.gitignore
+.dockerignore
+**/static/photos/*
+**/static/small/*
+**/static/thm/*
+**/__pycache__/*
+**/*.pyc
+clean_*.py
+data/WORK/*
+**/.log
+
+

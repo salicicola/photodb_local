@@ -1,0 +1,48 @@
+<html>
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+		<h2>
+			Salicicola Photo Gallery: Query Results &#8212; {{rset|length}} photo records found {%if category %}in category <i>{{category}}</i>{%endif%}
+			<div style="font-weight:normal;font-size:90%">
+				Searched by:
+				{%if town %} town={{town}} {%endif%}
+				{%if lcid %} location ID={{lcid}} {%endif%}
+				{%if year %} year={{year}} {%endif%}
+				{%if month %} month={{month}} {%endif%}
+				{%if day %} day={{day}} {%endif%}
+				{%if spid %} species=<i title="{{spid}}">{{request.GET.plantname}}</i>{%endif%}
+				{%if imid %} image containing [{{imid}}] {%endif%}
+			</div>
+		</h2>
+		<ol>
+			{%for rec in rset %}
+			<li>
+				{%if rec.genname in rec.latname %}
+{% if rec.nr < 100 and rec.nr > 0 %}
+					<a href="/photodb/gallery/view/{{rec.spid}}/{{rec.imid}}/">{{rec.latname}} ({{rec.colnames}}) [{{rec.imid}}.jpg] [{{rec.date}} {{rec.imid|slice:":4"}}] [{{rec.location}}]</a>
+{%else%}
+{{rec.latname}} ({{rec.colnames}}) [{{rec.imid}}.jpg] [{{rec.date}} {{rec.imid|slice:":4"}}] [{{rec.location}}]
+{%endif%}
+				{%else%}
+{% if rec.nr < 100 and rec.nr > 0 %}
+					<a href="/photodb/gallery/view/{{rec.spid}}/{{rec.imid}}/">
+						{{rec.genname}} {{rec.latname}} ({{rec.colnames}}) [{{rec.imid}}.jpg] [ {{rec.date}} {{rec.imid|slice:":4"}} ] [{{rec.location}}]
+					</a>
+{%else%}
+{{rec.genname}} {{rec.latname}} ({{rec.colnames}}) [{{rec.imid}}.jpg] [ {{rec.date}} {{rec.imid|slice:":4"}} ] [{{rec.location}}]
+{%endif%}
+				{%endif%}
+			</li>			
+			{%endfor%}
+		</ol>
+		<hr/>Prototype #{{version}}: sometimes displayed names may be incorrect; links used legacy classification/view
+		<!--
+Not fixed bugs:
+		-->
+	</body>
+</html>

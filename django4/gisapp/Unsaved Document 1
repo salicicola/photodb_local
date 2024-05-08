@@ -1,0 +1,28 @@
+gpd.io.file.fiona.drvsupport.supported_drivers['KML'] = 'rw'
+>>> gdf = gpd.read_file(kml_file, driver='KML')
+>>>
+
+
+
+{'DXF': 'rw', 'CSV': 'raw', 'OpenFileGDB': 'raw', 'ESRIJSON': 'r', 'ESRI Shapefile': 'raw', 'FlatGeobuf': 'raw', 'GeoJSON': 'raw', 'GeoJSONSeq': 'raw', 'GPKG': 'raw', 'GML': 'rw', 'OGR_GMT': 'rw', 'GPX': 'rw', 'MapInfo File': 'raw', 'DGN': 'raw', 'S57': 'r', 'SQLite': 'raw', 'TopoJSON': 'r'}
+>>> gpd.io.file.fiona.drvsupport.supported_drivers['KML'] = 'rw'
+>>> gdf = gpd.read_file(kml_file, driver='KML')
+>>> shp_file = "file.shp"
+>>> gdf.to_file(shp_file, driver='ESRI Shapefile')
+<stdin>:1: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+
+
+pip install fiona geopandas pyproj
+pip install --upgrade numpy
+
+
+import geopandas as gpd
+gpd.io.file.fiona.drvsupport.supported_drivers['KML'] = 'rw'
+
+# Read the KML file into a GeoDataFrame
+kml_file = "path/to/kml/file.kml"
+gdf = gpd.read_file(kml_file, driver='KML')
+
+# Write the GeoDataFrame to a shapefile
+shp_file = "path/to/shapefile/file.shp"
+gdf.to_file(shp_file, driver='ESRI Shapefile')

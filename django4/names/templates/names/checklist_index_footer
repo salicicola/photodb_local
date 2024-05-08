@@ -1,0 +1,3 @@
+<hr/>
+Version: #{{version}} &#8212; DB modified <i>{{db_modified}}</i> &#8212; Logged as <i>{{user.username}}</i> 
+

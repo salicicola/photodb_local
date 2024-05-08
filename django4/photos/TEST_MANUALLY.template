@@ -1,0 +1,11 @@
+## to check setting wrong last_number
+## check permissions in $SITE_ROOT/data, particularly in WORK
+
+## in dockerized app --------------------------------------------
+by camera without GPS                          
+by camera with embedded GPS             
+by camera and Garmin (Current.gpx)                                            
+by camera embedded gps and Garmin       
+by phone without GPS                    
+by phone with embedded GPS
+by phone and external track

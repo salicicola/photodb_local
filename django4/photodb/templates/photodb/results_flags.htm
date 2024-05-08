@@ -1,0 +1,72 @@
+<html>
+{% load humanize %}
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+		<h2 style="max-width:1200px;">
+			Salicicola Photo Gallery {%if flag == 'domestic' %} (Animals) {%else%} (Vascular Plants){%endif%}<br/>
+<div style="padding-top:1ex;font-size:75%">
+				Search by Flag: [{{flag|title}}] 
+</div>
+
+        </h2>
+
+
+		<ol>
+			{%for rec in meta_recs %}
+{% if rec.category == 'vascular' or rec.category == 'animals' %}
+{%if rec.published %}
+			<li> 
+					<a title="{{rec.category}}, {{rec.classification}} classifications available" target='view' href='/photodb/gallery/view/{{rec.spid}}/'>{{rec.long_name}}</a> ({{rec.published}} published images)
+				 
+				{%if rec.invasive == 'Actually Invasive'%}
+					<b title="MIPAG: {{rec.invasive_mipag|default:'not yet considered'}}">{{rec.invasive}}</b>
+				{%else%}
+						{{rec.invasive}}
+				{%endif%}
+                {% if user.is_authenticated %}
+                    [<a target="edit" href="/names/edit/name/{{rec.spid}}/">edit</a>]
+                {%endif%}
+				{%for spid, urls in invasive_notes.items %}
+					{%if spid == rec.spid %}
+						&#8212; <b>Salicicola notes</b>:
+						{%for url in urls%}
+							[<a target="note" style="color:red" href="{{server}}{{url}}">{{forloop.counter}}</a>]
+						{%endfor%}
+					{%endif%}
+				{% endfor %}
+                
+			</li>	
+{% endif %}
+{% endif %}	
+			{%endfor%}
+		</ol>
+		<hr/>Version #{{version}} <!--: sometimes displayed names may be incorrect. Links used newer classification.-->
+{% if user.is_authenticated %}
+                 
+                        
+<!-- fixed
+Prototype 
+TODO: <br/>
+                       
+                       (4) true in Rosa multiflora var.; to remove var. of E.fortunei (and to correct distr.) <br/>
+    why  [ID: 4440] in Jacobaea; , why [ID: 14049] [ID: 16015] in Arthraxon; [ID: 11522] in Glyceria maxima, etc.
+    (7) Capitalize MIPAG's names
+(1) to check all taxa with 'Do not list at this time' and fill invasive_note to suppress it<br/>
+(2) to add Actually Invasive to invasive_note, if there is <b>Actually Invasive</b> in bold 
+                            (then looking for nonnative=invasive would not be needed)<br/>
+                       (3) add authorization in view (currently only authentication is needed<br/>
+                      (5) to <b>correct edit form for new fields : invasive will not work!!!</b><br/>
+                       (6) Phragmites longivalvis not avail as ssp or var? (longi xxx) (no photos) <br/>
+
+-->
+{% endif %}
+        <br/>
+	</body>
+</html>
+

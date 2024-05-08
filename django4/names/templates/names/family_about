@@ -1,0 +1,77 @@
+<div class="abstract">
+    <div style="cursor:pointer;" onclick="d=document.getElementById('about');(d.style.display=='block' ? d.style.display='none' : d.style.display='block')">
+        <u>Help/About</u> ... 
+    </div>
+	<ul id="about" style="display:none">
+		<li>
+			The links to gallery are provided for each taxon (the number of published images shown at the end of line);
+            names of taxa not represented by published images at Salicicola are shown in gray.
+            {%if server%} 
+                (Standalone app: photodb/gallery is not installed, but links may lead to salicicola server) 
+            {%endif%}
+		</li>
+		<li>
+			Metadata from Massachusetts County Checklist (2011)&#8212;native/non-native status and distribution by county&#8212;are shown after each taxon name.
+		</li>
+		<li>
+			Status summary (Native/Introduced/Persistent (=Waif)/No Longer Extant) is also provided. 
+			For explanation of the used terms, see the Massachusetts Checklist. 
+			For those taxa whose status changes within the state, the summary note refers to just a part of their state-wide range 
+			(mostly depending on where the photographs were taken).
+		</li>				
+        <li>For rare plants, following line contains data from NHESP Database of rare plants (as of 2017)</li>
+        <li>The following line may contain herbarium records imported from CNHPortal (outdated and not verified);
+            if not shown in default view, try to append "all" to URL (after the trailing slash)</li>
+        <li>The line "Other records", shows data from Salicicola database: 
+            more or less reliable records from different sources, including literature, 
+            checked records from CNHPortal and iNaturalist (at least if they constitute a new record for county.
+            (marked as '+' sign).
+            <br/>
+            Abbreviations/conventions:<br/>
+                <!--<span style="display: inline-block;width:2em;background-color:orange;text-align: center">+</span>
+			        or, if available, its native status (N I W)
+                    with orange background records based on external (non-Salicicola) data
+                    </span><br/>
+                -->
+            <span style="display: inline-block;width:2em;background-color:black;color:white;text-align: center">del</span>
+            with black background = record to be excluded--based on data from an external source: 
+            'Flora of Worcester County,' 'Flora of Franklin County,' or another source (information from both 'Floras,'
+            may not be yet fully incorporated). 
+        </li>
+        <li>
+            The line from salicicola photo records has following abbreviations:<br/>
+            If taxon relocated, it shown by the same symbol as in the Checklist 2011<br/>
+            <span style="display: inline-block;width:2em;text-align: center">+</span> 						
+			<span style="display: inline-block;width:2em;text-align: center">N</span>
+			<span style="display: inline-block;width:2em;text-align: center">I</span> 
+			<span style="display: inline-block;width:2em;text-align: center">W</span> or
+			<span style="display: inline-block;width:2em;text-align: center">ad!</span>;
+			where ad! means new presence of herbarium sample and letter presumed
+			native status if assigned to at least one record. 
+			<br/>
+            <span style="display: inline-block;width:2em;background-color:yellow;text-align: center">C</span> or 
+			<span style="display: inline-block;width:2em;background-color:yellow;text-align: center">C!</span>
+            with yellow background = Salicicola photos are only those of cultivated plants
+			(with exclamation sign if having herbarium sample)
+			<br/>
+        </li>
+        <li>The last lines contains private (if user is authorized) and public notes, if they exists</li>
+ <!--       {%if townmapper_installed %}
+		    <li>TownMapper app restored partially: 
+                mostly using CNHPortal records parsed in 2018 (so far no other sources, e.g., salicicola data)</b>
+            </li>
+        {%else%}
+		    <li>This is standalone version without Townmapper app</li>
+        {%endif%}
+-->
+<!--        <li>
+            In case of large families, one can find taxon faster appending case sensitive anchor with genus name ( #{Genus} ) or for particular species
+            ( #{Genus}:{species} ), e.g., using URL like
+            /photodb/checklist/1394/all/#Bellis:perennis or /photodb/checklist/1394/all/#Bellis (1394 is an ID of aster family).
+            To reach page for any particular family use URL /photodb/checklist/fams or using shortcut appending genus or family name, e.g., 
+            /photodb/checklist/salicaceae or /photodb/checklist/salix (case insensitive).
+        </li>
+-->
+    </ul>
+</div>
+

@@ -1,0 +1,943 @@
+<form style="display:none" action="/photodb/edit/caption/" onSubmit="return duplicate()" method="get" id="hidden_form"><!-- post /servlet/CaptionEditorNew -->
+	<input type="hidden" name="pnid" id="pnid" value="{{irec.spid}}">
+	<input type="hidden" name="url" id="url" value="XXX">
+	<input type="hidden" name="role" id="role" value="YYY">
+	<input type="hidden" name="id" id="id" value="ZZZ">
+	<input type="hidden" name="file" id="file" value="F/{{irec.fid}}.xml">
+	<input type="hidden" name="mode" id="mode" value="change">
+	<input type="hidden" name="toremove" id="toremove" value="0">
+	<textarea name="editcaption" id="editcaption" cols="100" rows="4"></textarea>
+	<br>
+    Photo#: <input autocomplete="off" name="image_number" id="image_number" type="text" value="image_number" size="1">
+	<input name="photo_id" id="photo_id" type="hidden" value="{{irec.phid}}">
+	<input name="image_id" id="image_id" type="hidden" value="/photos/{{irec.phid|slice:':6'}}/{{irec.imid}}.jpg">
+    image file suffix: 
+	<input name="image_id_suffix" id="image_id_suffix" type="text" size="3" value="{{irec.imid|slice:'17:'}}" onChange="updateURL(this)">
+    (change it, if change image file e.g., 'c' - cropped, 's' - scaled) &nbsp; 
+    [<b><a title="may not be available if running at web server" target="_blank" href="/servlet/GetImage?id={{irec.imid|slice:':17'}}">original</a></b>]
+    
+    {%if request.META.HTTP_HOST == 'localhost:9090'%}
+[<a style="color:red" target="_blank" 
+href="http://localhost:8080/servlet/GimpOpen?path=/media/data/data/tomcat/webapps/ROOT/photos/{{irec.imid|slice:':6'}}/{{irec.imid}}.jpg">edit image</a>]
+{%if irec.imid == irec.phid %}
+[<a style="color:red" href="/photodb/gallery/view/autoscale/{{irec.spid}}/{{irec.imid}}">autoscale</a>]
+{%endif%}
+
+{%elif request.META.HTTP_HOST == 'localhost:8000'%}
+<a style="color:red" target="_blank" 
+href="http://localhost:8080/servlet/GimpOpen?path=/media/data/data/tomcat/webapps/ROOT/photos/{{irec.imid|slice:':6'}}/{{irec.imid}}.jpg">edit image</a>
+{%else%}
+<span title="available only if running locally, at localhost:9090, this one is {{request.META.HTTP_HOST }}">edit unavailable</span>
+{%if irec.imid == irec.phid %}
+[<a style="color:red" href="/photodb/gallery/view/autoscale/{{irec.spid}}/{{irec.imid}}">try autoscale</a>]
+{%endif%}
+
+{%endif%}
+
+    <input type="submit" value="Submit" id="submit">
+    &nbsp;
+    <button onClick="normal_view()" id="close">Close</button><br>
+	[ Duplicate image: <input type="checkbox" name="append"> ]
+	[ Mark to arhive (move image from the site): <input type="checkbox" name="arhive"> ]
+	[ Herbarium id: <input style="display:none" type="text" name="bug:stub" id="xxx" value="{{irec.herb_id}}">
+<input type="text" name="herb_id" id="herb_id" value='{{irec.herb_id|default_if_none:""}}'>]
+    <span>
+    Verified: 
+    <select name="verified" id="verified">
+        <option value="">unspecified</option>
+{%if irec.is_verified == 'yes' %}
+	<option value="yes" selected="selected" >yes</option>
+{%else%}
+        <option value="yes">yes</option>
+{%endif%}
+{%if irec.is_verified == 'no' %}
+<option value="no" selected="selected">no</option></select>
+{%else%}
+        <option value="no">no</option>
+{%endif%}
+</select>
+ [{{irec.is_verified}}]<br> 
+    LCID: <input name="LCID" id="LCID" value="{{irec.locality.lcid}}" title="XXX: name of lcid"><span>
+          Correct it:
+          <select onchange="changeLocation(this)">
+                           <option value=""></option>
+                           <option value="MA.MSF.Ply.67850011#Myles Standish State Forest, Plymouth#Charge Pond / Grassy Pond area, Myles Standish State Forest, Plymouth"> Myles SF-Plymouth-Charge /Grassy Pond area</option>
+                           <option value="MA.ELM.Ply.2011090531#???#???">???</option>
+                           <option value="MA.BHR.Ran.20061170001#???#???">???</option>
+                           <option value="MA.AAR.Bos.200600100#Arnold Arboretum, Jamaica Plain, Boston#Arnold Arboretum, Jamaica Plain, Boston">AA-JP</option>
+                           <option value="MA.AAR.Bos.200600200#Arnold Arboretum, Jamaica Plain, Boston#AA-JP-Bussey Brook">AA-JP-Bussey Brook</option>
+                           <option value="MA.AAR.Bos.200600300#Arnold Arboretum Greenhouse#AA-JP-DGH">AA-JP-DGH</option>
+                           <option value="MA.Suf.Bos.2012030101#UMass/State Biolab perimeter, Forest Hills, Boston#UMass/State Biolab perimeter, Forest Hills, Boston">AA/Biolab</option>
+                           <option value="MA.Mid.Act.200600500#Acton Grassy Pond Conservation Area#Acton Grassy Pond Conservation Area">Acton Grassy Pond Conservation Area</option>
+                           <option value="MA.Bri.Acu.20070609352#Acushnet#Summer Winds Farm, Acushnet">Acushnet: Summer Winds Farm</option>
+                           <option value="MA.Ber.Ada#Adams#Adams">Adams generic</option>
+                           <option value="MA.Midd.Arl.2016123001#Alewife Brook, Arlington#Alewife Brook, Arlington">Alewife Brook, Arlington</option>
+                           <option value="MA.ALR.Arl.2007060932#Alewife Reservation, Arlington#Alewife Reservation, Arlington">Alewife Reservation, Arlington</option>
+                           <option value="MA.ALR.Bel.20070609313#Alewife Reservation, Belmont#Alewife Reservation, Belmont">Alewife Reservation, Belmont</option>
+                           <option value="MA.ALR.Cam.2007061701#Alewife Reservation, Cambridge#Alewife Reservation, Cambridge">Alewife Reservation, Cambridge</option>
+                           <option value="MA.ALR.Cam.20070609331#Alewife Reservation, Cambridge#Alewife Reservation, Cambridge">Alewife Reservation, Cambridge</option>
+                           <option value="MA.Bri.Eas.22233732#Ames Long Pond, Easton#Ames Long Pond, Easton">Ames Long Pond, Easton</option>
+                           <option value="MA.ASP.Bro.2013021501#Ames Nowell State Park, Brockton#Ames Nowell State Park: Brockton">Ames Nowell State Park: Brockton</option>
+                           <option value="MA.ASP.Aby.2006090103#Ames Nowell State Park, Abington#Ames Nowell State Park, Abington: Cleveland Pond shore">Ames Nowell State Park: Cleveland Pd shore</option>
+                           <option value="MA.ASP.Aby.2006090105#Ames Nowell State Park, Abington#Ames Nowell State Park: boardwalk across Pond edge">Ames Nowell State Park: boardwalk across Pond edge</option>
+                           <option value="MA.ASP.Aby.2006090107#Ames Nowell State Park, Abington#Ames Nowell State Park: high-voltage line">Ames Nowell State Park: high-voltage line</option>
+                           <option value="MA.ASP.Aby.2006090109#Ames Nowell State Park, Abington#Ames Nowell State Park: woods">Ames Nowell State Park: woods</option>
+                           <option value="MA.Hmp.Amh#Amherst#Amherst">Amherst generic</option>
+                           <option value="MA.Ess.And.49441986#Pine Hole Pond, Ward Reservation, Andover#Pine Hole Pond, Ward Reservation, Andover">Andover: Ward Res. (Pine Hole Pond)</option>
+                           <option value="MA.Mid.Arl.2019040402#Menotomy Rocks Park, Arlington#Menotomy Rocks Park, Arlington">Arlington: Menotomy Rocks Park</option>
+                           <option value="MA.Midd.Arl.2019040401#Turkey Hill, Arlington#Turkey Hill, Arlington">Arlington: Turkey Hill</option>
+                           <option value="MA.Wor.Asn.2014062001#Ashburnham#Cheshire Pond Cons. Area, Ashburnham">Ashburnham: Cheshire Pond Cons. Area</option>
+                           <option value="MA.Wor.Asn.2014062002#Depot Rd., Ashburnham#Depot Rd. / powerline, Ashburnham">Ashburnham: Depot Rd./powerline</option>
+                           <option value="MA.Wor.Asn.2014062003#Lakeshore Drive, N of Lake Watatic, Ashburnham#Lakeshore Drive, N of Lake Watatic, Ashburnham">Ashburnham: Lakeshore Drive, N of Lake Watatic</option>
+                           <option value="MA.Wor.Asn.2014062005#N of Fitchburg Rd., Ashburnham#N of Fitchburg Rd., Ashburnham">Ashburnham: N of Fitchburg Rd.</option>
+                           <option value="MA.Wor.Asn.2014062004#Old County Rd. E of Lake Wampanoag, Ashburnham#Old County Rd. E of Lake Wampanoag, Ashburnham">Ashburnham: Old County Rd. E of Lake Wampanoag</option>
+                           <option value="MA.Wor.Asn#Ashburnham#Ashburnham">Ashburnham: generic</option>
+                           <option value="MA.Midd.Stw.48761779#Assabet River, Gleasondale, Stow#Assabet River (62 Rte), Gleasondale, Stow">Assabet River, Gleasondale, Stow</option>
+                           <option value="MA.Nrf.Avn.200600600#Avon#Avon Costco parking lot">Avon Costco parking lot</option>
+                           <option value="MA.Nrf.Avn.200600700#Avon#Avon Rt 28">Avon Rt 28</option>
+                           <option value="MA.BHR.Bra.201108202#Blue Hills Reservation, Braintree#BHR-B-South of Rt.95">BHR-B-South of Rt.95</option>
+                           <option value="MA.BHR.Can.200600900#Blue Hills Reservation, Canton#BHR-C-Accord P, GBHill">BHR-C-Accord P, GBHill</option>
+                           <option value="MA.BHR.Can.200601000#Blue Hills Reservation, Canton#BHR-C-GBH-ski slope">BHR-C-GBH-ski slope</option>
+                           <option value="MA.BHR.Can.200606023#Blue Hills Reservation, Canton#BHR-C-Little Blue Hill">BHR-C-Little Blue Hill</option>
+                           <option value="MA.BHR.Can.200601520#Blue Hills Reservation, Canton#BHR-C-Neponset RR-Fowl Meadow, Canton">BHR-C-Neponset RR-Fowl Meadow</option>
+                           <option value="MA.BHR.Can.200606017#Blue Hills Reservation, Canton#BHR-C-Neponset RR-W Fowl Meadow Path">BHR-C-Neponset RR-W Fowl Meadow Path</option>
+                           <option value="MA.BHR.Can.200606019#Blue Hills Reservation, Canton#BHR-C-Neponset RR-W Fowl Meadow, Neponset River Bank">BHR-C-Neponset RR-W Fowl Meadow, Neponset R. Bank</option>
+                           <option value="MA.BHR.Can.200601100#Blue Hills Reservation, Canton#BHR-C-Ponkapoag Bog">BHR-C-Ponkapoag Bog</option>
+                           <option value="MA.BHR.Can.2013022705#Ponkapoag Brook, Blue Hills Reservation,Canton#Ponkapoag Brook, Blue Hills Reservation, Canton">BHR-C-Ponkapoag Brook</option>
+                           <option value="MA.BHR.Can.17222821#Blue Hills Reservation, Canton#W Ponkapoag Pond, Blue Hills Reservation, Canton">BHR-C-Ponkapoag Pond W</option>
+                           <option value="MA.BHR.Can.200606029#Blue Hills Reservation, Canton#BHR-C S Ponkapoag Pond, Fisherman Beach entrance">BHR-C-Ponkapoag Pond, Fisherman Beach entrance</option>
+                           <option value="MA.BHR.Can.200601200#Blue Hills Reservation, Canton#BHR-C-Ponkapoag Pond-end of boardwalk">BHR-C-Ponkapoag Pond-end of boardwalk</option>
+                           <option value="MA.BHR.Can.200601300#Blue Hills Reservation, Canton#BHR-C-Ponkapoag Swamp">BHR-C-Ponkapoag Swamp</option>
+                           <option value="MA.BHR.Can.200606000#Blue Hills Reservation, Canton#BHR-Rt 138 opposite GBH, Canton">BHR-C-Rt 138 opposite GBH</option>
+                           <option value="MA.BHR.Can.200601400#Blue Hills Reservation, Canton#BHR-C-S slope of GBH above Accord P">BHR-C-S slope of GBH above Accord P</option>
+                           <option value="MA.BHR.Can#Blue Hills Reservation, Canton#Blue Hills Reservation, Canton">BHR-C-generic</option>
+                           <option value="MA.BHR.Ded.51957780#Blue Hills Reservation, Neponset R., Dedham#Blue Hills Reservation, Neponset R., Dedham">BHR-D-Neponset R.-Fowl Meadow</option>
+                           <option value="MA.BHR.Mlt.200601700#Blue Hills Reservation, Milton#BHR-M-4046-Pine Tree Brook P near pipeline">BHR-M-4046-Pine Tree Brook P near pipeline</option>
+                           <option value="MA.BHR.Mlt.200601800#Blue Hills Reservation, Milton#BHR-M-Border P and its continuation along Unquity">BHR-M-Border P and its continuation along Unquity</option>
+                           <option value="MA.BHR.Mlt.200601900#Blue Hills Reservation, Milton#BHR-M-Border P below Unquity Dumpster">BHR-M-Border P below Unquity Dumpster</option>
+                           <option value="MA.BHR.Mlt.200602100#Blue Hills Reservation, Milton#BHR-M-Border P/Unquity Rd crossing-NW corner">BHR-M-Border P/Unquity Rd crossing-NW corner</option>
+                           <option value="MA.BHR.Mlt.2011091001#Blue Hills Reservation, Milton#Brookwood Farm, Blue Hills Reservation, Milton">BHR-M-Brookwood Farm</option>
+                           <option value="MA.BHR.Mlt.200602300#Blue Hills Reservation, Milton#BHR-M-Chestnut Run">BHR-M-Chestnut Run</option>
+                           <option value="MA.BHR.Mlt.200602400#Blue Hills Reservation, Milton#BHR-M-Chickatawbut Overlook">BHR-M-Chickatawbut Overlook</option>
+                           <option value="MA.BHR.Mlt.200602500#Blue Hills Reservation, Milton#BHR-M-Chickatawbut Rd">BHR-M-Chickatawbut Rd</option>
+                           <option value="MA.BHR.Mlt.200602600#Blue Hills Reservation, Milton#BHR-M-Dam at Harland St/Unquity Rd intersection">BHR-M-Dam at Harland St/Unquity Rd intersection</option>
+                           <option value="MA.BHR.Mlt.201600710#Blue Hills Reservation, Milton#BHR Milton E of Rt 28">BHR-M-E of Rt 28</option>
+                           <option value="MA.BHR.Qui.2016020620#Blue Hills Reservation, Milton#Furnace Brook, Blue Hills Reservation, Milton">BHR-M-Furnace Brook</option>
+                           <option value="MA.BHR.Mlt.2007060923#Blue Hills Reservation, Milton#BHR-M-GBH Summit">BHR-M-GBH Summit</option>
+                           <option value="MA.BHR.Mlt.2006060011#Blue Hills Reservation, Milton#BHR-M-Hancock Hill">BHR-M-Hancock Hill</option>
+                           <option value="MA.BHR.Mlt.200602700#Blue Hills Reservation, Milton#BHR-M-Harland St">BHR-M-Harland St</option>
+                           <option value="MA.BHR.Mlt.200602800#Blue Hills Reservation, Milton#BHR-M-Harland St-empty ice pond-historic-1890">BHR-M-Harland St-empty ice pond-historic-1890</option>
+                           <option value="MA.BHR.Mlt.200602900#Blue Hills Reservation, Milton#BHR-M-Harland St-historic-1892">BHR-M-Harland St-historic-1892</option>
+                           <option value="MA.BHR.Mlt.200606015#Blue Hills Reservation, Milton#BHR-M-Hemenway Hill summit">BHR-M-Hemenway Hill summit</option>
+                           <option value="MA.BHR.Mlt.200603000#Blue Hills Reservation, Milton#BHR-M-Hillside St">BHR-M-Hillside St</option>
+                           <option value="MA.BHR.Mlt.200606003#Blue Hills Reservation, Milton#BHR-M-Houghton's Pond">BHR-M-Houghton's Pond</option>
+                           <option value="MA.BHR.Mlt.200603100#Blue Hills Reservation, Milton#BHR-M-Massachuseuck Trail">BHR-M-Massachuseuck Trail</option>
+                           <option value="MA.BHR.Mlt.200606013#Blue Hills Reservation, Milton#BHR-M-N slope of Hemenway Hill">BHR-M-N slope of Hemenway Hill</option>
+                           <option value="MA.BHR.Mlt.200606021#Blue Hills Reservation, Milton#BHR-M-Neponset R. Fowl Meadow along Brush Hill Road">BHR-M-Neponset R. Fowl Meadow along Brush Hill Rd.</option>
+                           <option value="MA.BHR.Mlt.200601510#Blue Hills Reservation, Milton#BHR-M-Neponset RR-Fowl Meadow">BHR-M-Neponset RR-Fowl Meadow</option>
+                           <option value="MA.BHR.Mlt.200603300#Blue Hills Reservation, Milton#BHR-M-Pasture Run">BHR-M-Pasture Run</option>
+                           <option value="MA.BHR.Mlt.200603400#Blue Hills Reservation, Milton#BHR-M-Pine Tree Brook floodplain off Unquity Rd">BHR-M-Pine Tree Brook floodplain off Unquity Rd</option>
+                           <option value="MA.BHR.Mlt.200603500#Blue Hills Reservation, Milton#BHR-M-Pine Tree Brook off Harland St">BHR-M-Pine Tree Brook off Harland St</option>
+                           <option value="MA.BHR.Mlt.200603700#Blue Hills Reservation, Milton#BHR-M-Pine Tree Brook-upper">BHR-M-Pine Tree Brook-upper</option>
+                           <option value="MA.BHR.Mlt.2015110501#Blue Hills Reservation, Milton#BHR-M-Pondlet betw. GBH and Wollcott Hill">BHR-M-Pondlet betw. GBH and Wollcott Hill</option>
+                           <option value="MA.BHR.Mlt.200603800#Blue Hills Reservation, Milton#BHR-M-Roger Pines-historic-1918">BHR-M-Roger Pines-historic-1918</option>
+                           <option value="MA.BHR.Mlt.200603900#Blue Hills Reservation, Milton#BHR-M-The Pines-historic-unknown-1885">BHR-M-The Pines-historic-unknown-1885</option>
+                           <option value="MA.BHR.Mlt.200604000#Blue Hills Reservation, Milton#BHR-M-Unquity Dumpster">BHR-M-Unquity Dumpster</option>
+                           <option value="MA.BHR.Mlt.200604100#Blue Hills Reservation, Milton#BHR-M-Unquity Dumpster parking lot">BHR-M-Unquity Dumpster parking lot</option>
+                           <option value="MA.BHR.Mlt.200604200#Blue Hills Reservation, Milton#BHR-M-Unquity Rd">BHR-M-Unquity Rd</option>
+                           <option value="MA.BHR.Mlt.200604201#Blue Hills Reservation, Milton#BHR-M-Unquity Rd pechka">BHR-M-Unquity Rd pechka</option>
+                           <option value="MA.BHR.Mlt.200606011#Blue Hills Reservation, Milton#BHR-M-Western Border Path off Rt.138">BHR-M-Western Border Path off Rt.138</option>
+                           <option value="MA.BHR.Mlt.200603600#Blue Hills Reservation, Milton#BHR-M-Pine Tree Brook-middle-off Unquity Rd, and around Ulin Rink">BHR-M-around Ulin Rink</option>
+                           <option value="MA.BHR.Mil#Blue Hills Reservation, Milton#Blue Hills Reservation, Milton">BHR-M-generic</option>
+                           <option value="MA.BHR.Can.200601500#Blue Hills Reservation, Canton#BHR-M/C-Neponset RR-Fowl Meadow">BHR-M/C-Neponset RR-Fowl Meadow</option>
+                           <option value="MA.BHR.Qui.2006060091#Blue Hills Reservation, Reservoir, Quincy#BHR, Quincy: Blue Hills Reservoir">BHR-Q-Blue Hills Reservoir</option>
+                           <option value="MA.BHR.Qui.200605000#Blue Hills Reservation, Quincy#BHR-Q-Bouncing Brook P off Gr Cedar Swamp">BHR-Q-Bouncing Brook P off Gr Cedar Swamp</option>
+                           <option value="MA.BHR.Qui.200605100#Blue Hills Reservation, Quincy#BHR-Q-Braintree Pass P at Barberry Bush">BHR-Q-Braintree Pass P at Barberry Bush</option>
+                           <option value="MA.BHR.Qui.200606031#Blue Hills Reservation, Quincy#BHR-Q-Chickatawbut Hill">BHR-Q-Chickatawbut Hill</option>
+                           <option value="MA.BHR.Qui.2017070701#Blue Hills Reservation, Quincy#Chickatawbut Hill proseka [houstonia site) Hill, Blue Hills Reservation, Quincy">BHR-Q-Chickatawbut proseka</option>
+                           <option value="MA.BHR.Qui.18439235#Blue Hills Reservation, Quincy#Blue Hills Reservation, Quincy E of Rt. 28">BHR-Q-E of Rt. 28</option>
+                           <option value="MA.BHR.Qui.200605200#Blue Hills Reservation, Quincy#BHR-Q-Fox Hill">BHR-Q-Fox Hill</option>
+                           <option value="MA.BHR.Qui.65333708#Blue Hills Reservation, Quincy#Furnace Brook, Blue Hills Reservation, Quincy">BHR-Q-Furnace Brook</option>
+                           <option value="MA.BHR.Qui.2016101902#Blue Hills Reservation, Quincy#Lower Furnace Brook, Blue Hills Reservation, Quincy">BHR-Q-Furnace Brook Lower</option>
+                           <option value="MA.BHR.Qui.2016101901#Blue Hills Reservation, Quincy#Middle Furnace Brook Wetlands, Blue Hills Reservation, Quincy">BHR-Q-Furnace Brook Wetlands (L.Site))</option>
+                           <option value="MA.BHR.Qui.200400001#Blue Hills Reservation, Quincy#BHR, Quincy: Great Cedar Swamp off Rt. 95">BHR-Q-Great Cedar Swamp off Rt.95</option>
+                           <option value="MA.BHR.Qui.2016020610#Blue Hills Reservation, Quincy#Great Dome with Little Dome, Blue Hills Reservation, Quincy">BHR-Q-Great Dome with Little Dome</option>
+                           <option value="MA.BHR.Qui.200605300#Blue Hills Reservation, Quincy#BHR-Q-Hawk Hill P">BHR-Q-Hawk Hill P</option>
+                           <option value="MA.BHR.Qui.200606035#Blue Hills Reservation, Quincy#BHR, Quincy: Hawk Hill SE slope">BHR-Q-Hawk Hill SE slope</option>
+                           <option value="MA.BHR.Qui.2007060928#Blue Hills Reservation, Quincy#BHR-Q-Hemlock P">BHR-Q-Hemlock P</option>
+                           <option value="MA.BHR.Qui.200605400#Blue Hills Reservation, Quincy#BHR-Q-Laurel P">BHR-Q-Laurel P</option>
+                           <option value="MA.BHR.Qui.200606007#Blue Hills Reservation, Quincy#BHR, Quincy: NE of Rattlesnake Hill">BHR-Q-NE of Rattlesnake Hill</option>
+                           <option value="MA.BHR.Qui.200606037#Blue Hills Reservation, Quincy#BHR-Q-Pine Tree Brook Path">BHR-Q-Pine Tree Brook P</option>
+                           <option value="MA.BHR.Qui.20110422#Blue Hills Reservation, Quincy#Blue Hills Reservation, Quincy, Quarry">BHR-Q-Quarry</option>
+                           <option value="MA.BHR.Qui.201108201#Blue Hills Reservation, Quincy#BHR-Q-South of Rt.95">BHR-Q-South of Rt.95</option>
+                           <option value="MA.BHR.Qui.200606033#Blue Hills Reservation, Quincy#BHR, Quincy: Squamaug Notch">BHR-Q-Squamaug Notch</option>
+                           <option value="MA.BHR.Qui.200606005#Blue Hills Reservation, Quincy#BHR, Quincy: St. Moritz Ponds">BHR-Q-St. Moritz Ponds</option>
+                           <option value="MA.BHR.Qui.2014052001#Blue Hills Reservation, Quincy#Tucker Hill, Blue Hills Reservation, Quincy">BHR-Q-Tucker Hill</option>
+                           <option value="MA.BHR.Qui.18439156#Blue Hills Reservation, Quincy#Blue Hills Reservation, Quincy W of Rt. 28">BHR-Q-W of Rt. 28</option>
+                           <option value="MA.BHR.Qui.200400002#Blue Hills Reservation, Quincy#BHR, Quincy: Wampatuck Path">BHR-Q-Wampatuck Path</option>
+                           <option value="MA.BHR.Qui.200605500#Blue Hills Reservation, Quincy#BHR-Q-Wampatuck Rd">BHR-Q-Wampatuck Rd</option>
+                           <option value="MA.BHR.Qui.200604700#Blue Hills Reservation, Quincy#BHR-Q-betw 4084 and 4072">BHR-Q-betw 4084 and 4072</option>
+                           <option value="MA.BHR.Qui.200604800#Blue Hills Reservation, Quincy#BHR-Q-betw Rattlesnake Hill and Wampatuck Hill">BHR-Q-betw Rattlesnake Hill and Wampatuck Hill</option>
+                           <option value="MA.BHR.Qui.200604900#Blue Hills Reservation, Quincy#BHR-Q-betw Rt 28 and pipeline">BHR-Q-betw Rt 28 and pipeline</option>
+                           <option value="MA.BHR.Qui.200606999#Blue Hills Reservation, Quincy#BHR, Quincy: S Squamaug Notch (chestnut tree)">BHR-Q-chestnut_tree Squamaug Notch</option>
+                           <option value="MA.BHR.Qui#Blue Hills Reservation, Quincy#Blue Hills Reservation, Quincy">BHR-Q-generic</option>
+                           <option value="MA.BHR.Qui.65328307#Blue Hills Reservation, Quincy#Pipeline parallel Rt. 28, Blue Hills Reservation, Quincy">BHR-Q-pipeline-Rt.28</option>
+                           <option value="MA.BHR.Mlt.200604300#Blue Hills Reservation, Milton#BHR-Q/M-Braintree Pass P off Rt 28">BHR-Q/M-Braintree Pass P off Rt 28</option>
+                           <option value="MA.BHR.Mlt.200604400#Blue Hills Reservation, Milton#BHR-Q/M-Chickatawbut Rd betw Overlook/Reservoir">BHR-Q/M-Chickatawbut Rd betw Overlook/Reservoir</option>
+                           <option value="MA.BHR.Mlt.200604500#Blue Hills Reservation, Milton#BHR-Q/M-Ridge Path">BHR-Q/M-Ridge Path</option>
+                           <option value="MA.BHR.Mlt.200604600#Blue Hills Reservation, Milton#BHR-Q/M-Rt 28">BHR-Q/M-Rt 28</option>
+                           <option value="MA.BHR.Ran.201304201#Blue Hill R., Blue Hills Reservation, Randolph#Blue Hill R., Blue Hills Reservation, Randolph">BHR-R-Ponkapoag Pond-Blue Hill R.</option>
+                           <option value="MA.BHR.Ran.200606027#Blue Hills Reservation, Randolph#BHR-R-Ponkapoag Pond-E">BHR-R-Ponkapoag Pond-E</option>
+                           <option value="MA.BHR.Ran.200605700#Blue Hills Reservation, Randolph#BHR-R-Ponkapoag Pond-NE">BHR-R-Ponkapoag Pond-NE</option>
+                           <option value="MA.BHR.Ran.200605900#Blue Hills Reservation, Randolph#BHR-R-Ponkapoag Pond-SE">BHR-R-Ponkapoag Pond-SE</option>
+                           <option value="MA.BHR.Ran.200606025#Blue Hills Reservation, Randolph#BHR-R-equestrian bridge accross Rt 24">BHR-R-equestrian bridge accross Rt 24</option>
+                           <option value="MA.BHR.Ran#Blue Hills Reservation, Randolph#Blue Hills Reservation, Randolph">BHR-R-generic</option>
+                           <option value="MA.BHR.Can.200605600#Blue Hills Reservation, Canton#BHR-R/C-Ponkapoag Trail-road to boardwalk">BHR-R/C-Ponkapoag Trail-road to boardwalk</option>
+                           <option value="MA.BHR.Bos.30703406#Blue Hills Reservation, Readville, Boston#Fowl Meadow, Blue Hills Reservation, Readville, Boston">BHR-Readville (Fowl Meadow)</option>
+                           <option value="MA.BHR.Mlt#Blue Hills Reservation, Milton#BHR, Milton">BHR: Milton (generic)</option>
+                           <option value="MA.BSF.Bxf.35802578#Bald Hill Reservation, Boxford#Bald Hill Reservation, Boxford">Bald Hill Reservation, Boxford</option>
+                           <option value="MA.BBR.Bel.2013100802#Beaver Brook Reservation, Belmont#Beaver Brook Reservation, Belmont">Beaver Brook Reservation [S], Belmont</option>
+                           <option value="MA.BBR.Bel_Wal.2013100801#Beaver Brook Reservation, Belmont/Waltham#Beaver Brook Reservation, Belmont/Waltham">Beaver Brook Reservation [S], Belmont/Waltham</option>
+                           <option value="MA.BBR.Wal.2013100803#Beaver Brook Reservation, Waltham#Beaver Brook Reservation, Waltham">Beaver Brook Reservation [S], Waltham</option>
+                           <option value="MA.Midd.Bed#Bedford#Bedford">Bedford generic</option>
+                           <option value="MA.Midd.Bed.2014070501#Great Meadows, Bedford#Bedford: Great Meadows">Bedford: Great Meadows</option>
+                           <option value="MA.Midd.Bed.2013110401#White Cedar Swamp Conservation Area, Bedford#Bedford: White Cedar Swamp Conservation Area">Bedford: White Cedar Swamp Cons. Area</option>
+                           <option value="MA.Mid.Bel#Belmont#Belmont">Belmont generic</option>
+                           <option value="MA.Mid.Bel.2019010707#Audubon Habitat Wildlife Sanctuary, Belmont#Audubon Habitat Wildlife Sanctuary, Belmont">Belmont: Habitat Wildlife Sanctuary</option>
+                           <option value="MA.Plm.BlP#Black Pond Conservation Area, Norwell#BlackPondR-Norwell">BlackPondR-Norwell</option>
+                           <option value="MA.Plm.BlP.200606300#Black Pond Conservation Area entrance, Norwell#BlackPondR-Norwell-Mt Blue Street">BlackPondR-Norwell-Mt Blue Street</option>
+                           <option value="MA.Plm.BlP.200606100#Black Pond Conservation Area, Norwell#BlackPondR-Norwell-boardwalk">BlackPondR-Norwell-boardwalk</option>
+                           <option value="MA.Plm.BlP.200606200#Black Pond Conservation Area, Norwell#BlackPondR-Norwell-forest">BlackPondR-Norwell-forest</option>
+                           <option value="MA.Plm.BlP.200606400#Black Pond Conservation Area, Norwell#BlackPondR-Norwell-powerline">BlackPondR-Norwell-powerline</option>
+                           <option value="MA.Ham.Bln#Blandford#Blandford">Blandford</option>
+                           <option value="MA.Bri.Bor.200606500#Borderland Park, Easton#Borderland Pk-Easton: Bristol Co">Borderland Pk-Easton: Bristol Co</option>
+                           <option value="MA.Nrf.Bor.200606600#Borderland Park, Sharon#Borderland Pk-Sharon: Norfolk Co">Borderland Pk-Sharon: Norfolk Co</option>
+                           <option value="MA.Plm.Hin.67849572#Boston Harbor Reservation: Bumkin I., Hingham#Boston Harbor Reservation: Bumkin I., Hingham">Boston Harbor Res: Bumkin I., Hingham</option>
+                           <option value="MA.Suf.Bos.64820767#George's Island, Boston Harbor Reservation, Boston#George's Island, Boston Harbor Reservation, Boston">Boston Harbor Res: George's Island, Boston</option>
+                           <option value="MA.Nrf.Wey.67849105#Boston Harbor Reservation: Grape Island, Weymouth#Boston Harbor Reservation, Grape Island, Weymouth">Boston Harbor Res: Grape I., Weymouth</option>
+                           <option value="MA.Plm.Ped.20070609113#Peddocks Island, Hull#Peddocks I. (inner), Hull">Boston Harbor Res: Peddocks I. (inner), Hull</option>
+                           <option value="MA.Plm.Ped.20070609121#Peddocks Island, Hull#Peddocks I. (salt marsh/beach), Hull">Boston Harbor Res: Peddocks I. (salt marsh/beach), Hull</option>
+                           <option value="MA.Suf.Bos.73089227#Thompson Island, Boston Harbor Reservation, Boston #Thompson Island, Boston Harbor Reservation, Boston ">Boston Harbor Res: Thompson Island</option>
+                           <option value="MA.Suf.Bos.2016060401#Arborway (Rt. 203), Boston#Arborway (Rt. 203), Boston">Boston: Arborway (Rt. 203)</option>
+                           <option value="MA.Suf.Bos.202105201#Boston: Dorchester#Boston: Dorchester">Boston: Dorchester</option>
+                           <option value="MA.Suf.Bos.2016102401#Muddy River, Boston#Muddy River, Boston">Boston: Muddy R.</option>
+                           <option value="MA.Suf.Bos#Boston#Boston">Boston: generic</option>
+                           <option value="MA.Bar.Brn#Bourne#Bourne">Bourne: Generic</option>
+                           <option value="MA.Bar.Brn.2014050100#Northern Bourne#Northern Bourne">Bourne: North</option>
+                           <option value="MA.BSF.Bxf.200800000#Boxford State Forest, Boxford#Boxford State Forest, Boxford">Boxford State Forest, Boxford</option>
+                           <option value="MA.BSF.Nad.35801985#Boxford State Forest, North Andover#Boxford State Forest, North Andover">Boxford State Forest, North Andover</option>
+                           <option value="MA.Nrf.Bra.200606700#Braintree#Braintree T-station">Braintree T-station</option>
+                           <option value="MA.Nrf.Bra#Braintree#Braintree">Braintree generic</option>
+                           <option value="MA.Nrf.Bra.2007060930#Braintree#Braintree, Wood Rd.">Braintree, Wood Rd.</option>
+                           <option value="MA.Ess.Sau.2007060937#Breakheart Reservation, Saugus#Breakheart Res., Saugus">Breakheart Res., Saugus</option>
+                           <option value="MA.MSP.Tau.200700200#Massasoit State Park, Taunton#Massasoit SP, Taunton">Brewster WingMassasoit SP</option>
+                           <option value="MA.Bar.Bre.200606801#Beech Island, Brewster, Cape Cod#Brewster-Cape Cod-Beech Island">Brewster-Cape Cod-Beech Island</option>
+                           <option value="MA.Bar.Bre.200606800#Wing Island, Brewster, Cape Cod#Brewster-Cape Cod-Wing Island">Brewster-Cape Cod-Wing Island</option>
+                           <option value="MA.Bar.Bre.16670706#Crosby Landing, Brewster#Crosby Landing, Brewster (Cape Cod)">Brewster: Crosby Landing</option>
+                           <option value="MA.Bar.Bre.201908011#Elbow Pond, Brewster#Elbow Pond, Brewster">Brewster: Elbow Pond</option>
+                           <option value="MA.Bar.Bre.16670708#Nickerson State Park, Brewster#Nickerson State Park, Brewster">Brewster: Nickerson State Park</option>
+                           <option value="MA.Bar.Bre#Brewster#Brewster">Brewster: generic</option>
+                           <option value="MA.HMS.Brd.73089408#Lake Nippenicket, Bridgewater#Hockomock Swamp, Lake Nippenicket, Bridgewater">Bridgewater: Nippenicket Lake</option>
+                           <option value="MA.HMS.Brd.2013021703#Nunkatessett Pond, Bridgewater#Nunkatessett Pond, Bridgewater">Bridgewater: Nunkatessett Pond</option>
+                           <option value="MA.Plm.Brd.2014091303#Styles &amp; Hart Park, Bridgewater#Styles &amp; Hart Park, Bridgewater">Bridgewater: Styles/Hart Pk</option>
+                           <option value="MA.Plm.Brd.2017060301#Fields and meadows off Elm St., Bridgewater#Fields and meadows off Elm St., Bridgewater">Bridgewater: fields and meadows off Elm St.</option>
+                           <option value="MA.Plm.Brd#Bridgewater#Bridgewater">Bridgewater: generic</option>
+                           <option value="MA.Plm.Bro.2017110501#Porter Pond, D.W. Field Pk., Brockton#Porter Pond, D.W. Field Pk., Brockton">Brockton: D.W. Field Pk., Porter Pond</option>
+                           <option value="MA.Plm.Bro.2011112002#East Gate Shopping Plaza, Brockton#East Gate Shopping Plaza, Brockton">Brockton: East Gate Shopping Plaza</option>
+                           <option value="MA.Nrf.Brl.30705306#Lost Pond Conservaton Area, Brookline#Lost Pond Conservaton Area, Brookline">Brookline: Lost Pond Cons. area</option>
+                           <option value="MA.Nrf.Brl.201110311#Muddy River, Brookline#Muddy River, Brookline">Brookline: Muddy River</option>
+                           <option value="MA.Nrf.Brl.2013122001#Sargent Pond, Brookline#Sargent Pond, Brookline">Brookline: Sargent Pond</option>
+                           <option value="MA.Nrf.Brl#Brookline#Brookline">Brookline: generic</option>
+                           <option value="MA.Plm.Hns.20170909022#Burrage Pond Area, Hanson#Burrage Pond Area vicinity, Hanson">Burrage Pond Area vicinity, Hanson</option>
+                           <option value="MA.Plm.Hns.2017090902#Burrage Pond Area, Hanson#Burrage Pond Area and vicinity, Hanson">Burrage Pond Area, Hanson</option>
+                           <option value="MA.Plm.Hns.20170909023#Burrage Pond WMA, Hanson#Burrage Pond WMA, Hanson">Burrage Pond WMA, Hanson</option>
+                           <option value="CT.Sto.dam.2014061104#Storrs, CT#Storrs (dam site), CT">CT: Storrs: dam</option>
+                           <option value="CT.Sto.pl1.2014061101#torrs (plot 1), CT#Storrs (plot 1), CT">CT: Storrs: plot1</option>
+                           <option value="CT.Sto.pl2.2014061102#torrs (plot 2), CT#Storrs (plot 2), CT">CT: Storrs: plot2</option>
+                           <option value="CT.Sto.pl3.2014061103#Storrs (plot 3), CT#Storrs (plot 3), CT">CT: Storrs: plot3</option>
+                           <option value="MA.Mid.Fra.2012102401#Callahan State Park, Framingham#Callahan State Park, Framingham">Callahan State Park, Framingham</option>
+                           <option value="MA.Mid.Cam.2012032701#Divinity Ave., Cambridge#Divinity Ave., Cambridge">Cambridge, HUH</option>
+                           <option value="MA.Mid.Cam.2013040501#Charles River embankment, Cambridge#Charles River embankment, Cambridge">Cambridge: Charles River embankment</option>
+                           <option value="MA.Mid.Cam.2016081701#Fresh Pond vicinity, Cambridge#Fresh Pond vicinity, Cambridge">Cambridge: Fresh Pond, vic</option>
+                           <option value="MA.Bar.Hya.2006088101#Hyannis, Cape Cod#Little Israel Pond, Hyannis, Cape Cod">Cape Cod, Hyannis, Little Israel Pond</option>
+                           <option value="MA.Bar.Hya.2006088061#Mary Dunn Pond, Hyannis, Cape Cod#Mary Dunn Pond, Hyannis, Cape Cod">Cape Cod, Hyannis, Mary Dunn Pd</option>
+                           <option value="MA.Bar.Hya.2006088082#Mary Dunn Rd., Hyannis, Cape Cod#Mary Dunn Rd., Hyannis, Cape Cod">Cape Cod, Hyannis, Mary Dunn Road</option>
+                           <option value="MA.Bar.Msh.2006112103#Cape Cod, 4-H Farley Camp, Mashpee#Cape Cod, 4-H Farley Camp, Mashpee">Cape Cod, Mashpee: 4-H Farley Camp</option>
+                           <option value="MA.Bar.Msh.2006112101#Cape Cod, 4-H Farley Camp, Mashpee#Cape Cod, Mashpee: 4-H Farley Outdoor Education Center">Cape Cod, Mashpee: 4-H Farley Camp, Edu. Center</option>
+                           <option value="MA.Bar.Brn.2013120101#Carter Beal Conservation Area, Bourne#Carter Beal Conservation Area, Bourne">Cape Cod: Bourne, Carter Beal Cons. Area</option>
+                           <option value="MA.Bar.Brn.200605122#Leary Conservation Area, Bourne, Cape Cod#Leary Conservation Area, Bourne (Pocasset)">Cape Cod: Bourne, Leary Cons. Area</option>
+                           <option value="MA.Bar.Den.2012092701#Quivett Creek Conservation Area, Dennis#Quivett Creek Conservation Area Dennis (Cape Cod)">Cape Cod: Dennis: Quivett Creek</option>
+                           <option value="MA.Bar.San.200701001#Cape Cod-historic#Cape Cod-historic: Sandwich 1909, Orleans 1891">Cape Cod: Sandwich, Orleans-historic</option>
+                           <option value="MA.Bar.San#Cape Cod, Sandwich#Cape Cod: Sandwich, generic">Cape Cod: Sandwich, generic</option>
+                           <option value="MA.Plm.Car.2013022801#Raccoon Pond, Carver#Raccoon Pond, Carver">Carver-Raccoon Pond</option>
+                           <option value="MA.MSF.Car.2014092901#Rt. 58, Carver#Carver, Rt. 58">Carver-Rt. 58</option>
+                           <option value="MA.Plm.Car.2014092902#Rt. 58, Carver#Carver, Rt. 58">Carver-Rt. 58</option>
+                           <option value="MA.Plm.Car.200704033#Carver#Carver: Cranberry Rd.">Carver: Cranberry Rd.</option>
+                           <option value="MA.Plm.Car#Carver#Carver: generic">Carver: generic</option>
+                           <option value="MA.Nrf.Dov.2007060601#Caryl Park, Dover#Caryl Park: near parking lot, Dover">Caryl Park: near parking lot, Dover</option>
+                           <option value="MA.Mid.Cha.200607000#Charles River, Newton#Charles R-Newton-SE border">Charles R-Newton-SE border</option>
+                           <option value="MA.Mid.Cha.200606900#Charles River, Newton#Charles R-Newton-off Saco St">Charles R-Newton-off Saco St</option>
+                           <option value="MA.Duk.Chm#Chilmark#Chilmark">Chilmark</option>
+                           <option value="CO.Pit.Asp#Aspen, Colorado#Colorado: Aspen vic., Pitkin Co.">Colorado: Aspen vic., Pitkin Co.</option>
+                           <option value="CO.Pit.Asp_RFR#Roaring Fork River, Aspen, Colorado#Roaring Fork RiverColorado: Aspen vic., Pitkin Co.">Colorado: Aspen vic., Roaring Fork River</option>
+                           <option value="CO.Lak.Cli#Colorado: Lake Co., Climax#Colorado: Lake Co., Climax">Colorado: Lake Co., Climax</option>
+                           <option value="CO.Lak.TwL#Twin Lakes,  Lake Co., Colorado#Colorado: Lake Co., Twin Lakes">Colorado: Lake Co., Twin Lakes</option>
+                           <option value="CO.Pit.Mar#Maroon Bells, Pitkin Co., Colorado#Colorado: Pitkin Co., Maroon Bells, White River National Forest ~9,600-10,000 ft">Colorado: Maroon Bells area</option>
+                           <option value="CO.Pit.Mar_Cla#Crater Lake, Maroon Bells, Pitkin Co., Colorado#Colorado: Pitkin Co., Maroon Bells, White River National Forest (Crater Lake)">Colorado: Maroon Bells: Crater Lake</option>
+                           <option value="CO.Pit.Mar_Lak#Maroon Lake, Pitkin Co., Colorado#Colorado: Pitkin Co., Maroon Lake, White River National Forest ~9,600-10,000 ft">Colorado: Maroon Lake</option>
+                           <option value="CO.Pit#Pitkin Co., Colorado#Colorado: Pitkin Co.">Colorado: Pitkin Co.</option>
+                           <option value="CO.R82.#Colorado, Rt.82#Colorado: Rt82">Colorado: Rt82</option>
+                           <option value="CO.R81.ST1#Colorado, Rt.82#Colorado: Rt82 stop1">Colorado: Rt82 stop1</option>
+                           <option value="CO.R82.ST2#Colorado, Rt.82#Colorado: Rt82 stop2">Colorado: Rt82 stop2</option>
+                           <option value="CO.R82.ST3#Colorado, Rt.82#Colorado: stop3: Ghost Town">Colorado: Rt82 stop3: Ghost Town</option>
+                           <option value="CO.R82.ST4#Independence Pass, Colorado#Colorado: stop4: Independence Pass">Colorado: Rt82 stop4: Independence Pass</option>
+                           <option value="CO.#Colorado#Colorado: generic">Colorado: generic</option>
+                           <option value="MA.Mid.Con.2013062701#Elm Brook, Concord#Elm Brook, Concord">Concord: Elm Brook</option>
+                           <option value="NH.Csh.Wpl.20070609372#Connecticut River, Walpole, NH#Connecticut River, Walpole, NH">Conn. R.: Walpole</option>
+                           <option value="NH.Csh.Nwl.20070609373#Connecticut River, North Walpole, NH#Connecticut River, North Walpole, NH">Conn. R:, N Walpole</option>
+                           <option value="MA.CUT.Nee.20070609383#Cutler Park, Needham#Cutler Park Central, Needham">Cutler Park: Central</option>
+                           <option value="MA.CUT.Xxx.200607100#Cutler Park#Cutler Pk S Cutler Pk">Cutler Pk S Cutler Pk</option>
+                           <option value="MA.CUT.Xxx.200607102#Cutler Park#Cutler Pk S Cutler Pk: Farm/Parking">Cutler Pk S Cutler Pk: Farm</option>
+                           <option value="MA.CUT.Ded.2006072001#Cutler Park, Dedham#Cutler Pk-Dedham-SE Cutler Pk">Cutler Pk-Dedham-SE Cutler Pk</option>
+                           <option value="MA.CUT.Nee.200607302#Cutler Park, Needham#Cutler Pk-Needham-N Cutler Pk">Cutler Pk-Needham-N Cutler Pk</option>
+                           <option value="MA.Nrf.Cut.2006073021#Cutler Park, Needham#Cutler Pk-Needham-N Cutler Pk">Cutler Pk-Needham-N Cutler Pk</option>
+                           <option value="MA.Nrf.Cut.2006071001#Cutler Park, Needham#Cutler Pk-Needham-S Cutler Pk">Cutler Pk-Needham-S Cutler Pk</option>
+                           <option value="MA.Nrf.Cut.200607200#Cutler Park, Needham#Cutler Pk-Needham-SE Cutler Pk">Cutler Pk-Needham-SE Cutler Pk</option>
+                           <option value="MA.Nrf.Cut.200607300#Cutler Park, Needham#Cutler Pk-Needham-SE Cutler Pk-Pine Island">Cutler Pk-Needham-SE Cutler Pk-Pine Island</option>
+                           <option value="MA.CUT.Nee.200607105#Cutler Park, Needham#Cutler Pk-Needham-SW Cutler Pk">Cutler Pk-Needham-SW Cutler Pk</option>
+                           <option value="MA.Nrf.Avn.2017010101#D.W. Field Pk., Avon#D.W. Field Pk., Avon">D.W. Field Pk., Avon</option>
+                           <option value="MA.Bri.Dar.201306312#Allens Pond Wildlife Sanctuary (NE), Dartmouth#Allens Pond Wildlife Sanctuary (NE), Dartmouth">Dartmouth: Allens Pond Sanctuary (NE)</option>
+                           <option value="MA.Bri.Dar.201305311#Allens Pond Wildlife Sanctuary (SW), Dartmouth#Allens Pond Wildlife Sanctuary (SW), Dartmouth">Dartmouth: Allens Pond Sanctuary (SW)</option>
+                           <option value="MA.Bri.Dar.201306313#Demarest Lloyd State Park, Dartmouth#Demarest Lloyd SP, Dartmouth">Dartmouth: Demarest Lloyd SP</option>
+                           <option value="MA.Bri.Dar.201306314#Slocum's River Reserve, Dartmouth#Slocum's River Reserve, Dartmouth">Dartmouth: Slocum's River Reserve</option>
+                           <option value="MA.Nrf.Ded#Dedham#Dedham">Dedham generic</option>
+                           <option value="MA.Nrf.Ded.2011072901#Charles River, Dedham#Dedham, Charles R.">Dedham, Charles R.</option>
+                           <option value="MA.Nrf.Ded.2012123101#Wigwam Pond, Dedham#Dedham, Wigwam Pond">Dedham, Wigwam Pond</option>
+                           <option value="MA.Nrf.Ded.2013040503#Wigwam Pond and vicinity, Dedham#Dedham, Wigwam Pond and vicinity">Dedham, Wigwam Pond and vicinity</option>
+                           <option value="MA.Nrf.Ded.202104183#Dedham#Dedham">Dedham: Endicotts's property</option>
+                           <option value="MA.Nrf.Ded.202104184#Dedham#Dedham">Dedham: Endicotts's property 2</option>
+                           <option value="MA.Nrf.Ded.202104181#Dedham#Dedham">Dedham: MIT Endicott House</option>
+                           <option value="MA.Nrf.Ded.202104186#Dedham#Dedham">Dedham: MIT's Weld Pond</option>
+                           <option value="MA.Nrf.Ded.202001010#NewBridge on the Charles, Dedham#NewBridge on the Charles, Dedham">Dedham: NewBridge/Charles</option>
+                           <option value="MA.Nrf.Ded.202104182#Dedham#Dedham">Dedham: Northeastern University Dedham Campus</option>
+                           <option value="MA.Nrf.Ded.51957943#Rt. 128, Dedham#Rt. 128, Dedham">Dedham: Rt.128</option>
+                           <option value="MA.Nrf.Ded.202104185#Dedham#Dedham">Dedham: wetland near MIT props</option>
+                           <option value="MA.Duk.xxx.200701004#Dukes Co-historic#Dukes Co: Elizabeth Islands-historic-1928">Dukes Co: Elizabeth Is.-historic-1928</option>
+                           <option value="MA.Plm.Dux.200607400#Duxbury#Duxbury-Bay Farm-parking lot">Duxbury-Bay Farm-parking lot</option>
+                           <option value="MA.Plm.Dux.2014101001#Thaddeus Chandler Sanctuary, Duxbury#Duxbury: Thaddeus Chandler Sanctuary">Duxbury: Chandler Sanctuary</option>
+                           <option value="MA.Plm.Dux.2014092801#Duxbury#Duxbury: Feinberg Bogs (South River Bog)">Duxbury: Feinberg Bogs</option>
+                           <option value="MA.Plm.Ebr.2019083001#Baseball field, East Bridgewater#Baseball field, East Bridgewater">East Bridgewater: baseball field</option>
+                           <option value="MA.Plm.Ebr#East Bridgewater#East Bridgewater">East Bridgewater: generic</option>
+                           <option value="MA.Bri.Eas.2014051003#Black Brook, Easton#Black Brook, Easton">Easton: Black Brook</option>
+                           <option value="MA.Ber.Egr.2016010101#Jug End Fen, Egremont#Jug End Fen, Egremont">Egremont: Jug End Fen</option>
+                           <option value="MA.Ber.Egr#Egremont#Egremont">Egremont: generic</option>
+                           <option value="MA.ELM.Ply.201109059#Front dune, Ellisville, Plymouth#Plymouth-Ellisville Marsh (all dunes incl. DCR)">Ellisville Marsh (all dunes incl. DCR)</option>
+                           <option value="MA.ELM.Ply.201109058#Ellisville Marsh, Plymouth#Ellisville Marsh (all marsh incl. DCR), Plymouth">Ellisville Marsh (all marsh incl. DCR)</option>
+                           <option value="MA.ELM.Ply.201109053#Ellisville Marsh border, Plymouth#Plymouth-Ellisville Marsh (border)">Ellisville Marsh (border)</option>
+                           <option value="MA.ELM.Ply.201109052#Front dune, Ellisville, Plymouth#Plymouth-Ellisville Marsh (dune)">Ellisville Marsh (dune)</option>
+                           <option value="MA.ELM.Ply.20110415#Ellisville Marsh, Plymouth#Plymouth-Ellisville Marsh (dunes, marsh, border)">Ellisville Marsh (dunes, marsh, border)</option>
+                           <option value="MA.ELM.Ply.201109051#Ellisville Marsh, Plymouth#Plymouth-Ellisville Marsh (marsh)">Ellisville Marsh (marsh)</option>
+                           <option value="MA.ELP.Ply.20110417#Ellisville State Park, Plymouth#Plymouth-Ellisville State Park (all)">Ellisville Park DCR (all)</option>
+                           <option value="MA.ELM.Ply.201109056#Ellisville Harbor State Park, Plymouth#Plymouth-Ellisville Marsh (border)">Ellisville Park DCR (border)</option>
+                           <option value="MA.ELM.Ply.201109055#Front dune, Ellisville Harbor State Park, Plymouth#Plymouth-Ellisville Marsh (dune)">Ellisville Park DCR (dune)</option>
+                           <option value="MA.ELP.Ply.201109057#Ellisville State Park, Plymouth#Plymouth-Ellisville State Park">Ellisville Park DCR (except marsh)</option>
+                           <option value="MA.ELM.Ply.201109054#Ellisville Marsh, State Park, Plymouth#Plymouth-Ellisville Marsh (marsh)">Ellisville Park DCR (marsh)</option>
+                           <option value="MA.Nor.Ded.2021040801#Endicott House surroundings, Dedham#Endicott House surroundings, Dedham">Endicott House surroundings, Dedham</option>
+                           <option value="MA.Frn.Erv.202105182#Erving State Forest, Erving#Erving State Forest, Erving">Erving State Forest, Erving</option>
+                           <option value="MA.Bri.Fai.2013101401#Nasketucket Bay State Reservation, Fairhaven#Nasketucket Bay State Reservation, Fairhaven">Fairhaven: Nasketucket Bay Res.</option>
+                           <option value="MA.Bri.Fai.2016091001#West Island, Fairhaven#West Island, Fairhaven">Fairhaven: West Island</option>
+                           <option value="MA.Bri.Flr.2013092501#Quanapoag Rd., Fall River#Quanapoag Rd., Fall River">Fall River: Quanapoag Rd.</option>
+                           <option value="MA.Bri.Flr.2013092502#Gas line off Quanapoag Rd., Fall River#Gas line off Quanapoag Rd., Fall River">Fall River: Quanapoag Rd., gas line</option>
+                           <option value="MA.Bar.Fal.20110410#Falmouth#Falmouth">Falmouth</option>
+                           <option value="MA.Bar.Fal.201110013#Coonamessett Reservation, Falmouth#Falmouth, Coonamessett Res.">Falmouth Coonamessett Res.</option>
+                           <option value="MA.Bar.Fal.201110012#Crane WMA, Falmouth#Falmouth, Crane WMA">Falmouth Crane WMA</option>
+                           <option value="MA.Bar.Fal.201110022#Crane WMA (Quail Area), Falmouth#Falmouth, Crane WMA, Quail Area">Falmouth Crane WMA: Quail Area</option>
+                           <option value="MA.Bar.Fal.201110011#Sippewisset, Falmouth#Falmouth, Sippewisset">Falmouth Sippewisset</option>
+                           <option value="MA.Bar.Fal.20130704#Salt Pond  Sanctuary, Falmouth#Salt Pond  Sanctuary, Falmouth">Falmouth: Salt Pond</option>
+                           <option value="MA.FFR.Flr.20070609161#Freetown/Fall River State Forest, Fall River#Freetown/Fall River State Forest, Fall River">Freetown/Fall River State Forest, Fall River</option>
+                           <option value="MA.FFR.Fre.20070609151#Freetown/Fall River State Forest, Freetown#Freetown/Fall River State Forest, Freetown">Freetown/Fall River State Forest, Freetown</option>
+                           <option value="MA.FFR.Fre.20070609201#Freetown/Fall River State Forest, Freetown#Freetown/Fall River State Forest, near parking, Freetown">Freetown/Fall River State Forest, near parking, Freetown</option>
+                           <option value="MA.Mid.Gar.200607500#Garden-in-the-Woods, Framingham#Garden in the Woods, Framingham">Garden-in-the-Woods Framingham</option>
+                           <option value="MA.Wor.Grn.58317932#Lake Wampanoag Wildlife Sanctuary, Gardner#Lake Wampanoag Wildlife Sanctuary, Gardner: ">Gardner: L. Wampanoag Wildlife Sanct.</option>
+                           <option value="MA.Ber.Grb.2011111103#Beartown State Forest, Great Barrington#Great Barrington, Beartown SF">Gr. Barrington, Beartown SF</option>
+                           <option value="MA.Ber.Grb.2011111102#Monument Mtn. Reservation, Great Barrington #Great Barrington, Monument Mtn. Res.">Gr. Barrington, Monument Mtn. Res.</option>
+                           <option value="MA.HLR.Dov.2006112001#Hale Reservation, Dover#Hale Reservation, Dover">Hale Res., Dover</option>
+                           <option value="MA.HLR.Wes.2006112005#Hale Res., Westwood#Hale Res., Westwood: entrance">Hale Res., Westwood: entrance</option>
+                           <option value="MA.HLR.Dov.2006112007#Hale Reservation, Dover#Hale Res.: Noanet Pond, Dover">Hale Res.: Noanet Pond, Dover</option>
+                           <option value="MA.HLR.Dov.2006112003#Hale Reservation, Dover#Hale Res.: Powisset Pond, Dover">Hale Res.: Powisset Pond, Dover</option>
+                           <option value="MA.Plm.Hal.50925313#West Monponsett Lake, Halifax#West Monponsett Lake, Halifax">Halifax: West Monponsett Lake</option>
+                           <option value="MA.Ess.Hml.201806302#Appleton Farms, Hamilton#Appleton Farms, Hamilton">Hamilton: Appleton Farms</option>
+                           <option value="MA.Ess.Ips.201806301#Hamlin Reservation, Ipswich#Hamlin Reservation, Ipswich">Hamlin Res., Ipswich</option>
+                           <option value="MA.Plm.Hns#Hanson#Hanson">Hanson generic</option>
+                           <option value="MA.Plm.Hns.20170909021#Burrage Pond Area, Hanson#Burrage Pond vicinity (Smith Nawazelski Conservation Area), Hanson">Hanson: Burrage Pond Area: WCA </option>
+                           <option value="MA.Ess.Nad.49442219#Harold Parker State Forest,, North Andover#Harold Parker State Forest, North Andover">Harold Parker SF, N Andover</option>
+                           <option value="MA.Ess.And.20070609361#Harold Parker SP, Andover#Harold Parker SP, Andover">Harold Parker SP, Andover</option>
+                           <option value="MA.Bar.Hrw#Harwich#Harwich">Harwich generic</option>
+                           <option value="MA.Bar.Hrw.2017030301#Smith Cold Brook Preserve, Harwich#Harwich: Smith Cold Brook Preserve">Harwich: Smith Cold Brook Preserve</option>
+                           <option value="MA.Ess.Sau.20070609351#Hawkes Pond, Saugus#Hawkes Brook floodplain, Saugus">Hawkes Brook floodplain, Saugus</option>
+                           <option value="MA.Ess.Sau.20070609332#Hawkes Pond, Saugus#Hawkes Pond, Saugus">Hawkes Pond, Saugus</option>
+                           <option value="MA.Frn.Hea.20070609374#Avery Brook, Heath#Avery Brook, Heath">Heath: Avery Brook</option>
+                           <option value="MA.Frn.Hea.20070609376#Hosmer Rd., Heath#Heath: Hosmer Rd.">Heath: Hosmer Rd.</option>
+                           <option value="MA.Frn.Hea.20070609375#Hosmer Rd., Heath#Heath: Hosmer Rd.: powerline">Heath: powerline</option>
+                           <option value="MA.Nrf.Nee.40362808#Hemlock Gorge, Needham#Hemlock Gorge, Needham">Hemlock Gorge, Needham</option>
+                           <option value="MA.Midd.New.40363446#Hemlock Gorge, Newton#Hemlock Gorge, Newton">Hemlock Gorge, Newton</option>
+                           <option value="MA.Plm.Hin.2016112801#Hewitts Cove, Hingham#Hewitts Cove, Hingham">Hewitts Cove, Hingham</option>
+                           <option value="MA.Plm.Hin#Hingham#Hingham">Hingham [generic]</option>
+                           <option value="MA.Plm.Hin.2008020002#Bare Cove Park, Hingham#Hingham: Bare Cove Park, salt marsh">Hingham: Bare Cove Park, salt marsh</option>
+                           <option value="MA.Plm.Hin.2008020001#Bare Cove Park, Hingham#Hingham: Bare Cove Park, woods">Hingham: Bare Cove Park, woods</option>
+                           <option value="MA.Plm.Hin.2008020982#Stodder's Neck Park, Hingham#Hingham: Stodder's Neck Park">Hingham: Stodder's Neck Park</option>
+                           <option value="MA.WSP.Hin.2016052801#George Washington Forest and vicinity, Hingham#George Washington Forest and vicinity, Hingham">Hingham: Washington Forest and vic.</option>
+                           <option value="MA.Plm.Hin.2013090201#Weir River, Hingham#Weir River, Hingham">Hingham: Weir River</option>
+                           <option value="MA.Plm.Hin.2017110201#World's End, Hingham#World's End, Hingham">Hingham: World's End</option>
+                           <option value="MA.Plm.Hin.76033763#Hingham#Northern Hingham">Hingham: northern</option>
+                           <option value="MA.Plm.Hin.76033596#Hingham#Northern Hingham, Rt 3a">Hingham: northern, Rt 3a</option>
+                           <option value="MA.WSP.Hin.2016052801.1#George Washington Forest and vicinity, Hingham#Pondlet S of Fulling Millpond, Hingham">Hingham: pondlet S of Fulling Millpond</option>
+                           <option value="MA.HMS.Wbr.20070609171#Hockomock Swamp, West Bridgewater#Hockomock Swamp, Maple St., W Bridgewater">Hockomock Swamp, Maple St., W Bridgewater</option>
+                           <option value="MA.HMS.Ray.2016122901#Hockomock Swamp, Raynham#Hockomock Swamp, Raynham">Hockomock Swamp, Raynham</option>
+                           <option value="MA.HMS.Wbr.20070609180#Hockomock Swamp, West Bridgewater#Hockomock Swamp, W Bridgewater">Hockomock Swamp, W Bridgewater</option>
+                           <option value="MA.HMS.Wbr.20070609181#Hockomock Swamp, West Bridgewater#Hockomock Swamp, high-voltage line, W Bridgewater">Hockomock Swamp, high-voltage line, W Bridgewater</option>
+                           <option value="MA.HMS.Wbr.2007060921#Hockomock Swamp, West Bridgewater#Hockomock Swamp, maple swamp off Maple St., W Bridgewater">Hockomock Swamp, maple swamp off Maple St., W Bridgewater</option>
+                           <option value="MA.HMS.Wbr.20070609191#Hockomock Swamp, West Bridgewater#Hockomock Swamp, open fen, W Bridgewater">Hockomock Swamp, open fen, W Bridgewater</option>
+                           <option value="MA.HMS.Eas.201511101#Hockomock Swamp, Easton#Hockomock Swamp: Easton">Hockomock Swamp: Easton</option>
+                           <option value="MA.Nrf.Hol.200607600#Holbrook#Holbrook Commuter R Station">Holbrook Commuter R Station</option>
+                           <option value="MA.Nrf.Hol.2006060092#Holbrook Sand Quarry#Holbrook Sand Quarry">Holbrook Sand Quarry</option>
+                           <option value="MA.Nrf.Hol#Holbrook#Holbrook">Holbrook generic</option>
+                           <option value="MA.Nrf.Hol.2017052001#Town Forest, Holbrook#Holbrook, Town Forest">Holbrook, Town Forest</option>
+                           <option value="MA.Nrf.Hol.48332110#Holbrook#Holbrook, powerline at Weymouth border">Holbrook, powerline at Weymouth border</option>
+                           <option value="MA.Nrf.Hol.2011112001#A vacant lot, Union St., Holbrook# Holbrook, vacant lot, Union St.,">Holbrook, vacant lot, Union St.</option>
+                           <option value="MA.Nrf.Hol.200607700#Holbrook#Holbrook-248 Center St">Holbrook-248 Center St</option>
+                           <option value="MA.Nrf.Hol.200607702#Holbrook#Holbrook/Braintree *** brook">Holbrook/Braintree *** brook</option>
+                           <option value="MA.Wor.Hld.201809091#Poutwater Pond, Holden#Poutwater Pond, Holden">Holden: Poutwater Pond</option>
+                           <option value="MA.HMF.Wil.2007060926#Hopkins Memorial Forest, Williamstown#Hopkins Mem. For. and vic.">Hopkins Mem. For. and vic</option>
+                           <option value="MA.HMF.Wil.2007060924#Hopkins Memorial Forest, Williamstown#Hopkins Mem. For.: Buxton Garden">Hopkins Mem. For.: Buxton Garden</option>
+                           <option value="MA.HMF.Wil.2007060925#Hopkins Memorial Forest, Williamstown#Hopkins Mem. For.: NW Hill slope">Hopkins Mem. For.: NW Hill slope</option>
+                           <option value="MA.Midd.Hud.2016043002#Assabet River NWR, Hudson#Assabet River NWR, Hudson">Hudson: Assabet R. NWR</option>
+                           <option value="MA.Plm.Hul.2013090209#Weir River Estuary, Hull#Weir River Estuary, Hull">Hull: Weir River Estuary</option>
+                           <option value="MA.Suf.Bos.20060499#Mother Brook at Turtle Pond Pkwy, Boston#Hyde Park, Mother Brook at Turtle Pond Pkwy">Hyde Park, Mother Brook at Turtle Pond Pkwy</option>
+                           <option value="MA.Suf.Bos.200607800#Jamaica Plain, Boston#JP-Allandale Rd/Centre St intersection">JP-Allandale Rd/Centre St intersection</option>
+                           <option value="MA.Suf.Bos.200607900#Allandale Woods, Jamaica Plain, Boston#JP-Allandale Woods">JP-Allandale Woods</option>
+                           <option value="MA.Suf.Bos.20070609382#Centre St., Jamaica Plain, Boston#Centre St., Jamaica Plain, Boston">JP-Centre Street</option>
+                           <option value="MA.Suf.Bos.200699999#Jamaica Plain, HRCA, Boston#Jamaica Plain, HRCA">Jamaica Plain, HRCA</option>
+                           <option value="MA.Suf.Bos.50925914#Moss Hill, Jamaica Plain, Boston#Moss Hill, Jamaica Plain, Boston">Jamaica Plain: Moss Hill</option>
+                           <option value="MA.Plm.Kin#Kingston#Kingston generic">Kingston generic</option>
+                           <option value="MA.Plm.Kin.2016072914#Muddy Pond, Kingston#Muddy Pond, Kingston">Kingston: Muddy Pond</option>
+                           <option value="MA.LAU.Lee.2018060152#Laurel Lake, Lee#Laurel Lake, northeast (Lee)">Laurel Lake: NE (Lee)</option>
+                           <option value="MA.LAU.Len.2018060151#Laurel Lake, Lenox#Laurel Lake, northeast (Lenox)">Laurel Lake: NE (Lenox)</option>
+                           <option value="MA.LAU.Len.2018060155#Laurel Lake, Lenox#Laurel Lake, northwest (Lenox: Edith Wharton Park)">Laurel Lake: NE (Lenox)</option>
+                           <option value="MA.LAU.Lee.2018060153#Laurel Lake, Lee#Laurel Lake, southeast (Lee)">Laurel Lake: SE: Highlawn Farm (Lee)</option>
+                           <option value="MA.LAU.Lee.2018060154#Laurel Lake, Lee#Laurel Lake, southwest (Lee: Edith Wharton Park)">Laurel Lake: WE (Lee)</option>
+                           <option value="MA.LAU.East.2018060150#Laurel Lake, Lee &amp; Lenox#Laurel Lake, east (Lee/Lenox)">Laurel Lake: east (Lee/Lenox)</option>
+                           <option value="MA.Ber.Lee.2011111115#East of Laurel Lake, Lee#Lee, E of Laurel Lake, XXX area,">Lee, E of Laurel Lake, XXX area,</option>
+                           <option value="MA.Ber.Lee.2011111116#Housatonic R. south of Rt. 102, Lee#Lee, Housatonic R. S of Rt. 102">Lee, Housatonic R. S of Rt. 102</option>
+                           <option value="MA.Ber.Len.2011111114#Laurel Lake, Lenox#Lenox, Laurel Lake NE shore">Lenox, Laurel Lake NE shore</option>
+                           <option value="MA.Ber.Len.2016010102#Kennedy Park, Lenox#Kennedy Park, Lenox">Lenox: Kennedy Park</option>
+                           <option value="MA.Mid.Lin.20070609321#Lincoln#Lincoln">Lincoln</option>
+                           <option value="MA.MSF.War.2006088043#Little Long Pond, Plymouth/Wareham border#Little Long Pond, Plymouth/Wareham">Little Long Pond (Plymouth/Wareham)</option>
+                           <option value="MA.LDP.Ply.2016070101#Long Duck Pond Preserve Lots, Plymouth#Long Duck Pond Preserve Lots, Plymouth">Long Duck Pond Pres. Lots</option>
+                           <option value="MA.LSF.Tyn.200611003#Lowell-Dracut-Tyngsborough State Forest,Lowell#Lowell-Dracut-Tyngsborough St F, Lowell">Lowell-Dracut-Tyngsborough St F, Lowell</option>
+                           <option value="MA.LSF.Tyn.200611001#Lowell-Dracut-Tyngsborough State Forest, Tyngsborough#Lowell-Dracut-Tyngsborough State Forest, Tyngsborough">Lowell-Dracut-Tyngsborough St F, Tyngsborough</option>
+                           <option value="MA.Mid.Low.200608000#Lowell-UMass#Lowell-UMass">Lowell-UMass</option>
+                           <option value="MA.Ess.Lyn.2019111100#Lynn Woods Reservation, Lynn#Lynn Woods Reservation">Lynn Woods Reservation</option>
+                           <option value="MA.Ess.Lyn#Lynn#Lynn">Lynn generic</option>
+                           <option value="MA.Ess.Lyn.2019111102#Walden Pond, Lynn Woods Reservation, Lynn#Lynn Woods Reservation, Walden Pond">Lynn: Walden Pond</option>
+                           <option value="MA.MSF_Pond.Ply.201809051#Cattle Pond, Plymouth#Cattle Pond, Plymouth">MSF: Cattle Pond</option>
+                           <option value="MA.Ess.Mrb.2007060902#Marblehead#Marblehead">Marblehead</option>
+                           <option value="MA.Ess.Mrb.2007060904#Marblehead#Marblehead Island">Marblehead Iisland</option>
+                           <option value="MA.Plm.Mrn.2014071103#Peirson Woods, Marion#Peirson Woods, Marion">Marion: Peirson Woods</option>
+                           <option value="MA.Plm.Mrn#Marion#Marion">Marion: generic</option>
+                           <option value="MA.Plm.Mrs.2016101502#Cornhill Woodland, Marshfield#Cornhill Woodland, Marshfield">Marshfield: Cornhill Woodland</option>
+                           <option value="MA.Plm.Mrs.2016101501#North River, Marshfield#North River, Marshfield">Marshfield: North R.</option>
+                           <option value="MA.Plm.Mrs.2017112603#Pudding Hill Reservation, Marshfield#Pudding Hill Reservation, Marshfield">Marshfield: Pudding Hill Reservation</option>
+                           <option value="MA.Plm.Mrs.2017112601#Rexhame Beach, Marshfield#Rexhame Beach, Marshfield">Marshfield: Rexhame Beach</option>
+                           <option value="MA.Plm.Mrs.2017112602#Marshfield#Pratt Property off Willow St., Marshfield">Marshfield: S. River at Willow St.</option>
+                           <option value="MA.#Massachusetts [generic/herbaria]#Massachusetts [generic/herbaria]">Massachusetts [generic/herbaria]</option>
+                           <option value="MA#Unknown location#Massachusetts generic">Massachusetts generic</option>
+                           <option value="MA.MSF_MWR.Plm.20070609379#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: east">Massasoit NWR: east</option>
+                           <option value="MA.MSF_MWR_Pond.Plm.20120609379#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: east: pond">Massasoit NWR: east: pond</option>
+                           <option value="MA.MSF_MWR.Plm.20070609377#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: large, Plymouth">Massasoit NWR: large</option>
+                           <option value="MA.MSF_MWR.Plm.2012122001#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: large, Plymouth">Massasoit NWR: large (Crooked Pond)</option>
+                           <option value="MA.MSF_MWR.Plm.2012122002#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: large (Gunners Exchange Pond), Plymouth">Massasoit NWR: large (Gunners Exchange Pond)</option>
+                           <option value="MA.MSF_MWR.Plm.20070609378#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: west, Plymouth">Massasoit NWR: west</option>
+                           <option value="MA.MSF_MWR.Plm.2012122003#Massasoit Wildlife Refuge, Plymouth#Massasoit NWR: west (Hoyts Pond), Plymouth">Massasoit NWR: west (Hoyts Pond)</option>
+                           <option value="MA.MSP.Tau.200700204#Massasoit State Park, Taunton#Massasoit SP: Big Bearhole Pond">Massasoit SP: Big Bearhole Pond</option>
+                           <option value="MA.MSP.Tau.200700202#Massasoit State Park, Taunton#Massasoit SP, Taunton: Main Road">Massasoit SP: Main Road</option>
+                           <option value="MA.MSP.Tau.20070609371#Massasoit State Park, Taunton#Massasoit SP: Off Lake Rico, Taunton">Massasoit SP: Off Lake Rico, Taunton</option>
+                           <option value="MA.Plm.Mat.2013060601#Nasketucket Bay State Reservation, Mattapoisett#Nasketucket Bay State Reservation, Mattapoisett">Mattapoisett: Nasketucket Bay Res.</option>
+                           <option value="MA.Nrf.Mdf.2007060929#Medfield Rhododendrons, Medfield#Medfield Rhododendrons">Medfield Rhododendrons</option>
+                           <option value="MA.Nrf.Mdf.2008020931#Medfield State Forest, Medfield#Medfield State Forest">Medfield State Forest</option>
+                           <option value="MA.Midd.Med#Medford#Medford">Medford generic</option>
+                           <option value="MA.Plm.Mid.2013022701#Rt. 28, Middleborough#Rt. 28, Middleborough">Middleborough [Rt. 28]</option>
+                           <option value="MA.Plm.Mid.2013022702#Rt. 495, Middleborough#Rt. 28, Middleborough">Middleborough [Rt. 495]</option>
+                           <option value="MA.Plm.Mid#Middleborough#Middleborough">Middleborough [generic]</option>
+                           <option value="MA.Plm.Mid.2017090801#Assawompset Pond, Middleborough#Assawompset Pond, Middleborough">Middleborough: Assawompset Pond</option>
+                           <option value="MA.Plm.Mid.2017052101#Nemasket R., Middleborough#Middleborough: Nemasket R.">Middleborough: Nemasket R.</option>
+                           <option value="MA.Plm.Mid.2017090802#Pocksha Pond, Middleborough#Pocksha Pond (North), Middleborough">Middleborough: Pocksha Pond (North)</option>
+                           <option value="MA.Plm.Mid.2013090501#Rocky Gutter WMA, Middleborough#Rocky Gutter WMA, Middleborough">Middleborough: Rocky Gutter WMA</option>
+                           <option value="MA.FEL.Med.200611013#Middlesex Fells Reservation, Medford#Middlesex Fells, Medford">Middlesex Fells, Medford</option>
+                           <option value="MA.FEL.Med.2006110132#Middlesex Fells, Medford#Middlesex Fells, Medford: Wright's Pond">Middlesex Fells, Medford: Wright's Pond</option>
+                           <option value="MA.FEL.Sto.2006110051#Middlesex Fells Reservation, Stoneham#Middlesex Fells Reservation, Stoneham">Middlesex Fells, Stoneham</option>
+                           <option value="MA.FEL.Sto.201109201#Middlesex Fells, Stoneham#Middlesex Fells, Stoneham">Middlesex Fells, Virginia Woods, Stoneham</option>
+                           <option value="MA.FEL.Win.20070609221#Middlesex Fells Reservation, Winchester#Middlesex Fells Res., Winchester">Middlesex Fells, Winchester</option>
+                           <option value="MA.FEL.Med.2007060915#Middlesex Fells Reservation, Medford#Middlesex Fells-1, Medford">Middlesex Fells-1, Medford</option>
+                           <option value="MA.FEL.Win.2007060916#Middlesex Fells Reservation, Winchester#Middlesex Fells-2, Winchester">Middlesex Fells-2, Winchester</option>
+                           <option value="MA.FEL.xxx.2007060922#Middlesex Fells Reservation, Winchester#Middlesex Fells-2, Winchester, Long Pond">Middlesex Fells-2, Winchester, Long Pond</option>
+                           <option value="MA.FEL.Med.2007060918#Middlesex Fells Reservation, Stoneham#Middlesex Fells-3, Medford">Middlesex Fells-3, Medford</option>
+                           <option value="MA.FEL.Sto.20070609172#Middlesex Fells Reservation, Stoneham#Middlesex Fells-3, Stoneham">Middlesex Fells-3, Stoneham</option>
+                           <option value="MA.FEL.Med.2007060919#Middlesex Fells Reservation, Medford#Middlesex Fells-4, Medford">Middlesex Fells-4, Medford</option>
+                           <option value="MA.FEL.Med.2007060920#Middlesex Fells Reservation, Medford#Middlesex Fells-5, Medford">Middlesex Fells-5, Medford</option>
+                           <option value="MA.FEL.Med.201109202#Middlesex Fells, Medford#Middlesex Fells, Medford">Middlesex Fells: Gar', Medford</option>
+                           <option value="MA.Nrf.Mlt.200608100#Millis (historic, 1886)#Millis (historic, 1886)">Millis-historic-1886</option>
+                           <option value="MA.Nrf.Mlt.200608300#Milton#Milton-Brook Rd">Milton-Brook Rd</option>
+                           <option value="MA.Nrf.Mlt.200608602#Milton#Milton-Corey Ln off Canton Ave">Milton-Corey Ln off Canton Ave</option>
+                           <option value="MA.Nrf.Mlt.200608400#Forbes Woods, Milton#Milton-Forbes Woods">Milton-Forbes Woods</option>
+                           <option value="MA.Nrf.Mlt.200608500#Milton#Milton-N border w/Mattapan-Rt 138/28">Milton-N border w/Mattapan-Rt 138/28</option>
+                           <option value="MA.Nrf.Mlt.200608600#Milton#Milton-Rt 28">Milton-Rt 28</option>
+                           <option value="MA.Nrf.Mlt#Milton#Milton">Milton: generic</option>
+                           <option value="MA.Midd.Lin.20150612201#Minuteman National Hist. Park, Lincoln#Minuteman National Hist. Park, Lincoln">Minuteman Nat. Hist. Park: Lincoln</option>
+                           <option value="MA.Frn.Cha.2007060927#Mohawk Trail State Forest, Charlemont#Mohawk Trail State Forest">Mohawk Trail State Forest</option>
+                           <option value="MA.GRR.Ada.202105192#Mt. Greylock State Reservation and vicinity, Adams#Mt. Greylock State Res. and vicinity, Adams">Mt. Greylock Res. and vic., Adams</option>
+                           <option value="MA.GRR.Noa.202105191#Mt. Greylock State Reservation and vicinity, North Adams#Mt. Greylock State Res. and vicinity, North Adams">Mt. Greylock Res. and vic., North Adams</option>
+                           <option value="MA.GRR.Noa_Ada.202105193#Mt. Greylock State Reservation and vicinity: Bellows Pipe Trail#Mt. Greylock State Res. and vicinity: Bellows Pipe Trail">Mt. Greylock Res. and vic.: Bellows Pipe Trail </option>
+                           <option value="MA.GRR#Mt. Greylock State Reservation and vicinity#Mt. Greylock State Reservation and vicinity">Mt. Greylock Res. and vicinity</option>
+                           <option value="MA.GRR.Wil.200600701#Mt. Greylock State Reservation, Williamstown#Mt. Greylock State Reservation, Williamstown">Mt. Greylock Res., Williamstown</option>
+                           <option value="MA.Hmp.Had.40362286#Mt. Holyoke Range State Park, Bare Mt., Hadley#Mt. Holyoke Range State Park (Bare Mt.), Hadley">Mt. Holyoke Rge. St. Pk. (Bare Mt.), Hadley</option>
+                           <option value="MA.Hmp.Amh.48214926#Mt. Holyoke Range State Park, Amherst#Mt. Holyoke Range State Park, Amherst">Mt. Holyoke Rge. St. Pk., Amherst</option>
+                           <option value="MA.Hmp.Gra.48215289#Mt. Holyoke Range State Park, Granby#Mt. Holyoke Range State Park, Granby">Mt. Holyoke Rge. St. Pk., Granby</option>
+                           <option value="MA.Hmp.Had.40361988#Mt. Holyoke Range State Park, Hadley#Mt. Holyoke Range State Park, Hadley">Mt. Holyoke Rge. St. Pk., Hadley</option>
+                           <option value="MA.Hmp.Shh.48220198#Mt. Holyoke Range State Park, South Hadley#Mt. Holyoke Range State Park, South Hadley">Mt. Holyoke Rge. St. Pk., South Hadley</option>
+                           <option value="MA.Hmp.Shh.20165739#Mt. Holyoke, South Hadley#Mt. Holyoke, South Hadley">Mt. Holyoke, South Hadley</option>
+                           <option value="MA.Frn.Sun.200605121#Mt. Toby Forest, Sunderland#Mt. Toby Forest (Robert Frost Trail), Sunderland">Mt. Toby Forest, Sunderland</option>
+                           <option value="MA.MSF.Ply.200608804#Little Long Pond, Plymouth/Wareham border#Little Long Pond, Plymouth/Wareham border">Myles SF [off] Plymouth/Wareham: Little Long Pond</option>
+                           <option value="MA.MSF.Car#Myles Standish State Forest, Carver#Myles Standish St F-Carver">Myles SF-Carver [generic]</option>
+                           <option value="MA.MSF.Car.200607274#Myles Standish State Forest, Carver#Myles Standish St Forest, Barrett Pond, Carver">Myles SF-Carver-Barrett Pond</option>
+                           <option value="MA.MSF.Car.2007060905#Myles Standish State Forest, Carver#Myles Standish St F-Carver-Cranberry Rd./W Line Rd.">Myles SF-Carver-Cranberry Rd./W Line Rd.</option>
+                           <option value="MA.MSF.Car.20070609051#Myles Standish State Forest E of Crane Brook, Carver#Myles Standish State Forest, E of Crane Brook, Carver">Myles SF-Carver-E of Crane Brook</option>
+                           <option value="MA.MSF.Car.200607272#Myles Standish State Forest, Carver#Myles Standish St Forest, East Head Reservoir, Carver">Myles SF-Carver-East Head Reservoir</option>
+                           <option value="MA.MSF.Car.20070609381#Myles Standish State Forest, Carver#Halfway Pond Rd, Myles Standish State Forest, Carver">Myles SF-Carver-Halfway Pond Rd.</option>
+                           <option value="MA.MSF.Car.20070609052#Lost Horse Bog, Myles Standish State Forest, Carver#Myles Standish State Forest, Lost Horse Bog, Carver">Myles SF-Carver-Lost Horse Bog</option>
+                           <option value="MA.MSF_Pond.Car.2016092402#Myles Standish State Forest, Carver#Myles Standish State Forest: pondlet/bog at Musquash / Bare Hill Rd. (MSSF), Carver">Myles SF-Carver-Pondlet/bog (Musquash/Bare Hill Rd)</option>
+                           <option value="MA.MSF.Car.2016092401#Myles Standish State Forest, Carver#Myles Standish State Forest: between Federal Pond and Musquash Rds, Carver">Myles SF-Carver-between Federal Pond and Musquash Rds</option>
+                           <option value="MA.MSF.Car.200608800#Myles Standish State Forest, Carver#Myles Standish St F-Carver-headquarters">Myles SF-Carver-headquarters</option>
+                           <option value="MA.MSF.Car.200611011#Myles Standish State Forest, Carver#Myles Standish St F-Carver-irrigation ditch off Wankinco R.">Myles SF-Carver-irrig. ditch-Wankinco R.</option>
+                           <option value="MA.MSF.Ply.20070609384#Myles Standish State Forest, Plymouth#Myles Standish SP, Liggett Rd., Plymouth">Myles SF-Plym-Liggett</option>
+                           <option value="MA.MSF_Pond.Ply.2013010701#Camp Squanto, Myles Standish State Forest, Plymouth#Myles Standish State Forest, Camp Squanto/Fawn Pond, Plymouth">Myles SF-Plymouth Camp Squanto/Fawn Pond</option>
+                           <option value="MA.MSF.Ply.2016052101#Myles Standish State Forest, Plymouth#Northern Myles Standish State Forest E of Widgeon Pond, Plymouth">Myles SF-Plymouth E of Widgeon Pond</option>
+                           <option value="MA.MSF.Ply#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth">Myles SF-Plymouth [generic]</option>
+                           <option value="MA.MSF.Ply.2013101203#Myles Standish State Forest, Plymouth#Frost pocket off College Pond Rd., W Bumps Pd., Myles Standish State Forest, Plymouth">Myles SF-Plymouth between College Pd.Rd./Bumps Pd.</option>
+                           <option value="MA.MSF.Ply.2007060906#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth powerline at inters. w/ Halfway Pond Rd.">Myles SF-Plymouth powerline at inters. w/ Halfway Pond Rd.</option>
+                           <option value="MA.MSF.Ply.20060851#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth-Alden Rd">Myles SF-Plymouth-Alden Rd</option>
+                           <option value="MA.MSF.Ply.17659969#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Plymouth - Bare Hill Rd.">Myles SF-Plymouth-Bare Hill Rd.</option>
+                           <option value="MA.MSF_Pond.Plm.2012111001#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Big West/Grassy West Pond, Plymouth">Myles SF-Plymouth-Big West/Grassy West Pond</option>
+                           <option value="MA.MSF.Ply.17659727#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Plymouth, Bumps Pond">Myles SF-Plymouth-Bumps Pond</option>
+                           <option value="MA.MSF_Pond.Ply.2013100401#Charge Pond, Myles Standish State Forest, Plymouth#Charge Pond, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Charge Pond</option>
+                           <option value="MA.MSF_Pond.Ply.2013101001#College Pond, Myles Standish State Forest, Plymouth#College Pond, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-College Pond</option>
+                           <option value="MA.MSF.Ply.17659887#Myles Standish State Forest, Plymouth#Myles Standish State Forst; Plymouth - Curlew Pond">Myles SF-Plymouth-Curlew Pond</option>
+                           <option value="MA.MSF_Pond.Plm.2012101501#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Doctors Pond 1, Plymouth">Myles SF-Plymouth-Doctors Pond 1</option>
+                           <option value="MA.MSF_Pond.Plm.2012101502#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Doctors Pond 2, Plymouth">Myles SF-Plymouth-Doctors Pond 2</option>
+                           <option value="MA.MSF_Pond.Plm.2012101503#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Doctors Pond 3, Plymouth">Myles SF-Plymouth-Doctors Pond 3</option>
+                           <option value="MA.MSF.Ply.2006088081#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth - Dumpster off Southwest Line Rd.">Myles SF-Plymouth-Dumpster off Southwest Line Rd.</option>
+                           <option value="MA.MSF.Ply.20070609111#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-E of New Long Pond">Myles SF-Plymouth-E of New Long Pond</option>
+                           <option value="MA.MSF.Ply.53084933#Myles Standish State Forest, Plymouth#Myles Standish State Forest (East Entrance), Plymouth">Myles SF-Plymouth-East Entrance</option>
+                           <option value="MA.MSF.Ply.200607271#Myles Standish State Forest, Plymouth#Myles Standish St Forest, East Head Reservoir, Plymouth">Myles SF-Plymouth-East Head Reservoir</option>
+                           <option value="MA.MSF.Ply.200608700#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Fearing Pond">Myles SF-Plymouth-Fearing Pond</option>
+                           <option value="MA.MSF_Pond.Plm.2012101504#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Fearing Pond, Plymouth">Myles SF-Plymouth-Fearing Pond</option>
+                           <option value="MA.MSF.Ply.2006088122#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Fearing Pond Rd.">Myles SF-Plymouth-Fearing Pond Rd.</option>
+                           <option value="MA.MSF.Ply.2012111002#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Federal Pond, Plymouth">Myles SF-Plymouth-Federal Pond</option>
+                           <option value="MA.MSF.Ply.20060854#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Field east of Three-Cornered Pond">Myles SF-Plymouth-Field east of 3-Cornered Pond</option>
+                           <option value="MA.MSF.Ply.2016012501#Myles Standish State Forest (mainained field), Plymouth#Myles SF-Plymouth-Field south of parking lot 2">Myles SF-Plymouth-Field south of parking lot 2</option>
+                           <option value="MA.MSF_Pond.Plm.2013011801#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Grassy Pond, Plymouth">Myles SF-Plymouth-Grassy Pond</option>
+                           <option value="MA.MSF_Pond.Plm.2012122301#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Gunners Exchange Pond, Plymouth">Myles SF-Plymouth-Gunners Echange Pond</option>
+                           <option value="MA.MSF.Ply.2007060910#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-inters. of Halfway Pond and Upper College Pond Rd.">Myles SF-Plymouth-Halfway Pond/Upper College Pond Rd.</option>
+                           <option value="MA.MSF.Ply.200608521#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth, Hooper Pond">Myles SF-Plymouth-Hooper Pd.</option>
+                           <option value="MA.MSF_Pond.Plm.2013011802#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Hooper Pond and vivinity, Plymouth">Myles SF-Plymouth-Hooper Pond and vic.</option>
+                           <option value="MA.MSF.Ply.77186480#Myles Standish State Forest, Plymouth#Kamesit Way and vicinity, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Kamesit.</option>
+                           <option value="MA.MSF_Pond.Ply.20120930008#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Little College Pond, Plymouth">Myles SF-Plymouth-Little College Pond</option>
+                           <option value="MA.MSF.Ply.48229408#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Little Widgeon Pond, Plymouth">Myles SF-Plymouth-Little Widgeon Pond</option>
+                           <option value="MA.MSF.Ply.2012100802#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond W of Little Widgeon Pond, Plymouth">Myles SF-Plymouth-Little Widgeon Pond #1 (Unnamed W)</option>
+                           <option value="MA.MSF.Ply.2012100801#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond SW of Little Widgeon Pond, Plymouth">Myles SF-Plymouth-Little Widgeon Pond #2 (Unnamed W, Rhynchospora)</option>
+                           <option value="MA.MSF.Ply.53085357#Myles Standish State Forest, Plymouth#Myles Standish State Forest (Lower College Pond Rd.), Plymouth">Myles SF-Plymouth-Lower College Pond Rd.</option>
+                           <option value="MA.MSF.Ply.200611009#Myles Standish State Forest, Plymouth#Maple Springs Rd., Myles Standish St Forest, Plymouth">Myles SF-Plymouth-Maple Springs Rd.</option>
+                           <option value="MA.MSF_Pond.Ply.20120930009#Myles Standish State Forest, Plymouth#Myles Standish State Forest, New Grassy Pond, Plymouth">Myles SF-Plymouth-New Grassy Pond</option>
+                           <option value="MA.MSF.Ply.17740747#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-New Long Pond">Myles SF-Plymouth-New Long Pond</option>
+                           <option value="MA.MSF.Ply.200607273#Myles Standish State Forest, Plymouth#Myles Standish St Forest, Webster Springs Road, Plymouth">Myles SF-Plymouth-Plymouth Webster Springs Rd.</option>
+                           <option value="MA.MSF_Pond.Ply.20120930001#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #1 W of College Pond, Plymouth">Myles SF-Plymouth-Pond 1 (W of College)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930002#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #2 opposite Federal Pond Rd., Plymouth">Myles SF-Plymouth-Pond 2 (opp. Fed. Pond Rd.)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930003#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #3 opposite W Crawford Rd., Plymouth">Myles SF-Plymouth-Pond 3 (opp. W Crawford Rd.)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930004#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #4 ('Military', W of L. College Pond Rd.), Plymouth">Myles SF-Plymouth-Pond 4 (Military)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930005#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #5 ('Rhynchospora', E of L. College Pond Rd.), Plymouthh">Myles SF-Plymouth-Pond 5 (Rhynchospora)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930006#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Torrey Pond, Plymouth">Myles SF-Plymouth-Pond 6 (Torrey Pond)</option>
+                           <option value="MA.MSF_Pond.Ply.20120930007#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Unnamed Pond #7 ('Lycopodiella') E of Torrey Pond, Plymouth">Myles SF-Plymouth-Pond 7 (Lycopodiella/East of Torrey Pond)</option>
+                           <option value="MA.MSF_Pond.Ply.2013082001#Manters Hole, Myles Standish State Forest, Plymouth#Manters Hole, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Pond Manters Hole</option>
+                           <option value="MA.MSF_Pond.Ply.2013082356#Myles Standish State Forest, Plymouth#Sly Ponds, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Pond Sly Ponds</option>
+                           <option value="MA.MSF_Pond.Ply.2013071609#Myles Standish State Forest, Plymouth#Unnamed S of SE Rd. Cachalot, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Pond Unnamed S of SE Rd. Cachalot</option>
+                           <option value="MA.MSF_Pond.Ply.2013091709#Myles Standish State Forest, Plymouth#Wings Hole Pond, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Pond: Wings Hole</option>
+                           <option value="MA.MSF.Ply.2014092903#Myles Standish State Forest, power line near Rocky Pond, Plymouth#Myles Standish State Forest, Plymouth - Power line near Rocky Pond">Myles SF-Plymouth-Power line near Rocky Pond</option>
+                           <option value="MA.MSF.Ply.200611007#Myles Standish State Forest, Plymouth#Myles Standish St Forest, Powerline NE of East Head Reservoir, Plymouth">Myles SF-Plymouth-Powerline NE of East Head Res.</option>
+                           <option value="MA.MSF.Ply.17660045#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Plymouth - Rocky Pond">Myles SF-Plymouth-Rocky Pond</option>
+                           <option value="MA.MSF.Ply.2013100901#Sawpit, Myles Standish State Forest, Plymouth#Sawpit, Myles Standish State Forest, Plymouth">Myles SF-Plymouth-Sawpit</option>
+                           <option value="MA.MSF.Ply.20060852#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth-Snake Hill Rd">Myles SF-Plymouth-Snake Hill Rd</option>
+                           <option value="MA.MSF.Ply.200608802#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-South Line Rd">Myles SF-Plymouth-South Line Rd</option>
+                           <option value="MA.MSF.Ply.200608806#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth Southeast Line Rd.">Myles SF-Plymouth-Southeast Line Rd.</option>
+                           <option value="MA.MSF.Ply.201203221#Myles Standish State Forest, Plymouth#Myles Standish St F, Plymouth - Southwest Line Rd. and vicinity">Myles SF-Plymouth-Southwest Line Rd. and vic.</option>
+                           <option value="MA.MSF.Ply.17367555#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Three-Cornered Pond Rd. (E)">Myles SF-Plymouth-Three-Cornered Pond Rd. (E)</option>
+                           <option value="MA.MSF.Ply.17367229#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Three-Cornered Pond Rd. (W)">Myles SF-Plymouth-Three-Cornered Pond Rd. (W)</option>
+                           <option value="MA.MSF.Ply.2007060914#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Plymouth: Three-Cornered/Round Pond">Myles SF-Plymouth-Three-Cornered/Round Pond</option>
+                           <option value="MA.MSF.Ply.2013011001#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Torrey Pond Rd., Plymouth">Myles SF-Plymouth-Torrey Pond Rd.</option>
+                           <option value="MA.MSF.Ply.17741063#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Unnamed Pond SW of New Long Pond">Myles SF-Plymouth-Unnamed Pond SW of New Long Pond</option>
+                           <option value="MA.MSF.Ply.20060853#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Upper College Pond Rd">Myles SF-Plymouth-Upper College Pond Rd</option>
+                           <option value="MA.MSF_Pond.Ply.20160830009#Myles Standish State Forest, Plymouth#Myles Standish State Forest, Widgeon Pond, Plymouth">Myles SF-Plymouth-Widgeon Pond</option>
+                           <option value="MA.MSF.Ply.2007060909#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-between New Long Pond and Upper College Pond Rd.">Myles SF-Plymouth-betw. New Long Pond and Upper College Pond Rd.</option>
+                           <option value="MA.MSF.Ply.200608810#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-bike path betw. East Head Res. and Upper College Pond Rd.">Myles SF-Plymouth-bike path 1</option>
+                           <option value="MA.MSF.Ply.2007060908#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-inters. Upper College Pond / Fearing Pond Rd.">Myles SF-Plymouth-inters. Upper College Pond / Fearing Pond Rd.</option>
+                           <option value="MA.MSF.Ply.200806151#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-off Alden Rd.">Myles SF-Plymouth-off Alden Rd.</option>
+                           <option value="MA.MSF.Ply.20070609385#Myles Standish State Forest, power line along Alden Rd., Plymouth#Myles Standish State Forest, power line along Alden Rd., Plymouth">Myles SF-Plymouth-power line along Alden Rd</option>
+                           <option value="MA.MSF.Ply.2012101001#Myles Standish State Forest, Plymouth#Myles Standish State Forest, powerline near Federal Pond, Plymouth">Myles SF-Plymouth-powerline near Federal Pond</option>
+                           <option value="MA.MSF.Ply.2007060907#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-wooded swamp at N bank of East Head Reservoir">Myles SF-Plymouth-wooded swamp at N bank of East Head Reservoir</option>
+                           <option value="MA.MSF.Ply.67849869#Myles Standish State Forest, Plymouth#Eastern Myles Standish State Forest, Plymouth">Myles SF-Plymouth: Eastern</option>
+                           <option value="MA.MSF.Car.2016092402#Myles Standish State Forest, Carver#Myles Standish St F-Carver-Three-Cornered Pond Rd. W / Musquash Rd.">Myles Standish SF-Carver-Three-Cornered Pond Rd. W / Musquash Rd.</option>
+                           <option value="MA.MSF.Ply.2013082103#East Line Rd., Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-East Line Rd.">Myles Standish SF-Plymouth-East Line Rd.</option>
+                           <option value="MA.MSF.Ply.2013071201#Myles Standish State Forest, Plymouth#Myles Standish St F-Plymouth-Haynes Rd.">Myles Standish SF-Plymouth-Haynes Rd.</option>
+                           <option value="MA.MSF.Ply.2013082102#Priscilla Rd., Myles Standish State Forest, Plymouth#Priscilla Rd., Myles Standish State Forest, Plymouth">Myles Standish SF-Plymouth-Priscilla Rd.</option>
+                           <option value="MA.Midd.Arl.2016123011#Mystic River Reservation, Arlington#Mystic River Reservation, Arlington">Mystic River Reservation, Arlington</option>
+                           <option value="MA.Bri.Tau.40364099#N of Municipal Golf Course, Taunton#N of Municipal Golf Course, Taunton">N of Municipal Golf Course, Taunton</option>
+                           <option value="NA.NA.NA#N/A (herbarium)#N/A (herbarium)">N/A (herbarium)</option>
+                           <option value="NH.Mer.Nlo.200607011#Philbrick-Cricenti Quaking Bog, New London, NH#Philbrick-Cricenti Quaking Bog, New London, NH">NH: Philbrick-Cricenti Qua.Bog, New London</option>
+                           <option value="MA.Nan.Nnt#Nantucket#Nantucket">Nantucket</option>
+                           <option value="MA.Nan.Nnt.2014060101#Nantucket#Stanford Farm/Ram Pasture, Nantucket">Nantucket: Stanford Farm/Ram Pasture</option>
+                           <option value="MA.Midd.Nat.2011070100#Rt. 9, Natick#Rt. 9, Natick">Natick: Rt. 9</option>
+                           <option value="MA.Nrf.Nee#Needham#Needham">Needham generic</option>
+                           <option value="MA.Nrf.Nee.200607152#Kendrick St., Needham#Kendrick St., Needham, Cutler Pk border">Needham.Kendrick, N Cut-PK</option>
+                           <option value="MA.Nrf.Nee.2013120701#Needham#Claxton Field, Needham">Needham: Claxton Field</option>
+                           <option value="MA.Nrf.Nee.2014041201#Ridge Hill Reservation, Needham#Ridge Hill Reservation, Needham">Needham: Ridge Hill Res.</option>
+                           <option value="MA.Nrf.Nee.40363670#near Echo Bridge, Needham#Needham: near Echo Bridge">Needham: near Echo Bridge</option>
+                           <option value="MA.Suf.Bos.2014050401#Neponset R., Hyde Park, Boston#Neponset R., Hyde Park">Neponset R., Hyde Park</option>
+                           <option value="MA.Bri.Nbd.2013101901#Acushnet Cedar Swamp State Reservation, New Bedford#Acushnet Cedar Swamp State Reservation, New Bedford">New Bedford: Acushnet Cedar Swamp SR</option>
+                           <option value="MA.Bri.Nbd.2014042501#Brooklawn Park, New Bedford#Brooklawn Park, New Bedford">New Bedford: Brooklawn Park</option>
+                           <option value="MA.Bri.Nbd#New Bedford#New Bedford">New Bedford: generic</option>
+                           <option value="NH.xxx.xxx.18521974#New Hampshire#New Hampshire">New Hampshire</option>
+                           <option value="NH.xxx.xxx.2013122101#Ossepee bog, New Hampshire#Ossepee bog, New Hampshire">New Hampshire: Ossepee bog</option>
+                           <option value="MA.Mid.Nwt.200608900#Newton#Newton Free Library parking lot">Newton Free Library parking lot</option>
+                           <option value="MA.Mid.Nwt.200609100#Newton#Newton Highlands T-station">Newton Highlands T-station</option>
+                           <option value="MA.Mid.Nwt.200609502#Newton#Newton, Woodland Golf Club">Newton, Woodland Golf Club</option>
+                           <option value="MA.Mid.Nwt.2006060012#Newton#Newton Highlands Reservation at intersection Circuit Ave / Thurston Rd.">Newton- Highlands-Res-Circuit-Thurston</option>
+                           <option value="MA.Mid.Nwt.200609200#Newton#Newton-Memorial Spaulding Elementary School">Newton-Memorial Spaulding Elementary School</option>
+                           <option value="MA.Mid.Nwt.200609300#Newton#Newton-Newtonville-Walnut St">Newton-Newtonville-Walnut St</option>
+                           <option value="MA.Mid.Nwt.200609500#Newton#Newton-Walnut St opposite Day Middle School">Newton-Walnut St opposite Day Middle School</option>
+                           <option value="MA.Mid.Nwt.200609400#Newton#Newton-off Winchester St">Newton-off Winchester St</option>
+                           <option value="MA.Midd.New.30705479#Kennard Park, Newton#Newton: Kennard Park">Newton: Kennard Pk.</option>
+                           <option value="MA.NWR.Dov.2007060943#Noanet Woods, Dover#Noanet Woods, Dover">Noanet Woods, Dover</option>
+                           <option value="MA.NWR.Dov.2007060602#Noanet Woods, Dover#Noanet Woods, Peabody Trail, Dover">Noanet Woods, Dover: Peabody Trail</option>
+                           <option value="MA.NWR.Dov.2007060942#Noanet Woods, Dover#Noanet Woods, Dover: northern wetland at Noanet Brook">Noanet Woods, Dover: northern wetland at Noanet Brook</option>
+                           <option value="MA.NWR.Dov.2007060604#Noanet Woods Res., Dover#Noanet Woods Res., wetland at origin of Noanet Brook, Dover">Noanet Woods, Dover: wetland at Noanet Brook origin</option>
+                           <option value="MA.Ber.Noa#North Adams#North Adams">North Adams generic</option>
+                           <option value="MA.Bri.Nta.2014051001#World War I Memorial Park, North Attleboro#World War I Memorial Park, North Attleboro">North Attleboro: World War I Memorial Park</option>
+                           <option value="MA.Nor.Ded.2021040802#Northeastern University Campus, Dedham#Northeastern University Campus, Dedham">Northeastern University Campus, Dedham</option>
+                           <option value="MA.Frn.Nro.202105181#Northfield State Forest, Northfield#Northfield State Forest, Northfield">Northfield State Forest, Northfield</option>
+                           <option value="MA.Frn.Nro#Northfield#Northfield">Northfield generic</option>
+                           <option value="MA.Plm.Nrw.50925753#Jakobs Pond, Norwell#Jakobs Pond, Norwell">Norwell: Jakobs Pond</option>
+                           <option value="MA.Plm.Nrw.20190516#Norris Reservation, Norwell#Norris Reservation, Norwell">Norwell: Norris Reservation</option>
+                           <option value="MA.Plm.Nrw.2019053#Stetson Meadows, Norwell#Stetson Meadows, Norwell">Norwell: Stetson Meadows</option>
+                           <option value="MA.Nrf.Nrd#Norwood#Norwood">Norwood generic</option>
+                           <option value="MA.Nrf.Nor.2013022803#Industrial Park, Norwood#Norwood-Industrial Park">Norwood-Industrial Park</option>
+                           <option value="MA.Nrf.Nor.200609800#Purgatory Swamp, Norwood#Norwood-Purgatory Swamp">Norwood-Purgatory Swamp</option>
+                           <option value="MA.Nrf.Nor.200609900#Norwood#Norwood-University Ave-wet meadow behind offices">Norwood-University Ave-wet meadow behind offices</option>
+                           <option value="MA.Nrf.Wey.202106262#Off Pond Meadow Park, Weymouth#Off Pond Meadow Park, Weymouth">Off Pond Meadow Park, Weymouth</option>
+                           <option value="MA.Plm.Pem.50925596#Herring Run, Little Pudding Brook, Pembroke#Herring Run, Little Pudding Brook, Pembroke">Pembroke: Herring Run, Little Pudding Brook </option>
+                           <option value="MA.Plm.Pem.50925487#Hobomock Pond, Pembroke#Hobomock Pond, Pembroke">Pembroke: Hobomock Pond</option>
+                           <option value="MA.Plm.Pem.2020102402#Misty Meadows Conservation Area, Pembroke#Misty Meadows Conservation Area, Pembroke">Pembroke: Misty Meadows CA</option>
+                           <option value="MA.Plm.Pem.2020102401#Willow Brook Farm Preserve, Pembroke#Willow Brook Farm Preserve, Pembroke">Pembroke: Willow Brook Farm Pr.</option>
+                           <option value="MA.Plm.Pem#Pembroke#Pembroke">Pembroke: generic</option>
+                           <option value="MA.Wor.Pet.2007060946#Petersham#Petersham: Federated Women Club SF">Petersham: Federated Women Club SF</option>
+                           <option value="MA.Wor.Pet.2007060947#Harvard Forest, Petersham#Petersham: Harvard Forest">Petersham: Harvard Forest</option>
+                           <option value="MA.Ber.Pit.2011111110#Pittsfield#Pittsfield, Arboretum">Pittsfield, Arboretum</option>
+                           <option value="MA.Ber.Pit.2011111111#Southwest of Mud Pond, Pittsfield#Pittsfield, SW of Mud Pond, NE of Richmond Pond, at farm entrance near small unnamed pond, opposite Camp Marion White">Pittsfield, SW of Mud Pond, NE of Richmond Pond, at farm entrance near small unnamed pond</option>
+                           <option value="MA.Ess.Ips.2014081602#Plum Island, Ipswich#Plum Island, Ipswich">Plum Island, Ipswich</option>
+                           <option value="MA.Ess.Nwb.2013091501#Plum Island, Newbury#Plum Island, Newbury">Plum Island, Newbury</option>
+                           <option value="MA.Ess.Nbr.2014081604#Plum Island, Newburyport#Plum Island, Newburyporth">Plum Island, Newburyport</option>
+                           <option value="MA.Ess.Rwl.2014081603#Plum Island, Rowley#Plum Island, Rowley">Plum Island, Rowley</option>
+                           <option value="MA.Plm.Ply.2013061201#Plymoth Plantation, Plymouth#Plymoth Plantation, Plymouth">Plymoth Plantation</option>
+                           <option value="MA.Plm.Ply#Plymouth#Plymouth">Plymouth [generic]</option>
+                           <option value="MA.Plm.Ply.2017072101#Alper Preserve, Plymouth#Alper Preserve, Plymouth">Plymouth-Alper Preserver</option>
+                           <option value="MA.Plm.Ply.2013022003#Bartlett Rd., Plymouth#Plymouth: Bartlett Rd.">Plymouth-Bartlett Rd.</option>
+                           <option value="MA.Plm.Ply.2016072913#Big West Pond, Plymouth#Plymouth:  Big West Pond">Plymouth-Big West Pond</option>
+                           <option value="MA.Plm.Ply.2013102301#Bloody Pond Conservation Area, Plymouth#Bloody Pond Conservation Area, Plymouth">Plymouth-Bloody Pond Cons. Area</option>
+                           <option value="MA.Plm.Ply.201508005#Bloody Pond, Plymouth#Bloody Pond, Plymouth">Plymouth-Bloody-Pond</option>
+                           <option value="MA.Plm.Ply.2017091101#Boot Pond, Plymouth#Plymouth:  Boot Pond">Plymouth-Boot Pond</option>
+                           <option value="MA.Plm.Ply.20110419#Center Hill Rd., Plymouth#Plymouth-Center Hill Rd.">Plymouth-Center Hill Rd.</option>
+                           <option value="MA.Plm.Ply.200610013#Cooks Pond and vicinity, Plymouth#Plymouth, Cooks Pond and vicinity">Plymouth-Cooks Pond and vicinity</option>
+                           <option value="MA.Plm.Ply.2013022802#Plymouth#Plymouth-Digital/Reed Pond">Plymouth-Digital/Reed Pond</option>
+                           <option value="MA.Plm.Ply.201508006#Gallows Pond, Plymouth#Gallows Pond, Plymouth">Plymouth-Gallows-Pond</option>
+                           <option value="MA.Plm.Ply.2016072906#Grassy Pond, Plymouth#Plymouth: Grassy Pond">Plymouth-Grassy Pond</option>
+                           <option value="MA.Plm.Ply.201508007#Grassy Pond, Plymouth#Grassy Pond, Plymouth">Plymouth-Grassy-Pond</option>
+                           <option value="MA.Plm.Ply.20160729030#Great South Pond, Plymouth#Plymouth: Great South Pond">Plymouth-Great South Pond</option>
+                           <option value="MA.Plm.Ply.2016072903#Great South Pond Area, Plymouth#Plymouth: Great South Pond Area">Plymouth-Great South Pond Area</option>
+                           <option value="MA.Plm.Ply.201508003#Halfway Pond, Plymouth#Halfway Pond, Plymouth">Plymouth-Halfway-Pond</option>
+                           <option value="MA.Plm.Ply.2016072901#Harlow Pond, Plymouth#Plymouth: Harlow Pond">Plymouth-Harlow Pond</option>
+                           <option value="MA.Plm.Ply.2016072905#King's Pond, Plymouth#Plymouth: King's Pond">Plymouth-King's Pond</option>
+                           <option value="MA.Plm.Ply.2016072912#Lily Pond, Plymouth#Plymouth:  Lily Pond">Plymouth-Lily Pond</option>
+                           <option value="MA.Plm.Ply.2017072102#Little Herring Pond, Plymouth#Little Herring Pond, Plymouth">Plymouth-Little Herring Pond</option>
+                           <option value="MA.Plm.Ply.2016072908#Little Micajah Pond, Plymouth#Plymouth: Little Micajah Pond">Plymouth-Little Micajah Pond</option>
+                           <option value="MA.Plm.Ply.200610000#Little West Pond, Plymouth#Plymouth-Little West Pond">Plymouth-Little West Pond</option>
+                           <option value="MA.Plm.Ply.201508001#Little Long Pond, Plymouth#Little Long Pond, Plymouth">Plymouth-Little-Long-Pond</option>
+                           <option value="MA.Plm.Ply.201508004#Long Pond, Plymouth#Long Pond, Plymouth">Plymouth-Long-Pond</option>
+                           <option value="MA.Plm.Ply.20140607#Plymouth#Plymouth-Old Cemetery.">Plymouth-Old Cemetery</option>
+                           <option value="MA.Plm.Ply.2017072104#Pickerel Pond WildLand Trust Plymouth#Pickerel Pond WildLand Trust, Plymouth">Plymouth-Pickerel Pond WildLand Trust</option>
+                           <option value="MA.Plm.Ply.2013010701#Pine Hills, Plymouth#Pine Hills, Plymouth">Plymouth-Pine Hills</option>
+                           <option value="MA.Plm.Ply.2016072910#Pondlet N of Lunn's Way, Plymouth#Plymouth:  Pondlet N of Lunn's Way">Plymouth-Pondlet N of Lunn's Way</option>
+                           <option value="MA.Plm.Ply.2016072909#Pondlet S of Lunn's Way, Plymouth#Plymouth:  Pondlet S of Lunn's Way">Plymouth-Pondlet S of Lunn's Way</option>
+                           <option value="MA.Plm.Ply.2016072907#Pondlet W of Little Micajah Pond, Plymouth#Plymouth: Pondlet W of Little Micajah Pond">Plymouth-Pondlet W of Little Micajah Pond</option>
+                           <option value="MA.Plm.Ply.2016072902#Reid Pond Preserve, Plymouth#Plymouth: Reid Pond Preserve">Plymouth-Reid Pond Preserve</option>
+                           <option value="MA.Plm.Ply.201508002#Round Pond, Plymouth#Round Pond, Plymouth">Plymouth-Round-Pond</option>
+                           <option value="MA.Plm.Ply.2016072915#South Triangle Pond, Plymouth#Plymouth:  South Triangle Pond">Plymouth-South Triangle Pond</option>
+                           <option value="MA.Plm.Ply.200610003#Plymouth Town Forest#Plymouth Town Forest">Plymouth-TownForest</option>
+                           <option value="MA.Plm.Ply.200610004#Cooks Pond, Plymouth#Plymouth Town Forest, Cooks Pond">Plymouth-TownForest,Cooks Pond</option>
+                           <option value="MA.Plm.Ply.200610002#Plymouth Town Forest#Plymouth Town Forest sand Quarry near Cooks Pond">Plymouth-TownForest,Quarry,nr.Cooks Pd</option>
+                           <option value="MA.Plm.Ply.2016072904#Triangle Pond, Plymouth#Plymouth: Triangle Pond">Plymouth-Triangle Pond</option>
+                           <option value="MA.Plm.Ply.2017072103#Triangle Pond (W of Little Herring Pond), Plymouth#Triangle Pond (W of Little Herring Pond), Plymouth">Plymouth-Triangle Pond (off Little Herring)</option>
+                           <option value="MA.Plm.Ply.2016072911#Whites Pond, Plymouth#Plymouth:  Whites Pond">Plymouth-Whites Pond</option>
+                           <option value="MA.Plm.Ply.201808051#Plymouth#Abandoned cranberry plantation S of Great South Pond, Plymouth">Plymouth: Abandoned cranberry plantation S of GSP</option>
+                           <option value="MA.BDC.Ply.2016090501#Beaver Dam Conservation Area, Plymouth#Beaver Dam Conservation Area, Plymouth">Plymouth: Beaver Dam C.A.</option>
+                           <option value="MA.BDC.Ply.2016090502#Little Island Pond, Beaver Dam Conservation Area, Plymouth#Little Island Pond, Beaver Dam Conservation Area, Plymouth">Plymouth: Beaver Dam C.A.: Little Island Pond</option>
+                           <option value="MA.Plm.Ply.60852258#Eel River, Plymouth#Eel River, Plymouth">Plymouth: Eel R.</option>
+                           <option value="MA.Plm.Ply.2012122901#Eel River mouth, Plymouth#Plymouth Eel River mouth">Plymouth: Eel River mouth</option>
+                           <option value="MA.Plm.Ply.2016081901#Emery Preserve, Plymouth#Emery Preserve, Plymouth">Plymouth: Emery Preserve</option>
+                           <option value="MA.Plm.Ply.2013010702#Halfway Pond, Plymouth#Plymouth: Halfway Pond">Plymouth: Halfway Pond</option>
+                           <option value="MA.MSF.Ply.2016052102#North of Myles Standish SF, Plymouth#Immediately N of Myles Standish State Forest, Plymouth">Plymouth: Immediately north of Myles SF-Plymouth</option>
+                           <option value="MA.Plm.Ply.202010144#Indian Brook, Plymouth#Indian Brook, Plymouth">Plymouth: Indian Brook</option>
+                           <option value="MA.Plm.Ply.202010143#Indian Brook Conservation Area, Plymouth#Indian Brook Conservation Area, Plymouth">Plymouth: Indian Brook Cons Area</option>
+                           <option value="MA.Plm.Ply.201405001#Little Herring/Triangle Pond, Plymouth#Little Herring/Triangle Pond, Plymouth">Plymouth: Little Herring/Triangle Pond</option>
+                           <option value="MA.Plm.Ply.202010142#Manomet Recreation Area, Plymouth#Manomet Recreation Area, Plymouth">Plymouth: Manomet Recr. Area</option>
+                           <option value="MA.Plm.Ply.202010141#Playground at Manomet Recreation Area, Plymouth#Playground at Manomet Recreation Area, Plymouth">Plymouth: Manomet Recr. Playground</option>
+                           <option value="MA.Plm.Ply.2012103081#Morton Park, Plymouth#Plymouth, Morton Park">Plymouth: Morton Pk</option>
+                           <option value="MA.Plm.Ply.2016061201#Plymouth#North Triangle Pond, Plymouth">Plymouth: North Triangle Pond</option>
+                           <option value="MA.Plm.Ply.2012110101#Plymouth Long Beach, Plymouth#Plymouth: Plymouth Long Beach">Plymouth: Plymouth Long Beach</option>
+                           <option value="MA.Plm.Ply.2017091701#Plymouth South High School, Plymouth#Plymouth: Plymouth South High and Middle School">Plymouth: Plymouth South School</option>
+                           <option value="MA.Plm_Pond.Ply.2016101601#Plymouth#Pondlet and bog NW Great Island Pond, Plymouth">Plymouth: Pondlet and bog NW Great Island Pond</option>
+                           <option value="MA.Plm.Ply.201808201#Powderhorn Pond, Plymouth#Powderhorn Pond, Plymouth">Plymouth: Powderhorn Pond</option>
+                           <option value="MA.Plm.Ply.2012103092#Savery Pond, Plymouth#Plymouth, Savery Pond">Plymouth: Savery Pond</option>
+                           <option value="MA.Plm.Ply.2012103091#Savery Pond area, Plymouth#Plymouth, Savery Pond Area">Plymouth: Savery Pond Area</option>
+                           <option value="MA.Plm.Ply.2015061301#White Horse Beach, Plymouth#White Horse Beach, Plymouth">Plymouth: White Horse Beach</option>
+                           <option value="MA.Plm.Ply.2015072501#West of Savery Pond, Plymouth#Plymouth, west of Savery Pond">Plymouth: west of Savery Pond</option>
+                           <option value="MA.Nrf.Bra.202106261#Pond Meadow Park, Braintree#Pond Meadow Park, Braintree">Pond Meadow Park, Braintree</option>
+                           <option value="MA.Plm.Hns.2017090901#Poor Meadow Brook Conservation Area, Hanson#Poor Meadow Brook Conservation Area, Hanson">Poor Meadow Brook Conservation Area, Hanson</option>
+                           <option value="MA.Wor.Pri.2018090902#Mt. Wachusett State Res., Princeton#Princeton: Mt. Wachusett State Res.Wa">Princeton: Mt. Wachusett State Res.</option>
+                           <option value="MA.Frn.Nsa.2007060945#Quabbin Reservoir, New Salem#Quabbin Reservoir, New Salem">Quabbin Reservoir, New Salem</option>
+                           <option value="MA.Nrf.Qui.19197042#Nut Island, Quincy#Quincy, Nut Island">Quincy: Nut Island</option>
+                           <option value="MA.Nrf.Qui.2006091001#Quincy#Quincy: Willard St., Shea Rink parking lot">Quincy: Willard St., Shea Rink parking lot</option>
+                           <option value="MA.Nrf.Qui.19196910#Quincy#Quincy: any location">Quincy: any location</option>
+                           <option value="MA.Nrf.Ran.200610900#Randolph#Randolph-home">Randolph home</option>
+                           <option value="MA.Nrf.Ran.200610100#Randolph#Randolph home-back lawn">Randolph home-back lawn</option>
+                           <option value="MA.Nrf.Ran.200610200#Randolph#Randolph home-back lawn-edge of woods">Randolph home-back lawn-edge of woods</option>
+                           <option value="MA.Nrf.Ran.200610300#Randolph#Randolph home-backyard woods">Randolph home-backyard woods</option>
+                           <option value="MA.Nrf.Ran.200610600#Randolph#Randolph home-bed under front windows">Randolph home-bed under front windows</option>
+                           <option value="MA.Nrf.Ran.200610700#Randolph#Randolph home-front lawn-bed">Randolph home-front lawn-bed</option>
+                           <option value="MA.Nrf.Ran.200611402#Randolph#Randolph Center Street">Randolph-Center Street</option>
+                           <option value="MA.Nrf.Ran.200610800#Randolph#Randolph-High St">Randolph-High St</option>
+                           <option value="MA.Nrf.Ran.200611000#Randolph#Randolph-N-Scanion Drive-off Rt 28">Randolph-N-Scanion Drive-off Rt 28</option>
+                           <option value="MA.Nrf.Ran.200611100#Randolph#Randolph-Rt 139 near intersection with Rt 24">Randolph-Rt 139 near intersection with Rt 24</option>
+                           <option value="MA.Nrf.Ran.200611200#Randolph#Randolph-Rt 28">Randolph-Rt 28</option>
+                           <option value="MA.Nrf.Ran.200611400#Randolph#Randolph-Rt 28/128 intersection">Randolph-Rt 28/128 intersection</option>
+                           <option value="MA.Nrf.Ran.200605271#Randolph#Southern Randolph">Randolph-south</option>
+                           <option value="MA.Ess.Glo.20070609315#Ravenswood Park, Gloucester#Ravenswood Park, Gloucester">Ravenswood Park, Gloucester</option>
+                           <option value="MA.Bri.Reh.40364337#SE of Great Meadow Hill, Rehoboth#SE of Great Meadow Hill, Rehoboth">Rehoboth: SE of Great Meadow Hill</option>
+                           <option value="MA.Bri.Reh.40364228#Near Anawan Rock, Rehoboth#Near Anawan Rock, Rehoboth">Rehoboth: near Anawan Rock</option>
+                           <option value="MA.Ber.Ric.2011111113#Nordeen Marsh Heritage Area, Richmond#Richmond, Richmond Pond S shore, Nordeen Marsh Heritage Area">Richmond, Richmond Pond S shore, Nordeen Marsh Heritage Area</option>
+                           <option value="MA.Ber.Ric.2011111112#Richmond Pond, Richmond#Richmond, Richmond Pond W shore">Richmond, Richmond Pond W shore</option>
+                           <option value="MA.Plm.Roc.201709231#Rochester#Rochester">Rochester: Linum site</option>
+                           <option value="MA.Plm.Roc.2007060934#Rochester#Quittacas Pond, Rochester">Rochester: Quittacas Pond</option>
+                           <option value="MA.Plm.Roc#Rochester#Rochester">Rochester: generic</option>
+                           <option value="MA.Plm.Rcl#Rockland#Rockland">Rockland generic</option>
+                           <option value="MA.Plm.Rcl.2018022402#Rockland#Rockland">Rockland: Twin Ponds</option>
+                           <option value="MA.Plm.Rcl.2018022401#Rockland#Rockland">Rockland: Union Point</option>
+                           <option value="MA.Plm.Rcl.2018022403#Rockland#Rockland">Rockland: fields</option>
+                           <option value="MA.Plm.Rcl.2018022404#Town Forest, Rockland#Town Forest, Rockland">Rockland: town forest</option>
+                           <option value="MA.Suf.Bos.200611500#Roslindale, Boston#Roslindale-Forest Hills T station">Roslindale-Forest Hills T station</option>
+                           <option value="MA.Ess.Rwl.2014080901#Nelson Island, Rowley#Parker River National Wildlife Refuge, Nelson Island, Rowley">Rowley: Parker R. NWR: Nelson I.</option>
+                           <option value="MA.Ess.Rwl.2014080902#Rough Meadows Wildlife Sanctuary, Rowley#Rough Meadows Wildlife Sanctuary, Rowley">Rowley: Rough Meadows Sanctuary</option>
+                           <option value="MA.RTS.Rt1.200611600#Rt 128 or Rt 3#Rt 128 or Rt 3">Rt 128 or Rt 3</option>
+                           <option value="MA.RTS.Rt1.200611700#Rt 128-93#Rt 128-93">Rt 128-93</option>
+                           <option value="MA.RTS.Rt1.200611702#Rt 24 (northern part)#Rt 24 (northern part)">Rt 24 (northern part)</option>
+                           <option value="MA.RTS.Rt2.200611800#Rt 28#Rt 28">Rt 28</option>
+                           <option value="MA.Ply_Pond.Ply.20120930010#South Plymouth#Little Rocky Pond, Plymouth">S Plymouth-Little Rocky Pond</option>
+                           <option value="MA.SBR.Bos.2015080401#Bellvue Hill, Stony Brook Reservation, Boston#SBR-Bellvue Hill">SBR-Bellvue Hill</option>
+                           <option value="MA.SBR.Bos.2016020601#Stony Brook Reservation, Boston#SBR-HydePk">SBR-HydePk</option>
+                           <option value="MA.SBR.Bos.20070609122#Stony Brook Reservation, Boston#SBR-HydePk E of E Boundary">SBR-HydePk E of E Boundary</option>
+                           <option value="MA.SBR.Bos.2007060913#Stony Brook Reservation, Boston#SBR-HydePk E of E Boundary, wetland">SBR-HydePk E of E Boundary, wetland</option>
+                           <option value="MA.SBR.Bos.200612000#Stony Brook Reservation, Boston#SBR-HydePk-Bald Knob">SBR-HydePk-Bald Knob</option>
+                           <option value="MA.SBR.Bos.200612100#Stony Brook Reservation, Boston#SBR-HydePk-Dedham Pkwy-weedy hill near parking">SBR-HydePk-Dedham Pkwy-weedy hill near parking</option>
+                           <option value="MA.SBR.Bos.20070609112#Stony Brook Reservation, Boston#SBR-HydePk-S Stony Brook S of Bald Knob">SBR-HydePk-S Stony Brook S of Bald Knob</option>
+                           <option value="MA.SBR.Bos.200612200#Stony Brook Reservation, Boston#SBR-HydePk-S Stony Brook W of Bald Knob">SBR-HydePk-S Stony Brook W of Bald Knob</option>
+                           <option value="MA.SBR.Bos.200612300#Stony Brook Reservation, Boston#SBR-HydePk-Stony Brook P">SBR-HydePk-Stony Brook P</option>
+                           <option value="MA.SBR.Bos.200612400#Stony Brook Reservation, Boston#SBR-Stony Brook">SBR-Stony Brook</option>
+                           <option value="MA.SBR.Bos.200612500#Stony Brook Reservation, Boston#SBR-WRoxb- N of Adams P-unnamed hill">SBR-WRoxb- N of Adams P-unnamed hill</option>
+                           <option value="MA.SBR.Bos.200613200#Stony Brook Reservation, Boston#SBR-WRoxb-E Boundary entrance">SBR-WRoxb-E Boundary entrance</option>
+                           <option value="MA.SBR.Bos.200613500#Stony Brook Reservation, Boston#SBR-WRoxb-NE of Turtle Pond">SBR-WRoxb-NE of Turtle Pond</option>
+                           <option value="MA.SBR.Bos.200613900#Stony Brook Reservation, Boston#SBR-WRoxb-NW-Johnson P">SBR-WRoxb-NW-Johnson P</option>
+                           <option value="MA.SBR.Bos.200614000#Stony Brook Reservation, Boston#SBR-WRoxb-NW-Lawrence P">SBR-WRoxb-NW-Lawrence P</option>
+                           <option value="MA.SBR.Bos.200614100#Stony Brook Reservation, Boston#SBR-WRoxb-NW-Milkweed Hill">SBR-WRoxb-NW-Milkweed Hill</option>
+                           <option value="MA.SBR.Bos.200613800#Stony Brook Reservation, Boston#SBR-WRoxb-NW-artificial hill NW of Johnson P">SBR-WRoxb-NW-artificial hill NW of Johnson P</option>
+                           <option value="MA.SBR.Bos.200614200#Stony Brook Reservation, Boston#SBR-WRoxb-Turtle Pond with brooks">SBR-WRoxb-Turtle Pond with brooks</option>
+                           <option value="MA.SBR.Bos.200614300#Stony Brook Reservation, Boston#SBR-WRoxb-Turtle Pond-N Brook">SBR-WRoxb-Turtle Pond-N Brook</option>
+                           <option value="MA.SBR.Bos.200613300#Stony Brook Reservation, Boston#SBR-WRoxb-immediate NW of res-weedy area">SBR-WRoxb-immediate NW of res-weedy area</option>
+                           <option value="MA.SBR.Bos.200612700#Stony Brook Reservation, Boston#SBR-WRoxb/HydePk E Boundary">SBR-WRoxb/HydePk E Boundary</option>
+                           <option value="MA.SBR.Bos.200612800#Stony Brook Reservation, Boston#SBR-WRoxb/HydePk Overlook P">SBR-WRoxb/HydePk Overlook P</option>
+                           <option value="MA.SBR.Bos.200612600#Stony Brook Reservation, Boston#SBR-WRoxb/HydePk border-Adams P">SBR-WRoxb/HydePk border-Adams P</option>
+                           <option value="MA.SBR.Bos.200613000#Stony Brook Reservation, Boston#SBR-WRoxb/HydePk-unspecified location">SBR-WRoxb/HydePk-unspecified location</option>
+                           <option value="MA.SBR.Bos#Stony Brook Reservation, Boston#Stony Brook Reservation, Boston">SBR-generic</option>
+                           <option value="MA.Bar.San#Sandwich#Sandwich">Sandwich, generic</option>
+                           <option value="MA.Mid.Wak.20070609362#Saugus R., Wakefield#Saugus R., Wakefield">Saugus R., Wakefield</option>
+                           <option value="MA.Plm.Sci#Scituate#Scituate">Scituate generic</option>
+                           <option value="MA.Plm.Sci.2016122601#Driftway Rd., Scituate#Driftway Rd., Scituate">Scituate: Driftway Rd.</option>
+                           <option value="MA.Plm.Sci.2017050401#Conservation Park at Driftway, Scituate#Scituate: Driftway Rd. / Conservation Park">Scituate: Driftway/Conservation Park</option>
+                           <option value="MA.Bar.San.2021041001#Scusset Beach State Reservation, Sandwich#Scusset Beach State Reservation, Sandwich">Scusset Beach State Reservation, Sandwich</option>
+                           <option value="MA.Nrf.Bor.2017052702#Bluff Hill, Moose Hill Wildlife Sanctuary, Sharon#Bluff Hill, Moose Hill Wildlife Sanctuary, Sharon">Sharon: Moose Hill Sanct.: Bluff Hill</option>
+                           <option value="MA.Nrf.Bor.2017052701#Moose Hill Wildlife Sanctuary, Sharon#Moose Hill Wildlife Sanctuary, Sharon">Sharon: Moose Hill Sanctuary</option>
+                           <option value="MA.Nrf.Bor.2017052703#Moose Hill Street, Sharon#Moose Hill Street, Sharon">Sharon: Moose Hill Street</option>
+                           <option value="MA.Ber.Shf.2011111104#Bartholomews Cobble, Sheffield#Sheffield, Bartholomews Cobble">Sheffield, Bartholomews Cobble</option>
+                           <option value="MA.Ber.Shf.2011111109#Berkshire School Rd., Sheffield#Sheffield, Berkshire School Rd.">Sheffield, Berkshire School Rd.</option>
+                           <option value="MA.Ber.Shf.2011111107#Foley Rd., Sheffield#Sheffield, Foley Rd.">Sheffield, Foley Rd.</option>
+                           <option value="MA.Ber.Shf.2011111108#Foley Rd./Salisbury Rd. intersection, Sheffield#Sheffield, Foley Rd., Salisbury Rd. intersect.">Sheffield, Foley Rd., Salisbury Rd. intersect.</option>
+                           <option value="MA.Ber.Shf.2011111105#Mt. Everett State Reservation, Sheffield#Sheffield, Mt. Everett State Res.">Sheffield, Mt. Everett State Res.</option>
+                           <option value="MA.Ber.Shf.2011111106#Schenob Brook Fen, Sheffield#Sheffield, Schenob Brook Fen (Kelsey Rd., roadside at Dry Brook)">Sheffield, Schenob Brook Fen (Kelsey Rd., roadside at Dry Brook)</option>
+                           <option value="MA.Wor.Shr.20070609311#Town Forest, Shrewsbury#Town Forest, Shrewsbury">Shrewsbury, Town Forest</option>
+                           <option value="MA.Ply.Ply.20120930011#South Plymouth#South Plymouth, Plymouth">South Plymouth</option>
+                           <option value="MA.Ham.SPR.76034521#Springfield#Springfield">Springfield</option>
+                           <option value="MA.Wor.Ste.2007060940#Sterling#Sterling: old quarry">Sterling: old quarry</option>
+                           <option value="MA.Ber.Stc.2011111101#Rt. 7, Stockbridge#Stockbridge: Rt. 7, roadside at Agawam Lake WMA border">Stockbridge: Rt. 7, roadside at Agawam Lake WMA border</option>
+                           <option value="MA.Nrf.Stg.22233853#Bird Street Conservation Area, Stoughton#Bird Street Conservation Area, Stoughton">Stoughton: Bird Street Conservation Area</option>
+                           <option value="MA.Midd.Sud.25345811#Allowance Brook floodplain, Sudbury#Allowance Brook floodplain, Sudbury">Sudbury: Allowance Brook floodplain</option>
+                           <option value="MA.Midd.Sud.2016043001#Assabet River NWR, Sudbury#Assabet River NWR, Sudbury">Sudbury: Assabet R. NWR</option>
+                           <option value="MA.Bri.Tau#Taunton#Taunton">Taunton generic</option>
+                           <option value="MA.Bri.Tau.40363968#Three-Mile Brook, Taunton#Three-Mile Brook, Taunton">Three-Mile Brook, Taunton</option>
+                           <option value="MA.TDM_WEST.Ply.2013022041#Beaver Dam Rd., Tidmarsh Farms West, Plymouth#Tidmarsh Farms West, Plymouth [Beaver Dam Rd.]">Tidmarsh Farms West, Plymouth [Beaver Dam Rd.]</option>
+                           <option value="MA.TDM_VIC.Ply#Tidmarsh Farms vicinity, Plymouth#Tidmarsh Farms vicinity">Tidmarsh Farms vicinity [generic]</option>
+                           <option value="MA.TDM_VIC.Ply.2015050002#Tidmarsh Farms vicinity, Plymouth#Tidmarsh Farms vicinity, Plymouth [bog #2]">Tidmarsh Farms vicinity, Plymouth [bog #2]</option>
+                           <option value="MA.TDM_VIC.Ply.2015050003#Tidmarsh Farms vicinity, Plymouth#Tidmarsh Farms vicinity, Plymouth [bog #3]">Tidmarsh Farms vicinity, Plymouth [bog #3]</option>
+                           <option value="MA.TDM.Ply.201110046#Beaver Dam Brook, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [Beaver Dam Brook]">Tidmarsh Farms, Plymouth [Beaver Dam Brook]</option>
+                           <option value="MA.TDM.Ply.201302204#Beaver Dam Rd., Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [Beaver Dam Rd.]">Tidmarsh Farms, Plymouth [Beaver Dam Rd.]</option>
+                           <option value="MA.TDM.Ply.201110050#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [Hudsonia/C.dumosum site]">Tidmarsh Farms, Plymouth [H.tomentosa/C.dumosum]</option>
+                           <option value="MA.TDM.Ply.201302021#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [Mars]">Tidmarsh Farms, Plymouth [Mars]</option>
+                           <option value="MA.TDM_WEST.Ply.201302206#Pine Hills, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [Pine Hills]">Tidmarsh Farms, Plymouth [Pine Hills]</option>
+                           <option value="MA.TDM.Ply.2015050001#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [bog #1] ">Tidmarsh Farms, Plymouth [bog #1]</option>
+                           <option value="MA.TDM.Ply.201110048#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [dam]">Tidmarsh Farms, Plymouth [dam]</option>
+                           <option value="MA.TDM.Ply.201110047#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [ditch]">Tidmarsh Farms, Plymouth [ditch]</option>
+                           <option value="MA.TDM.Ply.201110045#Drained pond, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [drained pond]">Tidmarsh Farms, Plymouth [drained pond]</option>
+                           <option value="MA.TDM.Ply.201201311#Mixed forest, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [forest]">Tidmarsh Farms, Plymouth [forest]</option>
+                           <option value="MA.TDM.Ply.#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [generic]">Tidmarsh Farms, Plymouth [generic]</option>
+                           <option value="MA.TDM.Ply#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [generic]">Tidmarsh Farms, Plymouth [generic]</option>
+                           <option value="MA.TDM.Ply.201110041#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [newly abandoned cranberry plantation]">Tidmarsh Farms, Plymouth [newly abandoned cranberry plantation]</option>
+                           <option value="MA.TDM.Ply.2015123101#Nursery Production, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [nursery]]">Tidmarsh Farms, Plymouth [nursery production]</option>
+                           <option value="MA.TDM.Ply.2015123110#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [nursery]]">Tidmarsh Farms, Plymouth [nursery wild]</option>
+                           <option value="MA.TDM.Ply.201110042#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [old cranberry bog]">Tidmarsh Farms, Plymouth [old cranberry bog]</option>
+                           <option value="MA.TDM.Ply.201302202#Open wetland, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [open wetland]">Tidmarsh Farms, Plymouth [open wetland]</option>
+                           <option value="MA.TDM.Ply.201301111#Red maple swamp, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [red maple swamp]">Tidmarsh Farms, Plymouth [red maple swamp]</option>
+                           <option value="MA.TDM.Ply.201110043#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [roadside]">Tidmarsh Farms, Plymouth [roadside]</option>
+                           <option value="MA.TDM.Ply.201110044#Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [sand pit]">Tidmarsh Farms, Plymouth [sand pit]</option>
+                           <option value="MA.TDM.Ply.201110049#The Arm, Tidmarsh Farms, Plymouth#Tidmarsh Farms, Plymouth [the Arm]">Tidmarsh Farms, Plymouth [the Arm]</option>
+                           <option value="MA.Ess.Top.20949461#Topsfield#Topsfield">Topsfield</option>
+                           <option value="MA.Mid.Med.2018123001#Torbert MacDonald State Park, Medford#Torbert MacDonald State Park, Medford">Torbert MacDonald State Park, Medford</option>
+                           <option value="MA.Wor.Boy.2007060938#Wachusett Reservoir, Boylston#Wachusett Reservoir, Boylston">Wachusett Reservoir, Boylston</option>
+                           <option value="MA.Mid.Con.200607151#Walden Pond, Concord#Walden Pond, Concord">Walden Pond-Concord</option>
+                           <option value="MA.Mid.Lin.201809111#Walden Pond, Lincoln#Walden Pond, Lincoln">Walden Pond-Lincoln</option>
+                           <option value="MA.Plm.Bro.20070609314#Brockton#Waldo Lake, D.W. Field Pk., Brockton">Waldo Lake, D.W. Field Pk., Brockton</option>
+                           <option value="MA.Plm.War.200608816#North Wareham#Wareham-High-voltage line near Maple Spring Rd">Wareham-High-voltage-line-Maple Spring Rd</option>
+                           <option value="MA.Plm.War.2006088121#Maple Spring Road, Wareham#Wareham, Maple Spring Road">Wareham-Maple Spring Rd</option>
+                           <option value="MA.Plm.War.200608814#North Wareham#Warehamv Pond near Maple Spring Road">Wareham-Pond near Maple Spring Rd</option>
+                           <option value="MA.Plm.War.200608818#Off Maple Spring Rd, Wareham#Wareham-off Maple Spring Rd">Wareham-off Maple Spring Rd</option>
+                           <option value="MA.Plm.War.2011060100#Agawam River Trail, Wareham#Agawam River Trail, Wareham">Wareham: Agawam R. Trail</option>
+                           <option value="MA.Plm.War.18434257#Charge Pond Rd., Wareham#Charge Pond Road, Wareham">Wareham: Charge Pond Rd.</option>
+                           <option value="MA.Plm.War.2017043001#Douglas S. Westgate Conservation Area, Wareham#Douglas S. Westgate Conservation Area, Wareham">Wareham: Douglas S. Westgate Conservation Area</option>
+                           <option value="MA.Plm.War.201808261#Horseshoe Pond / Conant Hill and vic., Wareham#Horseshoe Pond / Conant Hill and vic., Wareham">Wareham: Horseshoe Pond / Conant Hill and vic.</option>
+                           <option value="MA.Plm.War.2014120303#Onset Beach, Wareham#Wareham: Onset Beach">Wareham: Onset Beach</option>
+                           <option value="MA.Plm.War.2014102901#Onset Junction, Wareham#Onset Junction, Wareham">Wareham: Onset Junction</option>
+                           <option value="MA.Plm.War.2008020983#Wareham#Wareham: Tihonet Pond, Wankinco River">Wareham: Tihonet Pond, Wankinco River</option>
+                           <option value="MA.Plm.War.20070609312#Wareham#Wareham: Tihonet Rd.">Wareham: Tihonet Rd.</option>
+                           <option value="MA.Plm.War#Wareham#Wareham">Wareham: generic</option>
+                           <option value="MA.Plm.War.20110601001#Industrial site off Minot Ave., Wareham#Industrial site off Minot Ave., Wareham">Wareham: industrial area</option>
+                           <option value="MA.Midd.Way.30692149#Great Meadows, Wayland#Wayland: Great Meadows National Wildlife Refuge">Wayland: Great Meadows MWR</option>
+                           <option value="MA.Nrf.Wel.30704931#Kelly Park, Wellesley#Wellesley, Kelly Park Conservaton Area">Wellesley: Kelly Park Cons. Area</option>
+                           <option value="MA.Nrf.Wel.30704352#Wellesley#Office Pk., Charles River, Wellesley">Wellesley: Office Pk., Charles R.</option>
+                           <option value="MA.Bar.Wlf.2014100103#Great Island, Wellfleet#Great Island, Wellfleet">Wellfleet: Great Island</option>
+                           <option value="MA.Bar.Wlf.2014100102#Newcomb Hollow Beach, Wellfleet#Newcomb Hollow Beach, Wellfleet">Wellfleet: Newcomb Hollow Beach</option>
+                           <option value="MA.Bar.Wlf.2014100101#White Crest Beach, Wellfleet#White Crest Beach, Wellfleet">Wellfleet: White Crest Beach</option>
+                           <option value="MA.Wor.Stu.37407541#Wells State Park, Sturbridge#Wells State Park, Sturbridge">Wells State Park, Sturbridge</option>
+                           <option value="MA.Frn.Wen.2007060944#Wendell State Forest, Wendell#Wendell State Forest, Wendell">Wendell State Forest, Wendell</option>
+                           <option value="MA.Wor.Wbl.2007060939#West Boylston#West Boylston: powerline">West Boylston: powerline</option>
+                           <option value="MA.Plm.Wbr.2014082301#West Bridgewater#West Bridgewater: wetland at intersection of Rt. 106/East St">West Bridgewater: Rt. 106/East St.</option>
+                           <option value="MA.Plm.Wbr.2017060302#Fields and meadows off Scotland St., West Bridgewater#Fields and meadows off Scotland St., West Bridgewater">West Bridgewater: fields and meadows off Scotland..</option>
+                           <option value="MA.Duk.Wti#West Tisbury#West Tisbury">West Tisbury</option>
+                           <option value="MA.Bri.Wso.2015090701#Horseneck Beach Reservation, Westport#Horseneck Beach Reservation, Westport">Westport: Horseneck Beach Res.</option>
+                           <option value="MA.Nrf.Wes.200614502#Westwood#Westwood Industrial Park (University Ave/ Rosemont Rd.)">Westwood Industrial Park</option>
+                           <option value="MA.Nrf.Wes.200614400#Purgatory Swamp, Westwood (historic, 1901)#Westwood Purgatory Swamp-historic-1901">Westwood Purgatory Swamp-historic-1901</option>
+                           <option value="MA.Nrf.Wes#Westwood#Westwood generic">Westwood generic</option>
+                           <option value="MA.Nrf.Wes.200614500#Lowell Woods, Westwood#Westwood-Lowell Woods">Westwood-Lowell Woods</option>
+                           <option value="MA.Nrf.Wes.2016013101#Elsa M. Currier Reservation, Westwood#Westwood: Elsa M. Currier Res.">Westwood: Elsa M. Currier Res.</option>
+                           <option value="MA.Nrf.Wey.20070609222#Weymouth Great Pond, Weymouth#Weymouth Gr. Pond E shore">Weymouth Gr. Pond E shore</option>
+                           <option value="MA.Nrf.Wey.200614600#Weymouth Great Pond, Weymouth#Weymouth Gr. Pond NE shore">Weymouth Gr. Pond NE shore</option>
+                           <option value="MA.Nrf.Wey.48331960#Weymouth Great Pond, Weymouth#Weymouth Gr. Pond NW shore, Weymouth">Weymouth Gr. Pond NW shore</option>
+                           <option value="MA.Nrf.Wey.2007060941#Weymouth Great Pond, Weymouth#Weymouth Gr. Pond SE shore">Weymouth Gr. Pond SE shore</option>
+                           <option value="MA.Nrf.Wey.48331629#Weymouth Great Pond, Weymouth#Weymouth Gr. Pond SW shore, Weymouth">Weymouth Gr. Pond SW shore</option>
+                           <option value="MA.Nrf.Wey#Weymouth#Weymouth">Weymouth generic</option>
+                           <option value="MA.Nrf.Wey.200614700#Weymouth#Weymouth-Middle St">Weymouth-Middle St</option>
+                           <option value="MA.Nrf.Wey.2008020981#Abigail Adams Park, Weymouth#Weymouth: Abigail Adams Park">Weymouth: Abigail Adams Park</option>
+                           <option value="MA.Nrf.Wey.2017072601#Great Esker Park, Weymouth#Great Esker Park, Weymouth">Weymouth: Great Esker Park</option>
+                           <option value="MA.Nrf.Wey.2017072602#Osprey Overlook Park, Weymouth#Osprey Overlook Park, Weymouth">Weymouth: Osprey Overlook Park</option>
+                           <option value="MA.Nrf.Wey.16519379#Webb State Park, Weymouth#Weymouth: Webb State Park">Weymouth: Webb State Park</option>
+                           <option value="MA.HMF.Wil.201806301#Bullock Ledge Natural Area, Williamstown#Bullock Ledge Natural Area, Williamstown">Williamstown: Bullock Ledge Natural Area</option>
+                           <option value="MA.Ber.Wil#Williamstown#Williamstown">Williamstown: generic</option>
+                           <option value="MA.Midd.Wmg.49349877#Martins Brook, Wilmington#Martins Brook, Wilmington">Wilmington: Martins Brook</option>
+                           <option value="MA.Nrf.Ded.202001011#Wilson Mountain Reservation, Dedham#Wilson Mountain Reservation, Dedham">Wilson Mt. Res. Dedham</option>
+                           <option value="MA.Ess.Win.2011050600#Winchester#Winchester">Winchester</option>
+                           <option value="MA.Mid.Wob#Woburn#Woburn">Woburn generic</option>
+                           <option value="MA.Mid.Wob.2019100101#Horned Pond Mt., Woburn#Horned Pond Mt., Woburn">Woburn: Horned Pond Mt.</option>
+                           <option value="MA.Mid.Wob.2020091101#Rag Rock Cons. Area, Woburn#Rag Rock Cons. Area and vic., Woburn">Woburn: Rag Rock Cons. Area and vic.</option>
+                           <option value="MA.WSP.Hin.2006090101#Wompatuck State Park, Hingham#Wompatuck State Park, Hingham">Wompatuck State Park, Hingham</option>
+                           <option value="MA.WSP.Nrw.2013022808#Wompatuck State Park, Norwell#Wompatuck State Park, Norwell">Wompatuck State Park, Norwell</option>
+                           <option value="MA.Wor.Wrs.20070609211#Worcester#Worcester: Broad Meadow Brook">Worcester: Broad Meadow Brook</option>
+                        </select>
+                    </span>
+                    <br>
+                {%if irec.notes %}
+				Note (hidden)	<input type="text" value="{{irec.notes}}" name="notes" style="width:50em">
+                {%else%}
+                Note (hidden)	<input type="text" value="" name="notes" style="width:50em">
+                {%endif%}
+				Tags <input type="text" value='{{irec.tags|default_if_none:""}}' name="tags" style="width:40em"><br>
+				IndID <input type="text" value="{{irec.inid}}" name="INID" style="width:50em">
+                PHID={{irec.phid}}
+				GPS = 
+{%if irec.gps %}
+<a target="_blank" href="/photodb/acmemap/{{irec.gps}}/">{{irec.gps}}</a>
+{%endif%}
+                </span><br>
+ <!--               <input type="button" value="mark as planted" onclick="o = this.parentNode;     e = document.createElement('input');     e.setAttribute('name', 'planted');     e.setAttribute('value', 'yes');     e.setAttribute('size', 3);     o.appendChild(e);     "> -->
+Cultivated?
+    <select name="is_planted" id="is_planted">
+        <option value="">unspecified</option>
+{%if irec.is_planted == 'yes' %}
+	<option value="yes" selected="selected" >yes</option>
+{%else%}
+        <option value="yes">yes</option>
+{%endif%}
+{%if irec.is_planted == 'no' %}
+<option value="no" selected="selected">no</option></select>
+{%else%}
+        <option value="no">no</option>
+{%endif%}
+</select>
+[{{irec.is_planted}}]
+
+<b>Copy To:</b>
+<select id="cats" name="cats">
+<option value="vascular">vascular</option>
+<option value="nonvascular">nonvascular</option>
+<option value="animals">animals</option>
+<option value="varia">varia</option>
+</select>
+[<a href='#' onclick="newcat=document.getElementById('cats').value;url=url_copy_to + newcat;w=window.open(url);w.focus;return false"> >>> </a>]
+[<a href='/admin/photodb/vascularimage?q={{imid}}'>django form</a>]
+
+<!-- url='/photodb/copyto/?newcat='+newcat+'&oldcat={{cat}}&spid={{name.pnid}}&imid={{irec.imid}};w=window.open(url);w=window.open(url) -->
+
+
+</form>

@@ -1,0 +1,52 @@
+      <div id="hidden_form" style="display:none">
+         		YET TESTING ONLY::: just press a button and close next window, then wait ... and reload <br><form action="http://www.salicicola.com/cgi-sys/FormMail.cgi" method="POST"><input type="hidden" name="recipient" value="plantgallery@salicicola.com"><input type="hidden" id="subject" name="subject" value=""><input type="hidden" name="redirect" value="http://www.salicicola.com/msg/done.html"><textarea name="message" cols="80" rows="1"></textarea><br><br><input type="submit" value="request missing image via email"></form>
+      </div>
+      <div id="div.feedback_form" style="display:none">
+         <form action="/servlet/FeedbackLogger" method="post" id="feedback_form">
+            <table border="1">
+               <tr>
+                  <td valign="top" nowrap="true">
+                     Submitted by:
+                     
+                  </td>
+                  <td valign="top"><input type="text" name="feedback_form.user" id="feedback_form.user" value=""> 
+                     							  at
+                     							 <input type="text" name="feedback_form.at" id="feedback_form.at" readonly="true" value=""></td>
+               </tr>
+               <tr>
+                  <td valign="top" nowrap="true">
+                     								URL:
+                     							
+                  </td>
+                  <td valign="top"><input size="40" id="feedback_form.url" name="feedback_form.url" type="text" readonly="true" value=""></td>
+               </tr>
+               <tr>
+                  <td valign="top" nowrap="true">
+                     								Image url:
+                     							
+                  </td>
+                  <td valign="top"><input size="40" id="feedback_form.image.url" name="feedback_form.image.url" type="text" readonly="true" value=""></td>
+               </tr>
+               <tr>
+                  <td valign="top" nowrap="true">
+                     								Loading time:
+                     							
+                  </td>
+                  <td valign="top"><input id="feedback_form.loaded" name="feedback_form.loaded" type="text" readonly="true" value=""> milliseconds
+                     							
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top" nowrap="true">
+                     Enter comment:
+                     <br></td>
+                  <td colspan="2" valign="top"><textarea cols="40" rows="8" name="feedback_form.comment" id="feedback_form.comment"></textarea></td>
+               </tr>
+               <tr>
+                  <td valign="top" colspan="2" nowrap="true"><input type="submit" value="Submit">&nbsp;
+                     
+                     <button onClick="window.close()">Close</button></td>
+               </tr>
+            </table>
+         </form>
+</div>

@@ -1,0 +1,29 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function process () {
+			cdate=document.getElementById('date').value;
+            alert("date selected " + cdate);
+            if (cdate) {
+		        day = cdate.replaceAll('-', '');
+                //alert(day)
+			    url = "/photos/rename/" + day + "/"
+			    //alert(url);
+                location.href=url;
+            }
+            else {
+                alert("select valid date");
+            }
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Select day and click process</h2>
+	<div>Files must be in directory matching selected day in format YYYYMMDD and this folder must be in fixed location</div>
+	<form method="GET" action="">
+		<input name="date" id="date" type="date" required />
+		<input value="process" type="button" onclick="process()" />
+	</form>
+</body>
+</html>

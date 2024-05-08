@@ -1,0 +1,87 @@
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="keywords" content="">
+      <title>Salicicola GIS Apps</title>
+      <style type="text/css">
+        body {
+            background-color:#F0FFF0;
+            padding:3px;
+        }
+      </style>
+    </head>
+        <body>
+            <h2>
+                Salicicola GIS App (for local use, not available at salicicola.com)<br/>
+                Tools Currently Available/Enabled:
+            </h2>
+             <ol> <b>Generic tools</b>
+                 <li>Import KML file to the database (<code>gisapp_locality</code> table). 
+                     Tested using GPSVisualizer Sandbox [https://www.gpsvisualizer.com/draw/]:
+                     draw track manually and then download it as KML file 
+                     (closing track will be done automatically).<br/>
+                     KML file should be located at $APP_ROOT/<b>{{SRC_PATH}}</b> folder
+                     and named as LocID, following format MA.[A-Za-z]+.[A-Za-z_]+.\d+ (plus extension .gpx.xml);
+                     append this name (without extensions) to URL: /gis/location/import/kml/,
+                     e.g., /gis/location/import/kml/MA.BHR.Mil.000000 for a file 
+                     MA.BHR.Mil.000000.gpx.xml
+                     Saved record may need additional editing: particularly field <code>name</code> (taken from KML's track attribute).<br/>
+                     <b>Other limitations and bugs</b>: 
+                     [1] Created only for Massachusetts locations and field <code>region</code> will normally contains 'MA',
+                     field <code>subregion</code> will contains town name or list of towns;
+                     [2] area in sq.meters is rounded to ~100 m.sq;
+                     [3] if locality is partially outside Massachusetts, 
+                     <code>region</code> is shown as MA and field <code>subregion</code> will only contain Massachusetts towns. 
+                     [4] a possibility of using files exported from MassMapper is not yet tested.
+                 </li>
+                 <li>
+                     Preparing photos for data-entry: adding LocID and Town to records in {YYYYMMDD}_mapped.gpx file 
+                     (DB must have <code>gisapp_town</code> and optionally <code>gisapp_locality</code> 
+                     record corresponding to coordinates of the photo in *_mapped.gpx file).<br/>
+                     URL should follow format: /gis/update/photos/?day={YYYYMMDD}
+                     where photos should be located at $APP_ROOT/{{SRC_PATH}}/NewPhotos{YY}/{YYYYMMDD}/,
+                     e.g., $APP_ROOT/data/WORK/NewPhotos23/20230920/
+                     <br/>(It should work even if <u>photodb</u> and <u>photos</u> apps, 
+                     needed for data-entry, are not installed.)
+                 </li>
+              </ol>
+              <ol>
+                    <b>Simple Query (Massachusetts only)</b>
+                    <li>
+                        Get Town and if possible location supplying latitude and longitude, e.g.,
+                        /gis/find/42.1/-71.9/
+                    </li>
+                    <li>
+                        Try to get Town and if possible location from recorded photo supplying imageID, e.g., 
+                        /gis/find/20240426olymp0126/
+                    </li>
+              </ol>
+              <ol>
+                    <b>Convertion Utility</b>. Input files must be located at 
+                    $APP_ROOT/<b>data/static/WRK</b> folder and filenames should not contain spaces.
+                    Output files will be created at the same folder, having the same name but other extension:
+                    .kml, or .zip (for shapefile).
+                 <li>
+                     Converting waypoints from GPX to KML file<br/>
+                     /gis/convert/waypoints/kml/{filename}/ (filename without extension ".gpx")
+                 </li>
+                 <li>
+                     Converting track from GPX to KML file<br/>
+                    /gis/convert/track/kml/{filename}/ (filename without extension ".gpx")
+                 </li>
+                 <li>
+                     Converting KML file to ESRI shapefile (compressed):
+                     /gis/convert/kml/shape/{filename}/ (filename without extension ".kml")<br/>
+                </li>
+                <li>
+                     Alternatively use URL like
+                     /gis/download/{from}/{to}/{filename}/ 
+                     (in these cases, output file are temporary and should be automatically deleted.)
+                 </li>
+              </ol>
+            Version: #{{version}} (<i>{{updated}}</i>) alpha<br/>
+            <!--Tested as standalone app running at LinuxMint directly and using docker-compose.
+            For dependencies, see two files in $APP_ROOT (django4): Dockerfile (Python 3, GDAL, Spatialite library) 
+            and requirements.txt (Python libraries).-->
+        </body>
+</html>

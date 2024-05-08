@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="vascular plants, Pteridophytae, ferns, conifers, monocots, Dicotyledonae, Dicots,  Massachusetts, photos, images"/>
+		<title>Salicicola Photo  Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        {% include 'photodb/photos/style.htm' %}
+        {% include 'photodb/photos/script.htm' %}
+	</head>	
+	<!-- onload="show_all()" padding-left: 1.2em; padding-top: 1em; padding-left: 1.2em; padding-top: 1em;   -->
+	<body bgcolor="#F0FFF0" onload="show_all()">
+        {% include 'photodb/photos/header.htm' %}
+        {% load humanize %}
+        {% include 'photodb/photos/head.htm' %}        
+		<div style="padding-left:2.0em; padding-top: 1em; max-width:60em;font-size:90%"> <!-- padding-bottom: 1em; -->
+            {% include 'photodb/photos/subhead.htm' %}
+        </div>
+		{% for group in tree%}
+            {%if group.5 %}
+		        <div style="margin-top:2ex">
+                    <b style="font-size:120%">{{group.0}}</b>
+                    {%if group.0 %}
+					    &nbsp;
+                        <img class="switchview" vspace="0" hspace="0" border="0" onClick="show_hide(this, {{group.3}})" 
+					        src="/static/images/darrow.gif" style="height: 1ex; padding:0; margin:0; border-width:0"/> 
+                    {%endif%}
+                    <div id="{{group.3}}" style="display:none">
+                        {%for fam in group.4 %}
+                            {%if fam.5 %}
+                                <div>
+                                    <b>{{fam.0}}</b>
+
+                                    {%if fam.0 %}
+                                        &nbsp;
+                                        <img class="switchview" vspace="0" hspace="0" border="0" onClick="show_hide(this, {{fam.3}})" src="/static/images/darrow.gif" /> 
+
+{%if fam.6 %}
+  <table border="0" width="100%" style="padding-left:2em;">
+	<tr>
+        <td valign="top" width="25%" style="background-color:#EEEEEE;padding:1ex" title="">Unidentified</td>
+        <td valign="top">
+			{%for photo in fam.6%}
+                <a target="edit" href="/photodb/gallery/view/{{fam.3}}/{{photo.imid}}">
+                    <img alt="{{photo.nr}}" height="100" style="border: 3px solid black;" 
+                        title="{{photo.nr}}: {{photo.imid}} {{photo.location}}" 
+                        src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg"/> 
+                </a>
+            {%endfor%}
+        </td>
+    </tr>
+  </table>
+{%endif%}
+
+                                    {%endif%}
+                                    <div id="{{fam.3}}" style="display:none">
+                                        {%include 'photodb/photos/genera.htm' %}
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+            {%endif%}       
+        {%endfor%}
+        {% include 'photodb/photos/footer.htm' %}
+		<!-- debug: must always be legacy {{legacy}} and items in alphabetic order from views_photos -->
+	</body>
+</html>

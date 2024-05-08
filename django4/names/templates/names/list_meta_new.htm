@@ -1,0 +1,50 @@
+<div style="padding-left:2ex;"> <!-- background-color:yellow -->
+<table border="0">
+  <tr>
+    <td nowrap="true">
+    MA Counties
+    <td>
+	{%for c in tcounties %}
+		<span title="{{c.1}}" style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{c.0}}</span>
+	{%endfor%}
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<span>
+		{%if species.meta.rare %}
+			[<b style="color:green">{{species.meta.rare}}</b>]
+		{%else%}
+			{%if species.meta.invasive %}
+                {%if 'likely' in species.meta.invasive %}
+                    [<b style="color:red">Likely Invasive</b>]
+				{%elif 'Potentially' in species.meta.invasive %}
+                    [<b style="color:red">Potentially Invasive</b>]
+                {%else%}
+                    [<b style="color:red">Invasive</b>]
+				{%endif%}
+			{%elif species.meta.introduced%}
+				[{{species.meta.introduced|title}}]
+			{%else%}
+			{%endif%}
+		{%endif%}
+	    [{{species.meta.status}}]
+	</span>
+    </td>
+    <td>
+	{% with species.meta.counties as list %}
+		{% for i in list.split %}
+                   {%if i == '*'%}
+                        <span style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center"> &nbsp; </span>
+		   {%else%}
+			<span style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{ i }}</span>
+                   {%endif%}
+		{%endfor%}
+	{% endwith %}
+    </td>
+  </tr>
+
+<!-- DELETE in names -->
+</table>
+
+</div>

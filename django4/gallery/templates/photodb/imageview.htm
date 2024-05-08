@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Salicicola Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+		<script language="javascript" type="text/javascript">
+			{% include "photodb/scripts.js" %}
+		</script>
+		<style type="text/css">
+			{% include "photodb/styles.css" %}
+    	</style>
+   </head>
+   <body bgcolor="#F0FFF0" onload="fillForm(); write_info()">
+      <table border="0">
+         <tr>
+            <td>
+               <div id="header" class="header">
+		       {%if authorized %}
+						<span onClick="x='/photodb/identify?url=' + location.href + '&amp;name=' + this.innerHTML;window.open(x);">
+							{%else%}
+							
+			{%endif%}
+{%if legacy %}
+{{name.legacy_parent.sal_latname}} {{name.sal_latname}}
+{%else%}
+<!-- newer -->
+    {%if name.rank == 'species' %}
+                        <i>{{name.upper.latname}} {{name.latname}}</i> <span>{{name.authors}}</span>
+	{%elif name.rank == 'cultivar' %}
+		<i>{{name.upper.latname}} {{name.parent.latname}}</i> {{name.latname}} <span>{{name.authors}}</span>
+	{%elif name.rank == 'variety' %}
+        {%if name.parent.latname == name.latname %}
+            <i>{{name.upper.latname}} {{name.parent.latname}}</i> <span>{{name.authors}}</span> var. <i>{{name.latname}}</i> 
+        {%else%}
+		    <i>{{name.upper.latname}} {{name.parent.latname}}</i> var. <i>{{name.latname}}</i> <span>{{name.authors}}</span>
+        {%endif%}
+	{%elif name.rank == 'subspecies' %}
+        {%if name.parent.latname == name.latname %}
+        <i>{{name.upper.latname}} {{name.parent.latname}}</i> <span>{{name.authors}}</span> ssp. <i>{{name.latname}}</i> 
+        {%else%}
+		<i>{{name.upper.latname}} {{name.parent.latname}}</i> ssp. <i>{{name.latname}}</i> <span>{{name.authors}}</span>
+        {%endif%}
+	{%elif name.rank == 'forma' %}
+		<i>{{name.upper.latname}} {{name.parent.latname}}</i> ssp. <i>{{name.latname}}</i> <span>{{name.authors}}</span>
+	{%else%}
+		 <i>{{name.upper.latname}} {{name.latname}}</i>  <span>{{name.authors}}</span> <!-- happen if hybrid -->
+    {%endif%}
+{%endif%}
+						</span> 
+						<!-- <span>{{name.authors}}</span>  {{irec.authors}}  -->
+                  		&nbsp;&nbsp;&nbsp;&nbsp;									
+                  		<span>
+							<span style="width:15px"></span> 
+							{%if previmg %}
+							{%if legacy %}
+							<a href="/photodb/gallery/view/legacy/{{spid}}/{{previmg}}">
+							{%else%}
+{%if lcid_starts %}
+                            <a href="/photodb/tidmarsh/gallery/view/{{spid}}/{{previmg}}">
+{%else%}
+							<a href="/photodb/gallery/view/{{spid}}/{{previmg}}">
+{%endif%}
+							{%endif%}
+							<img src="/static/images/larrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle">
+							</a>
+                     		{%endif%}
+							&nbsp;
+							<span class="navigation">{{curnum}} &nbsp;of &nbsp; {{total}} &nbsp;</span>
+							{%if nextimg %}
+							{%if legacy %}
+							<a href="/photodb/gallery/view/legacy/{{spid}}/{{nextimg}}"><img src="/static/images/rarrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle"></a>
+							{%else%}
+{%if lcid_starts %}
+<a href="/photodb/tidmarsh/gallery/view/{{spid}}/{{nextimg}}"><img src="/static/images/rarrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle"></a>
+{%else%}
+							<a href="/photodb/gallery/view/{{spid}}/{{nextimg}}"><img src="/static/images/rarrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle"></a>
+{%endif%}
+							{%endif%}
+							{%endif%}
+						</span>
+						{%if authorized %}
+						&nbsp;&nbsp;&nbsp;&nbsp;
+                  		[<span style="font-size:80%" id="att_number">{{irec.nr}} </span><span style="font-size:80%"> (total {{total}} images)  
+                     	<!--												 &nbsp;-&nbsp;
+						 change view: 
+						 <a href="javascript:reload('scaled')">scaled</a>,
+						 <a href="javascript:reload('above')">caption above</a> or
+						 <a href="javascript:reload('below')">below</a>
+						  -->
+					     &nbsp;]
+					     {%endif%}
+                     	</span>
+						<br/>
+						<span style="font-weight:normal">{{name.colnames}}</span> 
+				</div>
+               <div id="caption">
+		       {%if authorized %}
+			   	<span id="{{fid}}.{{spid}}.date" class="date" onClick="edit(this)">{{irec.date}} </span> <!-- FIXME comma in a field -->
+		       {%else%}
+				<span class="date">{{irec.date}}</span>
+		       {%endif%}
+{%if irec.locality %}
+{%if authorized %}
+<span title="{{irec.locality.lcid}}" id="{{fid}}.{{spid}}.common.location" class="locality" onClick="edit(this)">{{irec.locality.public_name}}</span>
+{%else%}
+<span class="locality">{{irec.location}}</span>
+{%endif%}
+{%else%}
+{%if authorized %}
+	<span id="{{fid}}.{{spid}}.locality" class="locality" onClick="edit(this)">{{irec.location}} </span>
+{%else%}
+	<span class="locality">{{irec.location}}</span>
+{%endif%}
+{%endif%}
+{%if authorized %}
+    {% if irec.caption %}
+			   	<div style="max-width: 990px;padding-top:1ex" id="{{fid}}.{{spid}}.note" class="note" onClick="edit(this)">
+					<span >{{irec.caption | safe}}</span></div>
+    {% else %}
+                <div style="padding-top:1ex" id="{{fid}}.{{spid}}.note" class="note" onClick="edit(this)">***</div>
+    {%endif%}
+    {% if user.username == 'AZ' and irec.notes %}    
+    <b>DEBUG Hidden Notes</b>:
+    {{irec.notes}}
+    [<a target="_blank" href="/admin/photodb/vascularimage/?q={{irec.imid}}">edit in django</a>]
+    {%endif%}
+{%else%}
+	{%if irec.caption == '***' %}
+	<div id="{{fid}}.{{spid}}.note" class="note"> &nbsp;</div>
+	{%else%}
+	<div id="{{fid}}.{{spid}}.note" class="note">{{irec.caption | safe}}
+
+	</div>
+	{%endif%}
+{%endif%}
+               </div>
+					{%include 'photodb/forms.htm'%}
+				</td>
+			</tr>
+			<tr>
+				<td><img src="/servlet/GetImage?id={{imid}}"></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+		<table class="footer" border="0" width="100%">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center">
+						<hr/>
+                        [<a target="_blank" href="/bugs/entry/">report bug</a>]
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><a href="/salicicola/"><b>Salicicola</b></a></td>
+					<td align="right">
+						<span style="font-size:75%">
+							© AZ  IK 2005-2023
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--{% include  'photodb/hidden_form.htm' %}-->
+		<div style="color:#F0FFF0" id="debug"></div>
+	</body>
+</html>

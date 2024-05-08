@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ 		<title>Salicicola Photo DB. Names Edit Form (mini)</title>
+		<style>
+			* {
+				  box-sizing: border-box;
+			}
+
+			input[type=text], select, textarea {
+				  width: 100%;
+					padding: 12px;
+					  border: 1px solid #ccc;
+						border-radius: 4px;
+					  resize: vertical;
+			}
+
+			label {
+				  padding: 12px 12px 12px 0;
+					display: inline-block;
+			}
+
+			input[type=submit] {
+				  background-color: #4CAF50;
+					color: white;
+					  padding: 12px 20px;
+						border: none;
+					  border-radius: 4px;
+						cursor: pointer;
+						  
+			}
+
+			input[type=submit]:hover {
+				  background-color: #45a049;
+			}
+
+			input[type=button] {
+				  background-color: #4CAF50;
+					color: white;
+					  padding: 12px 20px;
+						border: none;
+					  border-radius: 4px;
+						cursor: pointer;
+			}
+			.container {
+				  border-radius: 5px;
+					background-color: #f2f2f2;
+					  padding: 20px;
+					  width:auto;
+					  margin: auto;
+			}
+
+			.col-25 {
+				  float: left;
+					width: 25%;
+					  margin-top: 6px;
+			}
+
+			.col-75 {
+				  float: left;
+					width: 75%;
+					  margin-top: 6px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+				  content: "";
+					display: table;
+					  clear: both;
+			}
+			.dropped {
+				 color:gray;
+			}
+			@media screen and (max-width: 820px) {
+				.col-25, .col-75, input[type=submit] {
+						  width: 100%;
+							  margin-top: 0;
+				}
+			}
+		</style>		
+	</head>
+	<body style="max-width:1200px;background-color:darkgray;padding:1px;margin: auto" > <!-- onload="checkNetwork()" -->
+		<div class="container">
+			<form method="get"  id="FormId" action="" > <!-- POST enctype="multipart/form-data" -->
+				<table border="0" width="100%">
+					<thead style="background-color:#CCCCCC">
+						<tr>
+							<td colspan="2">
+								<h2>
+									Salicicola Photo DB. Name &amp; Meta Record. Edit Form (meta only for species)
+									<br/>
+									<span class="dropped" style="font-weight:normal;font-size:90%">
+										Supporting legacy classification dropped<!--, editing legacy names and authors is not necessary-->
+									</span>
+								</h2>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<b>{{rec.category}}: {{famname}}: {{genname}}: {{rec.latname}}</b> &#8212; pnid/level: 
+								<input id="pnid" name="pnid" value="{{rec.pnid}}" readonly="true" size="3" style="width:4em"/>
+								<!--<input id="ccss" name="ccss" value="{{rec.ccss|default_if_none:""}}" readonly="true" size="3"  style="width:4em"/>-->
+								{%if rec.level == 'species'%}
+								<input id="level" name="level" value="{{rec.level|default_if_none:""}}" readonly="true" size="3"  style="width:5em"/>
+								{%else%}
+								<input id="level" name="level" style="color:red;width:5em" value="{{rec.level|default_if_none:""}}" readonly="true" size="3" />
+								{%endif%}
+								&#8212; use [<a href="/admin/names/name/{{rec.pnid}}/change/">standard form</a>] 
+								instead
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{%if rec.level == 'species' %}
+								<td>Genus: &nbsp; &nbsp; <b>{{rec.upper.latname|default_if_none:""}}</b> </td>
+							{%else%}
+								<td>Parent (species): &nbsp; &nbsp; <b>{{rec.upper.upper.latname|default_if_none:""}} {{rec.upper.latname|default_if_none:""}}</b> 
+									set null: <input type="checkbox" name="parent_null"/>
+								</td>
+							{%endif%}
+							
+							{%if rec.level == 'species' %}
+								<td class="dropped">
+									Legacy genus: &nbsp; &nbsp; <b>{{rec.legacy_parent.sal_latname|default_if_none:""}}</b>
+								</td>
+							{%else %} <!-- if level == 'synonym' did not work FIXME-->
+								<td class="dropped">
+									Legacy parent/species: &nbsp; &nbsp; 
+									<b>{{rec.legacy_parent.legacy_parent.sal_latname|default_if_none:""}} {{rec.legacy_parent.sal_latname|default_if_none:""}}</b>
+									{%if rec.legacy_parent.legacy_parent.sal_latname == None %} &#8212; <b style='color:red'>None</b> 
+									{%else%}
+										{%if rec.legacy_parent.legacy_parent.sal_latname == rec.upper.upper.latname %}
+											
+										{%else%}
+											&#8212; <b style='color:red'>dif. genus</b>
+										{%endif%}
+									{%endif%}
+								</td>
+							{%endif%}
+						</tr>
+						<tr>
+							<td>Latname: <input size="40" id="latname" name="latname" value="{{rec.latname|default_if_none:""}}"/></td>
+							<td class="dropped">Legacy latname: <input size="40" id="sal_latname" name="sal_latname" value="{{rec.sal_latname|default_if_none:""}}"/></td>
+						</tr>
+						<tr>
+							<td>Authors: <input size="40" id="authors" name="authors" value="{{rec.authors|default_if_none:""}}"/></td>
+							<td class="dropped">Legacy authors: <input size="40" id="sal_authors" name="sal_authors" value="{{rec.sal_authors|default_if_none:""}}"/></td>
+						</tr>
+						{%if rec.level == 'species' %}
+							<tr>
+								<td colspan="2">
+									Colnames: <input id="colnames" size="90" name="colnames" value="{{rec.colnames|default_if_none:""}}"/>
+									<br/> (Separate different common names by comma, avoid using 'or')
+								</td>
+							</tr>
+						{%endif%}
+							<tr>
+								<td colspan="2">Notes
+									<!--<span style="cursor:pointer" title="designed for internal use, XHTML formatting allowed" onclick="alert(this.title)">[?]</span>-->
+									<br/>	
+									<textarea rows="1" id="note" name="note">{{rec.note|default_if_none:""}}</textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">Caption
+									<!--<span style="cursor:pointer" title="designed for public use, XHTML formatting allowed" onclick="alert(this.title)">[?]</span>:-->
+									<br/>	
+									<textarea rows="1" id="caption" name="caption">{{rec.caption|default_if_none:""}}</textarea>
+								</td>
+							</tr>
+						</tbody>
+						{%if rec.level == 'species' %}
+							<tbody style="background-color:#DDDDDD">
+								<tr>
+									<td colspan="2">
+										<input hidden="true" name="rank" size="4" value="{{meta.rank}}"/>
+										<input hidden="true"name="su_ba" value="{{meta.su_ba}}"/> 
+										<b>Meta</b>: <input name="spid" readonly="true" size="4" value="{{meta.spid}}"/> 
+											Long name:  <input name="initial_name" value="{{meta.initial_name|default_if_none:""}}"/>
+											Evergreen: <input name="evergreen" value="{{meta.evergreen|default_if_none:""}}"/>
+											{%if meta.updated%}
+											Modified: <i>{{meta.updated}}</i>
+											{%else%}
+											&nbsp;&nbsp; <b style="color:red"> New Record </b>
+											{%endif%}
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										Non native: <input name="introduced" value="{{meta.introduced|default_if_none:''}}" size="5" pattern="|introduced|no current records|persistent|cultivated|cultivated/waif|domestic|exotic|NA" /> 
+										(introduced, no current records, persistent, cultivated, domestic, exotic, NA, or empty)<br/>
+										 <!-- <input  name="nonnative" value="{{meta.nonnative|default_if_none:''}}"/> style="display:none" -->
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Origin: <input name="origin" size="40" value="{{meta.origin|default_if_none:""}}"/> 
+									</td>
+									<td>
+										Invasive: <input name="invasive" value="{{meta.invasive|default_if_none:""}}"/>
+										MIPAG: {{meta.invasive_mipag}} <input name="invasive_mipag" readonly="true" value="{{meta.invasive_mipag|default_if_none:""}}"/>
+									<!--	<span style="cursor:pointer" title="to modify field 'invasive according to MIPAG', use standard (django admin) form" onclick="alert(this.title)">[?]</span>-->
+										<!-- style="display:none"  instead add readonly-->
+										<br/>
+									</td>
+								</tr>
+								<tr>
+								<td>
+										Rare: <input name="rare" value="{{meta.rare|default_if_none:""}}" pattern="|T|E|SC|WL|H" /> (T, E, SC, WL, H, or empty)<br/>
+										</td>
+										<td>
+										<br/>
+										</td>
+								</tr>
+							</tbody>
+						{%endif%}
+					<tfoot>
+						<tr>
+							<td><b>User ID</b>: <input id="uid" name="uid" value="{{request.user}}" readonly="true"/></td>
+							<td align="left" >
+								<input type="submit" style="width:10em;float:left" value="Save"/>		
+							</td> 
+						</tr>
+						<tr>
+							<td>
+								<input align="left" type="button" style="width:10em;float:left;width:auto;background-color:red;color:white;font-wight:bold" 
+									   value="Delete Name Record(s)" title="It will NOT try to delete meta records, at least yet"
+									   onclick="r=confirm('Confirm deleting these records');url='/names/delete/name/'+ {{rec.pnid}} + 
+											'/'; if (r) {location.href=url;}"/>
+							</td>
+							<td align="right">
+								{%if rec.level == 'species' %}
+									<input align="right" type="button" style="width:10em;float:left;width:auto;background-color:red;color:white;font-wight:bold" 
+								   		value="Add Synonym" 
+										title="Be sure the name doesn't already exist"
+										onclick="location.href='/names/add/synonym/'+ {{rec.pnid}}"/> 
+								{%endif%}				       
+							</td> 
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div> 
+	</body>
+</html>

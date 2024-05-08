@@ -1,0 +1,389 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="vascular plants, Pteridophytae, ferns, conifers, monocots, Dicotyledonae, Dicots,  Massachusetts, photos, images"/>
+		<title>Massachusetts Plant Gallery</title><link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+		<style type="text/css">	 
+		 div {
+		   padding-left: 1.5em;
+		 }
+		 div.container {
+		   padding: 0;
+			 margin:0;
+		 }
+					A.new:link {
+						color: green; 
+						background-color: transparent;
+						text-decoration: none;
+					}
+					A.new:visited {
+						color: green; 
+						background-color: transparent;
+						text-decoration:none;
+					}
+					A.new:active {
+						color: #ff0000; 
+						background-color: transparent;
+						text-decoration:none;
+					}
+					A.new:hover {
+						color: #ff0000; 
+						background-color: transparent;
+						text-decoration:none;
+					}					 
+    </style>
+    <script type="text/javascript" src="/static/scripts/calendar.js"></script>
+    <script type="text/javascript" src="/static/scripts/menu.js"></script>
+    <script language="javascript" type="text/javascript">
+var timeout = 30 * 1000; 
+
+var debug = false;
+current = 0;
+loaded = false;
+ 
+if (location.search.indexOf('deb') > 0) {
+	debug = true;
+}
+if (debug) {
+	var start = new Date();
+	var prof_info = "Profiling:: approximate loading time (first line combined for header images and images #0 and #1)\n";
+}
+
+function writeDebug(prof_info) {
+  if (document.all) {
+	  document.getElementById('div.debug').innerText = prof_info;
+	}
+	else {
+	  document.getElementById('div.debug').innerHTML = prof_info.replace('/$/g', '<br><//br>');
+	}
+}
+
+function loadNext() {
+  if (current == imageNames.length -1) {
+    current ++;
+    loaded = true;
+		if (debug) {
+			prof_info += "Total:" + (f - start) +
+				" for " + imageNames.length + " images, average: " +
+				((f-start)/imageNames.length) + "\n";
+			writeDebug(prof_info);
+		}
+		
+		if (imageNames.length > 4) {
+    	setTimeout('switchMe()', timeout);
+		}
+		else {
+		  document.getElementById('second_set').style.display = 'block';
+		}
+  }
+  else { 
+    current ++;
+    s = getImage(current);
+    id = 'd' + current;
+		try {
+			nextdiv = document.getElementById(id);
+			nextdiv.innerHTML = s; 
+		}
+		catch (e) {
+			//alert('should not reach, but ... ');
+			prof_info += 'error processing: ' + current + '\n';
+		}
+		if (debug) {
+			f = new Date();
+			prof_info += "#" + current + ":" + imageNames[current] + 
+			":" + (f - start) + "$\n";
+		}
+  }  
+}
+
+function show_all() {
+		if (imageNames.length < 5) {
+			// document.getElementById('second_set').style.display = 'block';
+		}
+document.getElementById('month').innerHTML = month_names[month - 1];
+
+}
+
+
+function getImage(current) {
+    s = '<img id="i' +
+        current + 
+        '" vspace="1" align="center" width="480" hspace="0" title="' +
+        imageCaptions[current] + '" ' + 'alt="' + imageCaptions[current] + '" ' +
+        'src="/static/photos/' + imageNames[current] +
+        '" onLoad="loadNext()" onError="noImage(this)" onClick="openImage(this)"/>'
+    return (s);
+}
+
+function switchMe() {
+  if (document.getElementById('first_set').style.display == 'none') {
+       document.getElementById('first_set').style.display = 'block';
+       document.getElementById('second_set').style.display = 'none';
+  }
+  else {
+       document.getElementById('first_set').style.display = 'none';
+       document.getElementById('second_set').style.display = 'block';
+  }
+  setTimeout('switchMe()', timeout);
+}
+function noImage(_img) {
+	if (! loaded) {
+		_img.src = "/tomcat.gif";
+		num = current + 1;
+		if (debug) {
+			prof_info += 'error_loading:';
+		}
+		loadNext();
+	}
+}					
+									
+						function show_hide(cObj, idvalue) {
+							current = document.getElementById(idvalue).style.display;
+							if (current=='none') {
+								document.getElementById(idvalue).style.display='block';
+								cObj.src="/static/images/uarrow.gif";
+							}
+							else {
+								document.getElementById(idvalue).style.display='none';
+								cObj.src="/static/images/darrow.gif";
+							}
+						}		
+						
+						function expandClass(thisTag, tag) {
+						  var els = document.getElementsByTagName(tag);
+							for (i = 0; i < els.length; i++) {
+							  var ele = els[i]; 
+								if (ele.className=='container') {	
+								  current = ele.style.display;
+								  if (current=='none') {
+									  ele.style.display='block';
+										thisTag.innerHTML = 'Collapse list';
+									}
+									else {
+									  ele.style.display='none';
+										thisTag.innerHTML = 'Expand list';
+									}
+							  }
+							}
+							els = document.getElementsByTagName('IMG');
+							for (i = 0; i < els.length; i++) {
+							  var ele = els[i];
+								if (ele.className=='switchview') {
+							    if(ele.src.indexOf("/images/uarrow.gif") != -1) {
+									  ele.src="/images/darrow.gif";
+									}
+									else {
+									  ele.src="/images/uarrow.gif";
+									}
+							  }
+							}
+						}
+						
+						function openImage(tag) {
+							if (tag.alt.length > 1) {
+								var w = window.open();
+								s = "<html><head><title> </title></head><body>" +
+									"<h3>" + tag.alt + "</h3><img src='" + tag.src + "'/>" +
+									"</body></html>";
+								w.document.write(s);
+								w.document.close();
+								w.focus();
+							}
+						}						
+						
+						
+		</script>
+    </head>
+     {% load humanize %}
+    <body bgcolor="#F0FFF0" onload="show_all()">
+    	<script>headerWriteText('PlantGallery', true)</script>
+    	<div style="padding-left: 1.2em; padding-top: 1em; font-size:150%"><b>Massachusetts Vascular Plants</b></div>
+    	<div style="padding-left:3.5em; padding-top: 1em; padding-bottom: 1em; font-size:90%">
+    		<a href="/static/photos/copyright.html">About. Copyright Notice and Acknowledgements</a>
+ 			<br><br>
+The flora of Massachusetts embraces more than three thousand species of vascular plants
+including non-natives.
+Taxonomy in this view largely follows
+Massachusetts County Checklist of 2011. 
+<!--(The checklist view, which is going to show the status of all plants included in the Massachusetts Checklist of 2011, is coming soon.)-->
+As of today, the gallery contains
+{{total_images|intcomma}}
+photos of
+{{grandtotal_species|intcomma}}
+taxa (species, subspecies, varieties, and hybrids) mostly from southeastern Massachusetts.
+Species flagged <i>exotic</i> and <i>cultivated</i> are excluded from the count, thus leaving {{total_species|intcomma}} species from the flora of Massachusetts.
+However, this filtering is not applied to thumbnail views. In other words, links to genera and families
+may lead to photos of some exotic/cultivated taxa, for example, those previously erroneously included in the flora 
+(such as exotic willows <i>Salix pentandra</i> or <i>S. aurita</i>).
+
+{% if user.is_authenticated %}
+{%if authorized %}
+					Massachusetts 
+					<a target="_blank" href="https://archives.lib.state.ma.us/bitstream/handle/2452/120973/ocn747431427.pdf?sequence=1">County Checklist of 2011</a>.
+					Modified on salicicola online version available in the following variants:
+					[<a target="_blank" href="/photodb/vascular/checklist/fams/">by family</a>] 
+					[<a target="_blank" href="/photodb/gallery/new/checklist/">entire list in a single file</a>] 
+					[<a target="_blank" href="/photodb/gallery/new/checklist/relevant/">shorter list: without waifes and 'historic' non-native species</a>]
+{%else%}
+					
+{%endif%}
+{%endif%}
+{% if user.is_authenticated %}
+<div style="color:grey">
+	DEBUG:
+	filter applied : {{filtered}}<br/>
+	{{total_species}} of {{grandtotal_species}} species:<br/>
+	Total excluded : {{excluded|length}}<br/>
+	Exotic {{exotic|length}}<br/>
+	Cultivated {{cultivated | length}}<br/>
+	Persistent {{persistent| length}}<br/>
+bugs: 0. OK? direct counting for images in higher groups 207+1091+940+7411+483+24894 = 35026 (i.e., ALL images including those of excluded species)<br/>
+      1. direct counting for higher group: 207+52+32+498+22+1390 = 2201 species (too many, perhaps all species excluding explicitly excluded ?)<br/>
+	  2. to check for families without genera/species/images [potential bug]
+</div>
+{%endif%}
+
+					
+				</div>
+				<table border="0" width="100%">
+					<tr>
+						<td>
+							<div></div>
+							<div>
+								<h3><a style="text-decoration: underline" href="/photodb/search/" target="_blank">Search Plant Gallery</a>
+								</h3>
+							</div>
+							<div>
+								<h3 style="margin-bottom:0px">
+									<span style="font-size: 75%; text-decoration: underline" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#8B0000'" 
+											onClick="expandClass(this, 'DIV')">Expand list</span>
+								</h3>
+							</div>
+							{%for group in tree %}
+							{%if group.images %}
+							<div>
+								<h3>
+									{{group.higher.latname}} 
+{%if group.higher.pk == 301314 %}
+<span style="font-weight:normal;color:red">
+[<a href="/photodb/gallery/note/301314/" style="font-weight:normal;color:red" target="note" onclick="open(this.href, 'note', 'width=450px,height=490px').focus(); return false">*</a>]
+</span>
+{%elif group.higher.pk == 301299 %}
+<span style="font-weight:normal;color:red">
+<a style="font-weight:normal;color:red" href="/photodb/gallery/note/301299/" target="note" onclick="open(this.href, 'note', 'width=450px,height=490px').focus(); return false">*</a>
+</span>
+{%endif%}
+ 
+{%if group.higher.colnames %} &#8212; {{group.higher.colnames}} {%endif%}
+										<span style="font-size:80%">({{group.taxa|intcomma}} taxa, {{group.images|intcomma}}
+								   images)</span>
+{%comment%}
+{%if group.higher.pk == 301314 %}
+<span style="font-weight:normal;color:red">
+<a href="/photodb/gallery/note/301314/" style="font-weight:normal;color:red" target="note" onclick="open(this.href, 'note', 'width=450px,height=490px').focus(); return false">*</a>
+</span>
+{%elif group.higher.pk == 301299 %}
+<span style="font-weight:normal;color:red">
+<a style="font-weight:normal;color:red" href="/photodb/gallery/note/301299/" target="note" onclick="open(this.href, 'note', 'width=450px,height=490px').focus(); return false">*</a>
+</span>
+{%endif%}
+{%endcomment%}
+								</h3>
+								{%for fam in group.fams %}
+								{%if fam.images %}
+									<div><!-- /photos/gallery/view/{{fam.fam.pnid}}/{{fam.fam.pnid}} /photodb/gallery/view/{{fam.fam.pnid}}/ http://salicicola.com/photos/gallery/view/{{fam.fam.pnid}}/-->
+										<a style="font-weight: bold; text-decoration: underline" 
+												target="_blank" href="/photodb/gallery/view/{{fam.fam.pnid}}/">{{fam.fam.latname}}</a> &nbsp;
+												{{fam.taxa}} {%if fam.taxa == 1 %}taxon{%else%}taxa{%endif%}
+												&nbsp;
+												<img class="switchview" vspace="0" hspace="0" border="0" onClick="show_hide(this, {{fam.fam.pnid}})" 
+													src="/static/images/darrow.gif" style="height: 1ex; padding:0; margin:0; border-width:0"/>
+										<div class="container" id="{{fam.fam.pnid}}" style="display: none">
+										{%for genus in fam.genera %}
+												{%if genus.images%}
+													<div>
+														<a style="font-weight:bold; text-decoration:underline" target="_blank" 
+																href="/photodb/gallery/view/{{genus.genus.pk}}/">{{genus.genus.latname}}</a> 
+																&nbsp; 
+														{%for species in genus.species %}
+														{%if species.images%}
+														<div style="display: block"> 
+															<!-- /photos/gallery/view/{{species.fid}}/{{species.species.pk}} /photodb/gallery/view/{{species.species.pk}}
+															http://salicicola.com/photos/gallery/view/{{species.species.pk}}/-->
+															<a class="species" target="_blank" title="{{species.species.rank}} {{species.species.longname}}"
+																	href="/photodb/gallery/view/{{species.species.pk}}" 
+																	style="text-decoration:none">{{species.species.longname|cut:genus.genus.latname}}</a> 
+<!-- FIXME: leading space retained -->
+															— <span>
+															{%if species.meta.rare %}
+																[<b style="color:green">{{species.meta.rare}}</b>]
+															{%else%}
+																{%if species.meta.invasive %}
+																	[<b style="color:red">{{species.meta.invasive|title}}</b>]
+																{%elif species.meta.introduced%}
+																	[{{species.meta.introduced|title}}]
+																{%else%}
+																	[Native]
+																{%endif%}
+															{%endif%}
+															
+															</span> — {{species.images}} images<br/>
+														</div>
+														{%endif%}
+														{%endfor%}		
+													
+												{%if not genus.species %}			
+					<div style="display: block" title="{{genus.taxa}}/{{genus.images}}">
+						No species included in Massachusetts flora.
+						{%if genus.images and genus.taxa %}<br/> <!-- FIXME -->
+							Click on genus name to see species in cultivation
+						{%endif%}
+					</div>	
+														{%endif%}	
+													</div>
+												{%endif%}
+										{%endfor%}
+										</div>
+									</div>
+								{%endif%}
+								{%endfor%}
+							</div>
+{%endif%}
+							{%endfor%}
+							
+		
+</td><td width="352" align="left" valign="top"><h3><span id="month"></span> Highlights</h3>
+
+
+<div id="first_set" style="display: block; padding:0"><div id="d0" style="padding:0"><center><script>
+      s = getImage(0);
+      document.write(s);
+    </script></center></div><script>
+    for (i = 1; i < imageNames.length/2; i++) {
+       s = '<div id="d' + i + '" style="padding:0"></div>';
+       document.write(s);
+    }
+  </script></div><div id="second_set" style="display:none; padding:0"><script>
+    for (i = imageNames.length/2; i < imageNames.length; i++) {
+       s = '<div id="d' + i + '" style="padding:0"></div>';
+       document.write(s);
+    }
+  </script></div>
+  </td>
+  </tr>
+  </table>
+  <div id="div.debug" style="visibility:hidden">{% if user.is_authenticated %}
+    Welcome, {{ user.get_username }}
+{%else%}
+Guest user
+{%endif%}
+	</div>
+  <table class="footer" border="0" width="100%">
+  <tbody>
+  <tr><td colspan="3" align="right"><hr/><i>Last updated: 
+            <script language="javascript" type="text/javascript">
+               document.write(siteLastUpdated);
+             </script></i></td></tr><tr><td align="left"><a href="/"><b>Salicicola</b></a></td><td align="center">
+&nbsp;
+						</td><td align="right">&nbsp;
+				      <a href="mailto:azinovjev@salicicola.com?subject=salicicola plant gallery">webmaster</a></td></tr></tbody></table></body></html>

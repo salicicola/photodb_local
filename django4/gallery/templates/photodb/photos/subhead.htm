@@ -1,0 +1,56 @@
+{% load humanize %}
+<b>Notes</b>: 
+{{total_photos|intcomma}} image{%if total_photos == 1%}{%else%}s{%endif%} illustrating {{total_species|intcomma}}
+{%if total_species == 1%} taxon {%else%} taxa (at genus, species, or subspecies level){%endif%}
+
+<!--
+	{{total_photos|intcomma}} images illustrating {{total_species|intcomma}} taxa (at genus, species, or subspecies level).
+-->
+<!--
+    Currently there are {%if total_photos%}{{total_photos|intcomma}} photos/images belonging to{%endif%} {{total_species|intcomma}} lowest taxa (species). -->
+    <!--plant (or animal) species.-->
+    <!--Click small green square with arrow after family/higher taxon name to expand/collapse family or higher taxon. -->
+    <!--Links to images sorted by image numbers in gallery; those highlighted green are published, yellow or red not published -->
+<!--    (many not even scaled; in case server is not available, these numbers will be provided without links). 
+    Using thumbnails can be manually disabled by appending '?thumbs=no' to URL or 
+    automatically disabled in case number of images exceeds <i>{{max_thums}}</i> or images are not available.
+    To add links for editing photo records in SQL DB, may try to append ?thumbs=no&sql_edit=yes
+    (must be logged in as authorized user and this feature is not available for every kind of query).
+<br/>-->
+<!-- to check  what is relevant now XXX
+<b>Bugs/todo</b>: 
+    to check that colnames are always present; links in green work only for vascular plants; 
+    queries by location aren't absolutely reliable: they depends on presence of the correct ID,
+    besides currently used SQLite DB doesn't have case-sensitive queries 
+    (all these queries should use most restrictive part of the location ID from its beginning, 
+    e.g. all ids of Massachusetts' locations starts with MA.).
+-->
+    <!--&#8212; 
+    to partially fix this flaw whenever possible, instead of <i>contains</i> queries
+    used <i>startswith</i> (marked by prepended '^'),  
+    may also migrate to PostgreSQL eventually. 
+    <!--to check and correct if necessary hierarchy of "animals"; 
+    to correct query by location (must be case-sensitive). -->
+    <!--Editing photo records in SQL DB may be enabled to authorized users 
+			    (if unpublished images available) but it's
+			    hardly recommended since changes can be lost with next update. 
+			    To disable edit links for unauthenticated/unauthorized users.
+			    WHAT TO DO with Spahgnum, UNNAMED_PLANTS, Mammals, etc.? ...-->
+			    <br/>
+{%comment%}
+    {% if user.is_authenticated %}
+        You are logged in as user <b>{{request.user}}</b> &#8212; 
+        <a href="/admin/logout/">Logout</a>. 
+        Clean <a href="/photos/cleared/">cache<!-- and reload  this page--></a>.
+	    View mode: [{{view}}{%if thumbs and edit_domain and total_photos < 100 %}: thumbnails{%else%}, thumbnail view unavailable{%endif%}]{%if edit_domain%}; 
+						    view &amp; editing legacy XML DB records available [{{edit_domain}}]{%endif%}.
+    {%else%}
+	    <a href="/admin/login/?next=/photos/">Login</a>
+    {%endif%}
+{%endcomment%}
+<!--
+  <div>
+	<h3 style="margin-bottom:0px">
+		<span style="font-size: 75%; text-decoration: underline" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#8B0000'" onClick="expand()">Compact/Expand list</span></h3> 
+  </div>
+-->

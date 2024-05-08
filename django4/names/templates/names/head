@@ -1,0 +1,40 @@
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="keywords" content=""/>
+      <title>Massachusetts Photo Gallery</title>
+      <link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+      <style type="text/css">
+      body {
+        bakground-color:#F0FFF0;
+      }
+			a {
+						text-decoration: none;
+			}	
+      .evergreen {
+        padding-left: 2em;
+      }
+      li.none {
+        list-style-image:none; 
+        list-style-type:none; 
+        background-color:lightgrey
+      }
+      td.left {
+        /* valign="top" */
+        width: 20em;
+      }
+			.hidden {
+			  visibility: visible; /* hidden */
+			}
+a {
+font-weight: bold; 
+text-decoration: underline;
+}
+h3 {
+margin-bottom:0;
+padding-bottom:0;
+padding-top:0;
+margin-top:0;
+}
+    </style>
+<script type="text/javascript" src="/static/scripts/menu.js"></script>
+

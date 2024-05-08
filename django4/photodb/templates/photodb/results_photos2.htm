@@ -1,0 +1,44 @@
+<html>
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+		<h2>
+			Salicicola Photo Gallery
+            <div style="padding-top:1ex;font-size:75%">
+				Search by:
+				{%if town %} town={{town}} {%endif%}
+				{%if lcid %} location ID={{lcid}} {%endif%}
+				{%if year %} year={{year}} {%endif%}
+				{%if month %} month={{month}} {%endif%}
+				{%if day %} day={{day}} {%endif%}
+				{%if spid %} species=<i title="{{spid}}">{{request.GET.plantname}}</i>{%endif%}
+				{%if imid %} image containing [{{imid}}] {%endif%}
+            </div>
+            <div style="padding-top:0;font-size:75%">
+            Query Results: {{names|length}} taxa with {{rset|length}} photo records found in category <i>{{category}}</i>
+            </div>
+			<div style="font-weight:normal;font-size:55%;margin-top:1ex">
+				Prototype #{{version}}<br/>
+                Sorting of images and filtered navigation is not yet supported
+			</div>
+		</h2>
+		<ol>
+			{%for name, recs in names %}
+			<li>
+				{{name}} <br/>
+			    {%for rec in recs %}
+				  [<a target="_blank" href="/photodb/gallery/view/{{rec.0}}/{{rec.1}}">{{forloop.counter}}</a>]
+				{%endfor%}
+			</li>			
+			{%endfor%}
+		</ol>
+		<hr/><!--Prototype #{{version}}: sometimes displayed names may be incorrect; links used legacy classification/view-->
+		<!--
+Not fixed bugs:
+		-->
+	</body>
+</html>

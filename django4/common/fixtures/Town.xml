@@ -1,0 +1,2572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+ <object model="common.town" pk="MA">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField"><None></None></field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:04+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Bou">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Bourne</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Bre">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Brewster</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Brt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Barnstable</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Chh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Chatham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Den">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Dennis</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Est">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Eastham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Fal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Falmouth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Hrw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Harwich</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Msh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Mashpee</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Orl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Orleans</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Pro">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Provincetown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.San">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Sandwich</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Tru">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Truro</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Wlf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Wellfleet</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bar.Yar">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Barnstable</field>
+  <field name="town" type="CharField">Yarmouth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Ada">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Adams</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Alf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Alford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Bec">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Becket</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Chs">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Cheshire</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Cla">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Clarksburg</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Dal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Dalton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Egr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Egremont</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Flo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Florida</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Grb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Great Barrington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Han">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Hancock</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.His">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Hinsdale</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Lee">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lee</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Len">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lenox</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Lns">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Lanesborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Mnr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Monterey</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Mtw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Mount Washington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Nas">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">New Ashford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Nma">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">New Marlborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Noa">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">North Adams</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Oti">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Otis</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.PIT">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Pittsfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Per">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Peru</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Ric">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Richmond</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Sav">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Savoy</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Shf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Sheffield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Snd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Sandisfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Stc">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Stockbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Tyr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Tyringham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Was">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Washington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Wil">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Williamstown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Wnd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">Windsor</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ber.Wst">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Berkshire</field>
+  <field name="town" type="CharField">West Stockbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Acu">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Acushnet</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Att">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Attleboro</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Brk">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Berkley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Dar">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Dartmouth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Dig">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Dighton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Eas">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Easton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Fai">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Fairhaven</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Flr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Fall River</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Fre">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Freetown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Mbd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">New Bedford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Mns">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Mansfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Nor">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Norton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Nta">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">North Attleborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Ray">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Raynham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Reh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Rehoboth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.See">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Seekonk</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Som">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Somerset</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Swa">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Swansea</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Tau">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Taunton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Bri.Wso">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Bristol</field>
+  <field name="town" type="CharField">Westport</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Chm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Chilmark</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Edg">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Edgartown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Gay">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Gay Head</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Gsn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Gosnold</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Oak">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Oak Bluffs</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Tis">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">Tisbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Duk.Wti">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Dukes</field>
+  <field name="town" type="CharField">West Tisbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Ame">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Amesbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.And">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Andover</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.BEV">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Beverly</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Bxf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Boxford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Dan">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Danvers</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Esx">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Essex</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Geo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Georgetown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Glo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Gloucester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Grl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Groveland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Hav">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Haverhill</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Hml">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Hamilton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Ips">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Ipswich</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Law">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Lawrence</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Lnn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Lynnfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Lyn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Lynn</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Man">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Manchester-by-the-Sea</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Mdt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Middleton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Mer">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Merrimac</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Met">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Methuen</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Mrb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Marblehead</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Nad">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">North Andover</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Nah">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Nahant</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Nbr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Newburyport</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Nwb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Newbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.PEA">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Peabody</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Rck">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Rockport</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Rwl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Rowley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Sal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Salem</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Sau">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Saugus</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Sls">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Salisbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Swm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Swampscott</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Top">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Topsfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Wna">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">Wenham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ess.Wnr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Essex</field>
+  <field name="town" type="CharField">West Newbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Asf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Ashfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Brs">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Bernardston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Buc">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Buckland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Cha">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Charlemont</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Cnw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Conway</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Col">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Colrain</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Dee">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Deerfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Erv">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Erving</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Gil">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Gill</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Grd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Greenfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Haw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Hawley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Hea">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Heath</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Lev">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Leverett</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Ley">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Leyden</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Mnt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Montague</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Mon">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Monroe</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Nro">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Northfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Nsa">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">New Salem</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Ora">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Orange</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Row">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Rowe</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Shl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Shelburne</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Shu">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Shutesbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Sun">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Sunderland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Wen">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Wendell</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Whl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Whately</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Frn.Wrk">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Franklin</field>
+  <field name="town" type="CharField">Warwick</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Aga">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Agawam</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Bln">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Blandford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Bm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Brimfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Chi">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Chicopee</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Cht">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Chester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Elo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">East Longmeadow</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Grv">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Granville</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Hll">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Holland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Hly">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Holyoke</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Hmd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Hampden</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Lon">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Longmeadow</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Lud">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Ludlow</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Mng">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Montgomery</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Mnn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Monson</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Pal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Palmer</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Rus">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Russell</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.SPR">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Springfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Sti">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Southwick</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Tol">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Tolland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Wlb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Wilbraham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Wls">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Wales</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Wse">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">Westfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Ham.Wsi">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampden</field>
+  <field name="town" type="CharField">West Springfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Amh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Amherst</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Blc">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Belchertown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Chf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Chesterfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Cum">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Cummington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Esh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Easthampton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Gra">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Granby</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Gsh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Goshen</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Had">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Hadley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Hat">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Hatfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Hun">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Huntington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Mdl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Middlefield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Nrt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Northampton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Pel">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Pelham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Pln">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Plainfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Shh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">South Hadley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Sth">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Southampton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Wlm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Williamsburg</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Wre">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Ware</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Wrt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Worthington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Hmp.Wsm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Hampshire</field>
+  <field name="town" type="CharField">Westhampton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Act">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Acton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Arl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Arlington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Asb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Ashby</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Ash">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Ashland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Aye">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Ayer</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Bed">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Bedford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Bel">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Belmont</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Bil">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Billerica</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Box">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Boxborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Bur">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Burlington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.CAM">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Cambridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Cho">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Chelmsford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Con">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Concord</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Crl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Carlisle</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Dra">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Dracut</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Dun">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Dunstable</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.EVE">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Everett</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Fra">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Framingham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Gro">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Groton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Hls">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Holliston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Hop">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Hopkinton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Hud">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Hudson</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Lex">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Lexington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Lin">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Lincoln</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Lit">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Littleton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Low">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Lowell</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Mal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Malden</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Mar">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Marlborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.May">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Maynard</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Med">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Medford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Mel">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Melrose</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Nat">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Natick</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.New">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Newton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Nre">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">North Reading</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Pep">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Pepperell</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Rea">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Reading</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.She">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Sherbom</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Shi">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Shirley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Smr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Somerville</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Sto">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Stoneham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Stw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Stow</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Sud">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Sudbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Tew">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Tewksbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Tow">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">recordend</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Tyn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Tyngsborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wak">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Wakefield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Waltham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wat">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Watertown</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Way">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Wayland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Win">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Winchester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wmg">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Wilmington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wob">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Woburn</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wsd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Westford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Midd.Wsn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Middlesex</field>
+  <field name="town" type="CharField">Weston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nan">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Nantucket</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nan.Nnt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Nantucket</field>
+  <field name="town" type="CharField">Nantucket</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Avn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Avon</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Bll">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Bellingham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Bra">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Braintree</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Brl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Brookline</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Can">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Canton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Coh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Cohasset</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Ded">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dedham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Dov">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Dover</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Fox">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Foxborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Frl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Franklin</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Hol">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Holbrook</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Mdf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Medfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Mdw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Medway</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Mil">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Millis</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Mlt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Milton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Nee">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Needham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Nrd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Norwood</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Nrk">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Norfolk</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Pla">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Plainville</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Qui">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Quincy</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Ran">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Randolph</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Sha">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Sharon</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Stg">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Stoughton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Wel">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Wellesley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Wes">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Westwood</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Wey">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Weymouth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Wlp">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Walpole</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Nrf.Wrh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Norfolk</field>
+  <field name="town" type="CharField">Wrentham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Aby">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Abington</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Brd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Bridgewater</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Bro">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Brockton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Car">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Carver</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Dux">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Duxbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Ebr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">East Bridgewater</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Hal">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Halifax</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Hin">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hingham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Hno">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hanover</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Hns">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hanson</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Hul">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Hull</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Kin">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Kingston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Lak">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Lakeville</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Mat">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Mattapoisett</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Mid">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Middleborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Mrn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Marion</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Mrs">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Marshfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Nrw">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Norwell</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Pem">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Pembroke</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Plt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plympton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Ply">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Plymouth</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Rcl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Rockland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Roc">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Rochester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Sci">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Scituate</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.War">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Wareham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Wbr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">West Bridgewater</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Plm.Whi">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Plymouth</field>
+  <field name="town" type="CharField">Whitman</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf.Bos">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Boston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf.Che">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Chelsea</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf.REV">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Revere</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf.Rev">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Revere</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Suf.Wnh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Suffolk</field>
+  <field name="town" type="CharField">Winthrop</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField"><None></None></field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Asn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Ashburnham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Ath">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Athol</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Aub">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Auburn</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Bla">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Blackstone</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Bol">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Bolton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Boo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Brookfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Boy">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Boylston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Brn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Berlin</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Brr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Barre</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Chl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Charlton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Cli">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Clinton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Dou">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Douglas</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Dud">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Dudley</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Ebk">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">East Brookfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.FIT">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Fitchburg</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Grf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Grafton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Grn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Gardner</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Har">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Harvard</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Hld">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Holden</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Hpe">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Hopedale</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Hrd">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Hardwick</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Hub">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Hubbardston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Lan">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Lancaster</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Lei">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Leicester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Leo">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Leominster</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Lun">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Lunenburg</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Men">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Mendon</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Mlb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Millbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Mlf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Milford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Mlv">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Millville</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Nba">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">New Braintree</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Nbe">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">North Brookfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Nrb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Northborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Nrr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Northbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Okh">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Oakham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Oxf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Oxford</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Pax">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Paxton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Pet">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Petersham</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Phi">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Phillipston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Pri">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Princeton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Roy">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Royalston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Rut">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Rutland</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Shr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Shrewsbury</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Spe">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Spencer</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Stb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Southborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Ste">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Sterling</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Str">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Southbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Stu">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Sturbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Sut">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Sutton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Tem">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Templeton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Upt">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Upton</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Uxb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Uxbridge</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wbf">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">West Brookfield</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wbl">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">West Boylston</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Web">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Webster</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wnc">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Winchendon</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wrn">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Warren</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wrs">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Worcester</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wsb">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Westborough</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+ <object model="common.town" pk="MA.Wor.Wsr">
+  <field name="state" type="CharField">Massachusetts</field>
+  <field name="state_abbr" type="CharField">MA</field>
+  <field name="county" type="CharField">Worcester</field>
+  <field name="town" type="CharField">Westminster</field>
+  <field name="modified" type="DateTimeField">2010-02-10T11:56:57+00:00</field>
+ </object>
+</django-objects>

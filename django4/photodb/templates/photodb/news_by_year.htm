@@ -1,0 +1,141 @@
+<html>
+	{% load humanize %}
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<style type="text/css">
+			body {
+			background-color:#F0FFF0;
+			color:#8B0000;
+			font-family:Verdana, Arial, SunSans-Regular, Sans-Serif;
+			/* font-size:small; */
+			line-height:1.4em;
+			margin:0;
+			padding:0;
+			font-size:0.83em;
+			}
+			.red {
+			/* color:red; */
+			display:none;
+			}
+			a:link {
+			color: #8B0000;
+			}
+			a:visited {
+			color:#8B0000;
+			}
+			a:active {
+			color: #FF0000;
+			}
+			a:hover {
+			color: #FF0000;
+			}
+			/* #logo in use */
+			#logo {
+			border-top:0.2em solid #9C0000;
+			background-color:#8B0000;
+			padding:0.2em 0.4em 0.4em;
+			color:#FFFFFF;
+			font-family:"Trebuchet MS", Verdana, Arial, SunSans-Regular, Sans-Serif;
+			font-size:150%;
+			}
+			#logo a:link, #logo a:visited {
+			text-decoration:none;
+			color:#FFF;
+			}
+			img.icon {
+			cursor:pointer;
+			vertical-align:baseline;
+			height:9px;
+			}
+			.rare {
+			color:darkred;
+			}
+			.status {
+			color:brown;
+			}
+			.new_state {
+			color:red;
+			}
+			.new_county {
+			color:darkorange;
+			}
+			.introduced {
+			/* not in use */
+			}
+			.invasive {
+			color:orange;
+			}
+			div.image {
+			position:relative;width:356px;margin:2px;
+			}
+			div.caption {
+			padding:0;margin-top:0px;margin-bottom:0px;position:relative;top:-5.6ex;width:auto;height:0px;left:1ex;color:white;
+			}
+			img.right {
+			position:relative;margin-bottom:0;margin-top:0;padding:0;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div
+			id="logo">
+			<span>Additions to Plant Gallery made in {{year}}</span>
+			<span
+				style="float:right">
+				<a href="/">Salicicola</a>
+			</span>
+		</div>
+		<div style="font-weight:bold;margin:1ex">
+			This list covers Salicicola Plant Gallery additions
+			made in year {{year}}
+			including re-identifed species.
+			{{recs|length|intcomma}} plant names were added.
+		</div>
+		<div style="border-width:0; margin:1em">
+			<table width="100%">
+				<!--
+				<tr>
+					<td valign="top" width="50%">
+						<div style="margin-left:1em;padding-left:2em;text-indent:-1em;margin-right:1em;">
+							<div>
+								<a target="_blank" href="http://salicicola.com/photos/gallery/view/1428/15343">Carex striata</a>
+							    — Walter&#39;s sedge
+							</div>
+							<div style="padding-left:2em">
+								<b class="rare">Endangered</b> — <b class="new_county">new location</b> — Plymouth
+							</div>
+						</div>
+					</td>
+				</tr>
+				-->
+				{%for rec in recs %}
+					<tr>
+						<td valign="top" width="50%">
+							<div style="margin-left:1em;padding-left:2em;text-indent:-1em;margin-right:1em;">
+								<div>
+									<a target="_blank" href="/photodb/gallery/view/{{rec.plant.pnid}}"><i>{{rec.plant.longname}}</i></a>
+									{{rec.plant.authors}}
+									— {{rec.plant.colnames}} [{{rec.published}}]
+								</div>
+								{%comment%}
+								<div style="padding-left:2em">
+									<b class="rare"></b> — <b class="new_county">new location</b> — Plymouth
+								</div>
+								{%endcomment%}
+							</div>
+						</td>
+					</tr>			
+				{%endfor%}
+				
+			</table>
+			<hr width="100%"/>
+			<div style="float:left; margin-left:1em;">
+				Generated <i>{{generated}}</i> (I. Kadis &amp; A. Zinovjev)
+				<span style="color:red"></span>
+			</div>
+			<div style="float:right; margin-right:2em;">© AZ IK 2012-{{generated.year}}</div>
+			<div><br/></div>
+		</div>
+	</body>
+</html>			

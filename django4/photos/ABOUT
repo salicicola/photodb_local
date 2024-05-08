@@ -1,0 +1,57 @@
+urlpatterns
+    path('', views.index, "photos/index.htm")
+
+    #renaming photos, extracting EXIF-INFO and if possible coordinates
+    path('rename/', process.process, "photos/rename.htm") ## will call the next one       
+        path('rename/<str:ymd>/', process.rename)
+            fnum = "%s/data/RENAME/last_number.txt" % SITE_ROOT 
+            "%s/NewPhotos%s/%s/" % (SOURCE, ymd[2:4], ymd)
+            rename_exif_files(SRC, fnum)
+            embedded = setlatlon(SRC, ymd) >> "%s/%s_mapped.gpx" % (SRC, ymd) [if coordinates found]
+            garmin = update_by_garmin (None, ymd) << if Current.gpx present and for only current date (ymd)
+            update_by_GIS(request, ymd) >>> 
+                redirect to "/gis/update/photos/?path=data/WORK/NewPhotos%s/%s/%s_mapped.gpx&day=%s" % (ymd[2:4], ymd, ymd, ymd)
+    ## in case of errors may fix error and run individually:
+        path('update_garmin/<str:ymd>/', process.update_by_garmin),
+        path('update_gis/<str:ymd>/', process.update_by_GIS),
+    
+
+    path('entry/', views.entry),   
+    path('entry/<int:ymd>/', views.entry_day),  
+    path('entry/done/', views.last_committed), 
+
+    path('locations/reset/', tools.update_options), ## updating "photodb/templates/photodb/locations_options" (for MA only)
+    path('locations/set/<str:filtering>/', tools.update_options), ## may need to reset after its usage
+    path('names/reset/', tools.update_names),       ## updating //scripts/photos/entry/species.xml
+
+###########################################
+defs in process & garmin_tools [optional]: 
+    process(request)
+    rename(request, ymd)
+    rename_exif_files(start, fnum)
+        parse_file(fname)
+    setlatlon(SRC_DIR, ymd):
+    update_by_garmin (request, ymd)
+        garmin_tools.correct_tz(ymd)
+        garmin_tools.process_one_day(ymd)
+    update_by_GIS (request, ymd)   ## needs gisapp installed > redirecting
+
+defs in views & start_edit4:
+    index(request, template="photos/index.htm"):
+    entry(request, template="photos/entry.htm")
+        start_edit4.start(request, root_path)
+    def last_committed(request)
+
+defs in start_edit4:
+
+
+defs in tools
+    tools.update_options
+    tools.update_names
+    ::
+        path('locations/reset/', tools.update_options), ## updating "photodb/templates/photodb/locations_options" (for MA only)
+        path('locations/set/<str:filtering>/', tools.update_options), ## may need to reset after its usage
+        path('names/reset/', tools.update_names),       ## updating //scripts/photos/entry/species.xml
+
+
+

@@ -1,0 +1,2915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<towns>
+    <record>
+        <locID>MA</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <modified>2010-02-10 11:56:04</modified>
+    </record>
+    <record>
+        <locID>MA.Bar</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Bou</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Bourne</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Bre</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Brewster</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Brt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Barnstable</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Chh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Chatham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Den</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Dennis</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Est</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Eastham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Fal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Falmouth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Hrw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Harwich</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Msh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Mashpee</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Orl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Orleans</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Pro</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Provincetown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.San</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Sandwich</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Tru</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Truro</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Wlf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Wellfleet</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bar.Yar</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Barnstable</county>
+        <town>Yarmouth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Ada</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Adams</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Alf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Alford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Bec</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Becket</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Chs</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Cheshire</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Cla</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Clarksburg</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Dal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Dalton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Egr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Egremont</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Flo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Florida</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Grb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Great Barrington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Han</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Hancock</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.His</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Hinsdale</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Lee</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Lee</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Len</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Lenox</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Lns</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Lanesborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Mnr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Monterey</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Mtw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Mount Washington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Nas</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>New Ashford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Nma</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>New Marlborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Noa</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>North Adams</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Oti</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Otis</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Per</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Peru</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.PIT</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Pittsfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Ric</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Richmond</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Sav</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Savoy</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Shf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Sheffield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Snd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Sandisfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Stc</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Stockbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Tyr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Tyringham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Was</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Washington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Wil</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Williamstown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Wnd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>Windsor</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ber.Wst</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Berkshire</county>
+        <town>West Stockbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Acu</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Acushnet</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Att</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Attleboro</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Brk</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Berkley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Dar</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Dartmouth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Dig</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Dighton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Eas</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Easton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Fai</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Fairhaven</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Flr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Fall River</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Fre</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Freetown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Mbd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>New Bedford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Mns</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Mansfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Nor</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Norton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Nta</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>North Attleborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Ray</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Raynham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Reh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Rehoboth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.See</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Seekonk</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Som</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Somerset</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Swa</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Swansea</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Tau</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Taunton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Bri.Wso</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Bristol</county>
+        <town>Westport</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Chm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Chilmark</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Edg</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Edgartown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Gay</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Gay Head</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Gsn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Gosnold</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Oak</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Oak Bluffs</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Tis</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>Tisbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Duk.Wti</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Dukes</county>
+        <town>West Tisbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Ame</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Amesbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.And</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Andover</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.BEV</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Beverly</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Bxf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Boxford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Dan</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Danvers</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Esx</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Essex</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Geo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Georgetown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Glo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Gloucester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Grl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Groveland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Hav</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Haverhill</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Hml</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Hamilton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Ips</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Ipswich</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Law</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Lawrence</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Lnn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Lynnfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Lyn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Lynn</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Man</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Manchester-by-the-Sea</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Mdt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Middleton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Mer</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Merrimac</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Met</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Methuen</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Mrb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Marblehead</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Nad</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>North Andover</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Nah</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Nahant</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Nbr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Newburyport</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Nwb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Newbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.PEA</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Peabody</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Rck</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Rockport</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Rwl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Rowley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Sal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Salem</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Sau</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Saugus</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Sls</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Salisbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Swm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Swampscott</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Top</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Topsfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Wna</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>Wenham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ess.Wnr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Essex</county>
+        <town>West Newbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Asf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Ashfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Brs</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Bernardston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Buc</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Buckland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Cha</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Charlemont</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Cnw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Conway</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Col</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Colrain</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Dee</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Deerfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Erv</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Erving</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Gil</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Gill</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Grd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Greenfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Haw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Hawley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Hea</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Heath</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Lev</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Leverett</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Ley</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Leyden</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Mnt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Montague</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Mon</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Monroe</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Nro</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Northfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Nsa</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>New Salem</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Ora</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Orange</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Row</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Rowe</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Shl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Shelburne</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Shu</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Shutesbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Sun</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Sunderland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Wen</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Wendell</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Whl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Whately</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Frn.Wrk</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Franklin</county>
+        <town>Warwick</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Aga</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Agawam</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Bln</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Blandford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Bm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Brimfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Chi</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Chicopee</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Cht</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Chester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Elo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>East Longmeadow</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Grv</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Granville</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Hll</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Holland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Hly</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Holyoke</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Hmd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Hampden</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Lon</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Longmeadow</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Lud</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Ludlow</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Mng</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Montgomery</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Mnn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Monson</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Pal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Palmer</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Rus</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Russell</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.SPR</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Springfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Sti</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Southwick</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Tol</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Tolland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Wlb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Wilbraham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Wls</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Wales</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Wse</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>Westfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Ham.Wsi</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampden</county>
+        <town>West Springfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Amh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Amherst</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Blc</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Belchertown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Chf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Chesterfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Cum</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Cummington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Esh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Easthampton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Gra</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Granby</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Gsh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Goshen</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Had</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Hadley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Hat</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Hatfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Hun</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Huntington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Mdl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Middlefield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Nrt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Northampton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Pel</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Pelham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Pln</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Plainfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Shh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>South Hadley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Sth</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Southampton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Wlm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Williamsburg</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Wre</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Ware</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Wrt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Worthington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Hmp.Wsm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Hampshire</county>
+        <town>Westhampton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Act</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Acton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Arl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Arlington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Asb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Ashby</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Ash</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Ashland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Aye</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Ayer</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Bed</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Bedford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Bel</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Belmont</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Bil</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Billerica</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Box</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Boxborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Bur</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Burlington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.CAM</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Cambridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Cho</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Chelmsford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Con</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Concord</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Crl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Carlisle</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Dra</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Dracut</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Dun</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Dunstable</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.EVE</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Everett</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Fra</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Framingham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Gro</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Groton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Hls</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Holliston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Hop</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Hopkinton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Hud</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Hudson</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Lex</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Lexington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Lin</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Lincoln</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Lit</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Littleton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Low</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Lowell</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Mal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Malden</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Mar</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Marlborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.May</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Maynard</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Med</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Medford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Mel</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Melrose</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Nat</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Natick</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.New</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Newton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Nre</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>North Reading</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Pep</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Pepperell</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Rea</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Reading</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.She</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Sherborn</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Shi</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Shirley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Smr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Somerville</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Sto</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Stoneham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Stw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Stow</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Sud</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Sudbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Tew</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Tewksbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Tow</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Townsend</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Tyn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Tyngsborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wak</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Wakefield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Waltham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wat</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Watertown</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Way</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Wayland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Win</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Winchester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wmg</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Wilmington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wob</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Woburn</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wsd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Westford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Midd.Wsn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Middlesex</county>
+        <town>Weston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nan</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Nantucket</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nan.Nnt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Nantucket</county>
+        <town>Nantucket</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Avn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Avon</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Bll</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Bellingham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Bra</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Braintree</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Brl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Brookline</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Can</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Canton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Coh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Cohasset</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Ded</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Dedham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Dov</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Dover</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Fox</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Foxborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Frl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Franklin</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Hol</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Holbrook</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Mdf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Medfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Mdw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Medway</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Mil</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Millis</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Mlt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Milton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Nee</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Needham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Nrd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Norwood</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Nrk</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Norfolk</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Pla</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Plainville</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Qui</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Quincy</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Ran</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Randolph</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Sha</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Sharon</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Stg</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Stoughton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Wel</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Wellesley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Wes</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Westwood</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Wey</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Weymouth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Wlp</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Walpole</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Nrf.Wrh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Norfolk</county>
+        <town>Wrentham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Aby</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Abington</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Brd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Bridgewater</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Bro</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Brockton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Car</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Carver</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Dux</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Duxbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Ebr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>East Bridgewater</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Hal</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Halifax</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Hin</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Hingham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Hno</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Hanover</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Hns</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Hanson</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Hul</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Hull</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Kin</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Kingston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Lak</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Lakeville</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Mat</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Mattapoisett</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Mid</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Middleborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Mrn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Marion</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Mrs</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Marshfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Nrw</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Norwell</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Pem</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Pembroke</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Plt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Plympton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Ply</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Plymouth</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Rcl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Rockland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Roc</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Rochester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Sci</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Scituate</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.War</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Wareham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Wbr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>West Bridgewater</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Plm.Whi</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Plymouth</county>
+        <town>Whitman</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Suf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Suffolk</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Suf.Bos</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Suffolk</county>
+        <town>Boston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Suf.Che</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Suffolk</county>
+        <town>Chelsea</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Suf.REV</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Suffolk</county>
+        <town>Revere</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Suf.Wnh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Suffolk</county>
+        <town>Winthrop</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Asn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Ashburnham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Ath</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Athol</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Aub</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Auburn</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Bla</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Blackstone</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Bol</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Bolton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Boo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Brookfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Boy</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Boylston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Brn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Berlin</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Brr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Barre</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Chl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Charlton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Cli</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Clinton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Dou</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Douglas</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Dud</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Dudley</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Ebk</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>East Brookfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.FIT</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Fitchburg</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Grf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Grafton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Grn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Gardner</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Har</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Harvard</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Hld</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Holden</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Hpe</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Hopedale</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Hrd</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Hardwick</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Hub</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Hubbardston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Lan</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Lancaster</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Lei</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Leicester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Leo</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Leominster</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Lun</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Lunenburg</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Men</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Mendon</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Mlb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Millbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Mlf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Milford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Mlv</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Millville</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Nba</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>New Braintree</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Nbe</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>North Brookfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Nrb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Northborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Nrr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Northbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Okh</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Oakham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Oxf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Oxford</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Pax</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Paxton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Pet</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Petersham</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Phi</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Phillipston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Pri</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Princeton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Roy</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Royalston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Rut</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Rutland</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Shr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Shrewsbury</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Spe</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Spencer</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Stb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Southborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Ste</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Sterling</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Str</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Southbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Stu</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Sturbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Sut</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Sutton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Tem</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Templeton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Upt</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Upton</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Uxb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Uxbridge</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wbf</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>West Brookfield</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wbl</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>West Boylston</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Web</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Webster</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wnc</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Winchendon</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wrn</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Warren</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wrs</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Worcester</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wsb</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Westborough</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+    <record>
+        <locID>MA.Wor.Wsr</locID>
+        <state>Massachusetts</state>
+        <state_abb>MA</state_abb>
+        <county>Worcester</county>
+        <town>Westminster</town>
+        <modified>2010-02-10 11:56:57</modified>
+    </record>
+</towns>

@@ -1,0 +1,470 @@
+<html>
+	<head>
+			<title>Salicicola Search Engine</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!--			<script type="text/javascript" src="/static/scripts/menu.js"></script>-->
+			<style type="text/css">
+				 form td, th {
+					/* white-space: nowrap; */
+                    background-color:#DDDDDD;
+                    padding-left:1ex;
+                    padding-right:1ex;
+				 }
+                form table {
+                    border-style:solid;
+                    border-color:#AAAAAA;
+                    border-width:1px;
+                }
+			</style>
+			
+<!--<script type="text/javascript" src="Survey%20Data%20Entry%20for%20Mobile_files/species.js"></script>
+<script type="text/javascript" src="/static/scripts/species.js"></script>-->
+
+<!--<script type="text/javascript" src="/static/scripts/species_vascular.js"></script>-->
+		<script type="text/javascript">
+// removed all XHR
+
+function load_js(category) {
+      var head= document.getElementsByTagName('head')[0];
+	  try {
+		oldscript = document.getElementsByTagName("script")[0];
+        //alert(oldscript);
+        oldscript.remove();
+        //alert("removed old script")
+	  }
+      catch (e) {
+         //alert(e);
+	  }
+      var script= document.createElement('script');
+      script.src= '/static/scripts/species_' + category + '.js';
+      head.appendChild(script);
+      //alert ('loaded javascript/json file: ' + script.src);
+     if (category == 'varia') {
+		alert('select plant/animal name is not enabled for this category');
+	 }
+     document.getElementById("pnids").value = "";
+     document.getElementById("plantname").value = "";
+   }
+
+
+function updateList(txt) {
+	var DATA_LENGTH = data["names"].length;
+    var j = 0;
+    document.getElementById("pnids").value="";
+    var tobj = document.getElementById("suggest_list");
+    tobj.style.display='block';
+    tobj.innerHTML = "";
+    for (i = 0; i < DATA_LENGTH; i++) {
+       rec = data["names"][i];   
+       //FIXME use latname + colnames instead of latname to search
+       if (rec["longname"].indexOf(txt) > -1 & rec["images"] > 0) {
+           j++;
+           ele = document.createElement("li");
+           ele.setAttribute("onclick", "document.getElementById('plantname').value = this.innerHTML; document.getElementById('pnids').value=this.id;this.parentElement.style.display='none'")
+           ele.setAttribute("title", rec["authors"]);
+           ele.setAttribute("id", rec["PNID"]);
+           text = document.createTextNode(rec["longname"])
+           ele.appendChild(text);
+           tobj.appendChild(ele); 
+       }
+       if (j > 4) {
+           break;
+       }
+    }
+}
+
+			
+	</script>		
+			
+			
+			
+			
+		</head>
+		<body bgcolor="#F0FFF0">
+			<div style="padding-left: 1.0em; padding-top: 1em; padding-bottom:2ex; font-size: 130%; font-weight: bold">
+					Salicicola Search Engine
+            </div>
+			<div style="margin-left: 1.5em;">
+				<form method="get" action="" autocomplete="off">				
+<table border="0">
+ <tr>
+        <th align="left"  colspan="2">
+            Search photos by category
+        </th>
+</tr>
+    <tr>
+        <td align="right">
+            Select category
+        </td>
+        <td>
+            <select name="category" onchange="load_js(this.value)" required="true" autofocus="true">
+				<option value="" selected="true">not specified</option>
+                <option value="vascular" >Vascular Plants</option>
+                <option value="nonvascular">Non-Vascular Plants</option>
+                <option value="animals">Animals</option>
+                <option value="varia">Images of Another Kind</option>
+            </select>
+			<upper style="color:red"> * </upper>At least one other field to be selected
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Town
+        </td>
+        <td>
+            <select name="town">
+                <option value="" selected="true">not specified</option>
+                <option value="Abington">Abington</option>
+                <option value="Acton">Acton</option>
+                <option value="Andover">Andover</option>
+                <option value="Ashburnham">Ashburnham</option>
+                <option value="Avon">Avon</option>
+                <option value="Belmont">Belmont</option>
+                <option value="Boston">Boston</option>
+                <option value="Bourne">Bourne</option>
+                <option value="Boxford">Boxford</option>
+                <option value="Braintree">Braintree</option>
+                <option value="Brewster">Brewster</option>
+                <option value="Cambridge">Cambridge</option>
+                <option value="Canton">Canton</option>
+                <option value="Carver">Carver</option>
+                <option value="Charlemont">Charlemont</option>
+                <option value="Concord">Concord</option>
+                <option value="Dover">Dover</option>
+                <option value="Easton">Easton</option>
+                <option value="Fall River">Fall River</option>
+                <option value="Framingham">Framingham</option>
+                <option value="Freetown">Freetown</option>
+                <option value="Gloucester">Gloucester</option>
+                <option value="Hingham">Hingham</option>
+                <option value="Hadley">Hadley</option>
+                <option value="Hyannis">Hyannis</option>
+                <option value="Holbrook">Holbrook</option>
+                <option value="Hull">Hull</option>
+                <option value="Jamaica Plain">Jamaica Plain</option>
+                <option value="Marblehead">Marblehead</option>
+                <option value="Mashpee">Mashpee</option>
+                <option value="Medfield">Medfield</option>
+                <option value="Medford">Medford</option>
+                <option value="Milton">Milton</option>
+                <option value="Needham">Needham</option>
+                <option value="Newton">Newton</option>
+                <option value="Norwell">Norwell</option>
+                <option value="Norwood">Norwood</option>
+                <option value="Plymouth">Plymouth</option>
+                <option value="Quincy">Quincy</option>
+                <option value="Randolph">Randolph</option>
+                <option value="Rochester">Rochester</option>
+                <option value="Saugus">Saugus</option>
+                <option value="Stoneham">Stoneham</option>
+                <option value="Sunderland">Sunderland</option>
+                <option value="Taunton">Taunton</option>
+                <option value="Tyngsborough">Tyngsborough</option>
+                <option value="Wakefield">Wakefield</option>
+                <option value="Wareham">Wareham</option>
+                <option value="West Bridgewater">West Bridgewater</option>
+                <option value="Westwood">Westwood</option>
+                <option value="Weymouth">Weymouth</option>
+                <option value="Williamstown">Williamstown</option>
+                <option value="Winchester">Winchester</option>
+            </select>
+        </td>
+    </tr>
+    <tr>      
+        <td align="right">Location</td>
+        <td>
+            <select name="lcid">
+<option value="" selected="true">not specified</option>
+<option value="MA.AAR">Arnold Arboretum, Boston</option>
+<option value="MA.ALR">Alewife Reservation</option>
+<option value="MA.ASP">Ames Nowell State Park, Abington</option>
+<option value="MA.BBN">Beaver Brook North Reservation</option>
+<option value="MA.BBR">Beaver Brook Reservation</option>
+<option value="MA.BDC">Beaver Dam Conservation Area</option>
+<option value="MA.BHR">Blue Hills Reservation</option>
+<option value="MA.BSF">Boxford State Forest, Boxford/North Andover</option>
+<option value="MA.CUT">Cutler Park</option>
+<option value="MA.ELM">Ellisville Marsh, Plymouth</option>
+<option value="MA.ELP">Ellisville State Park, Plymouth</option>
+<option value="MA.FEL">Middlesex Fells Reservation</option>
+<option value="MA.FFR">Freetown/Fall River State Forest</option>
+<option value="MA.GRR">Mt. Greylock State Reservation and vicinity</option>
+<option value="MA.HLR">Hale Reservation</option>
+<option value="MA.HMF">Hopkins Memorial Forest, Williamstown</option>
+<option value="MA.HMS">Hockomock Swamp and vicininities</option>
+<option value="MA.LAU">Laurel Lake, Lee &amp; Lenox</option>
+<option value="MA.LDP">Long Duck Pond Preserve Lots, Plymouth</option>
+<option value="MA.LSF">Lowell-Dracut-Tyngsborough State Forest</option>
+<option value="MA.MSF">Myles Standish State Forest</option>
+<option value="MA.MSF_MWR">Massasoit Wildlife Refuge, Plymouth</option>
+<option value="MA.MSP">Massasoit State Park, Taunton</option>
+<option value="MA.NWR">Noanet Woods, Dover</option>
+<option value="MA.SBR">Stony Brook Reservation, Boston</option>
+<option value="MA.TDM">Tidmarsh Farms and vicinity</option>
+<option value="MA.Nrf.Ded.202001011">Wilson Mountain Reservation, Dedham</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Year
+        </td>
+        <td>
+            <select name="year">
+                <option value="">not specified</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Month
+        </td>
+        <td>
+            <select name="month">
+                <option value="">not specified</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td  align="right">
+            Day of month 
+        </td>
+        <td>
+            <select name="day">
+                <option value="">not specified</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+        </td>
+    </tr>
+<tr>
+    <td align="right">
+        <div class="col-25">
+            <label for="plant_id" style="width:50ex">Type &amp; select a single plant/animal name: </label><br/>
+			<span style="font-size:75%">Enter a part of either Latin or common name (if exists)</span>		
+    	</div>
+    </td>
+    <td>
+    	<div class="col-75"> 
+     		<input title="" type="text" onkeyup="updateList(this.value);" id="plantname" name="plantname"  size="40" autocomplete="off"> 
+		<input id="pnids" name="spid" size="2" autocomplete="off" style="visibility:hidden">  
+            <br/>
+            <ul id="suggest_list" style="display: none; max-height: 12ex; overflow: hidden; background-color: yellow; border-width: 1px; border-color: black; border-style: solid; padding: 3px;">
+	      </ul>
+        </div>
+    </td>
+</tr>
+<tr>
+	<td align="right">
+		Enter any part of image ID
+	</td>
+	<td>
+		<input name="imid" id="imid" autocomplete="off"/>
+		(file name without extension)
+	</td>
+</tr>
+    <tr>
+        <td align="center" >
+            <input type="reset" value="Clear"/>
+        </td>
+        <td align="center">
+            <input type="submit" value="Submit"/>
+        </td>
+    </tr>
+
+
+<tr><th colspan="2" style="background-color:white"><hr/></th></tr>
+
+<tr>
+        <th align="left"  colspan="2">
+            Search vascular plant names containing<!--plant or animal--> <!--(with or without photos)-->
+        </th>
+</tr>
+<tr>
+		<td align="left">
+			By Latin name
+			<input id="latin_name" autocomplete="off"/> 
+		</td>
+		<td>
+			<button  type="button" onclick="value=document.getElementById('latin_name').value.trim();window.open('/photodb/search/latname/'+value+'/');">Search</button>
+		</td>
+ </tr>
+<tr>
+		<td align="left">
+			By common name
+			<input id="common_name" autocomplete="off"/>
+		</td>
+		<td>
+			<button  type="button"  onclick="value=document.getElementById('common_name').value.trim();window.open('/photodb/search/colname/'+value+'/');">Search</button>
+		</td>
+ </tr>
+<tr><th colspan="2" style="background-color:white"><hr/></th></tr>
+
+<tr>
+		<td align="left">
+			<b>Search by flag:
+            invasive, exotic, domestic, cultivated</b>
+			<select id="flag_name">
+				<option value="exotic">exotic</option>
+				<option value="domestic">domestic</option>
+				<option value="cultivated">cultivated</option>
+				<option value="invasive">invasive</option>
+			</select>
+			
+
+		</td>
+		<td>
+			<button type="button" onclick="value=document.getElementById('flag_name').value.trim();window.open('/photodb/search/flag/'+value+'/');">Search</button>
+			<span style="font-size:80%">"Exotic" in this context means that the plant or animal is
+			native outside of New England and does not occur in New England
+			even as introduced or cultivated/domesticated to the best of our knowledge.</span>
+		</td>
+ </tr>
+
+
+
+
+<!--  
+ <tr>
+        <th align="left"  colspan="2">
+            Search photos in all categories
+        </th>
+ </tr>-->
+{% if user.is_authenticated %} <!-- FIXME authorized -->
+<tr><th colspan="2" style="background-color:white"><hr/></th></tr>
+ <tr>
+		<td align="left"><b>Photos not copyrighted by Salicicola</b></td>
+		<td>
+			<button type="button" onclick="window.open('/photodb/search/photos/by/', 'search').focus()">Search</td>
+		</td>
+ </tr>
+
+ <tr>
+		<td align="left">Photos with tags</td>
+		<td>
+			<button type="button" onclick="window.open('/photodb/search/tags/', 'search').focus()">Search</td>
+		</td>
+ </tr>
+
+
+<tr>
+	<td>
+		Enter a part of file name (without extension)
+		<input id="part_imid" autocomplete="off" value=""/>
+	</td>
+	<td>
+		<button type="button" onclick="value=document.getElementById('part_imid').value;window.open('/photodb/search/imid/'+value, 'search').focus()">Search</button
+	</td>
+</tr>{% endif %}
+ {%if user.is_authenticated %}
+
+    <tr style="display:none">
+        <td colspan="2" style="max-width:600px;font-size:90%">
+	    Known bugs: searches for Myles Standish SF and Middlesex Fells Reservation do not always yield correct results
+	    (location ids to be unified); cached index is in use for filtering by plant or animal name; most recent additions to the DB may not be shown;
+		when one uses legacy names, searching by plant name may not work or not work properly; 
+        some plant names, particularly those involving varieties or subspecies, must be formatted correctly.
+		Search results are still shown as a simple list, i.e., photos aren't grouped by genus.
+		Draft (alpha) version:&nbsp;#{{version}} (add more locations, fix bugs in DB, improve output, add filtering by flags) <!-- revno 191+ revno 198+-->
+        </td>
+    </tr>
+
+{% endif %}
+<tr><th colspan="2" style="background-color:white"><hr/></th></tr>
+<tr><td colspan="2">Beta Version (2022-03-12)</td></tr>
+</table>
+</form>
+</div>
+    <table class="footer" border="0" width="100%">
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <a href="/photodb/">
+                        <b>Salicicola</b>
+                    </a>
+                </td>
+                <td align="center">&#160;</td>
+                <td align="right">&#160; 
+                    <a href="mailto:azinovjev@salicicola.com?subject=salicicola plant gallery">webmaster</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<!-- FIXME:
+<button> will implicitly submit, 
+which can cause problems if you want to use a button in a form without it submitting. 
+Thus, another reason to use <input type="button"> (or <button type="button">)
+-->
+

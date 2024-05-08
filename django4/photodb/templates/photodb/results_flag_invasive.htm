@@ -1,0 +1,116 @@
+<html>
+{% load humanize %}
+	<head>
+			<title>Massachusetts Photo Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<script type="text/javascript" src="/static/scripts/menu.js"></script>
+	</head>
+	<body>
+		<script>headerWriteText('Projects', true)</script>
+
+
+		<h2 style="max-width:1200px;">
+			Salicicola Photo Gallery (Plants or Animals)
+<div style="padding-top:1ex;font-size:75%">
+			Search by Flag [{{flag}}]
+            <br/>
+<span style="font-weight:normal;">{{meta_recs|length}} names with {{photos|intcomma}} photos found</span>
+</div>
+		</h2>
+			<h3 style="max-width:1200px;">Animals (only those with Salicicola photographs)</h3>
+			<ol>
+			{%for rec in meta_recs %}
+				{% if rec.category == 'animals' %}
+					<li>
+						{%if rec.images %}
+							<a title="{{rec.category}}, {{rec.classification}} classifications available" target='view' href='/photodb/gallery/view/{{rec.spid}}/'>{{rec.long_name}}</a> 
+							({{rec.images}} images)
+						{%else%}
+							{{rec.long_name}} (no photos) <!-- irrelevant since only animals with photos are in DB -->
+						{%endif%}
+					</li>	
+				{%endif%}
+			{%endfor%}
+			</ol>
+			<h3 style="max-width:1200px;">
+				Vascular Plants (all Massachusetts taxa including those not yet on the official list)<br/>
+				<span style="font-weight:normal;font-weight:90%">
+					Generally following MIPAG
+					(<a href="https://www.massnrc.org/mipag/">Massachusetts Invasive Plant Advisory Group</a>),
+					unless there are reasons to disagree with their vote (as of December 2021). In these cases species are marked 'Actually Invasive.'
+					Hover cursor over 'Actually Invasive' to view the value assigned by MIPAG.
+				</span>
+			</h3>
+		<ol>
+			{%for rec in meta_recs %}
+			{% if rec.category == 'vascular' %}
+			<li>
+				{%if rec.images %}
+					<a title="{{rec.category}}, {{rec.classification}} classifications available" target='view' href='/photodb/gallery/view/{{rec.spid}}/'>{{rec.long_name}}</a> ({{rec.images}} images)
+				{%else%}
+					{{rec.long_name}} (no photos) <!--[ID: {{rec.spid}}]-->
+				{%endif%}
+				&#8212; 
+				{%if rec.invasive == 'Actually Invasive'%}
+					<b title="MIPAG: {{rec.invasive_mipag|default:'not yet considered'}}">{{rec.invasive}}</b>
+				{%else%}
+						{{rec.invasive}}
+				{%endif%}
+
+<!-- became irrelevant not needed 
+                {%if rec.invasive %}
+                    {{rec.invasive}}
+                {%elif rec.invasive_mipag%}
+                    {{rec.invasive_mipag|title}}               
+                {%else%}
+                    <b title="XXX to set invasive_note !!! currently needs nonnatove=invasive">Actually Invasive</b>
+                {% endif %}
+-->
+                {% if user.is_authenticated %}
+                    [<a target="edit" href="/names/edit/name/{{rec.spid}}/">edit</a>]
+                {%endif%}
+				{%for spid, urls in invasive_notes.items %}
+					{%if spid == rec.spid %}
+						&#8212; <b>Salicicola notes</b>:
+						{%for url in urls%}
+							[<a target="note" style="color:red" href="{{server}}{{url}}">{{forloop.counter}}</a>]
+						{%endfor%}
+					{%endif%}
+				{% endfor %}
+                
+{% comment %}
+debug/edit: 			
+				{%if rec.invasive %}
+					MIPAG: [<a target="edit" href="/names/edit/name/{{rec.spid}}/">{{rec.invasive}}</a>]
+				{%else%}
+					<b>Actually Invasive [<a target="edit" href="/names/edit/name/{{rec.spid}}/">edit</a>]</b>
+				{%endif%}
+{% endcomment %}
+			</li>	
+			{%endif%}		
+			{%endfor%}
+		</ol>
+		<hr/>Version #{{version}} <!--: sometimes displayed names may be incorrect. Links used newer classification.-->
+{% if user.is_authenticated %}
+                 
+                        
+<!-- fixed
+Prototype 
+TODO: <br/>
+                       
+                       (4) true in Rosa multiflora var.; to remove var. of E.fortunei (and to correct distr.) <br/>
+    why  [ID: 4440] in Jacobaea; , why [ID: 14049] [ID: 16015] in Arthraxon; [ID: 11522] in Glyceria maxima, etc.
+    (7) Capitalize MIPAG's names
+(1) to check all taxa with 'Do not list at this time' and fill invasive_note to suppress it<br/>
+(2) to add Actually Invasive to invasive_note, if there is <b>Actually Invasive</b> in bold 
+                            (then looking for nonnative=invasive would not be needed)<br/>
+                       (3) add authorization in view (currently only authentication is needed<br/>
+                      (5) to <b>correct edit form for new fields : invasive will not work!!!</b><br/>
+                       (6) Phragmites longivalvis not avail as ssp or var? (longi xxx) (no photos) <br/>
+
+-->
+{% endif %}
+        <br/>
+	</body>
+</html>
+

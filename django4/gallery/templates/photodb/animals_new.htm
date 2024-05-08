@@ -1,0 +1,276 @@
+<html>
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Massachusetts Photo Gallery: Animals</title>
+      <link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        <style type="text/css">
+		        body {
+			        margin: 0;
+			        padding: 0;
+			        background-color:#F0FFF0;
+		        }
+		        #wrapper {
+			        width: 1004px;   /* 972px; */
+			        margin: 0 auto;
+			        color:#8B0000; 
+			        background-color: #F0FFF0;
+		        }
+		        #header {
+			        height:72px;
+			        background-color: #F0FFF0;
+			        margin-bottom:3px;
+			        white-space:nowrap;
+		        }
+		        #sidebar {
+			        width: 325px; /* 305px; */
+			        background-color:#F0FFF0;
+			        float:left;
+			        margin-right:3px;
+			        white-space:nowrap;
+		        }
+		        #sidebar h2 {
+			        padding-left:5px;
+			        margin-bottom:0;
+			        margin-top:14px;
+		        }	
+		        #content {
+			        width:672px;  /* 658px; */
+			        background-color:#F0FFF0;
+			        padding-left:3px;
+			        float:left;
+			        padding-top:14px;
+		        }
+		        #footer {
+			        clear:both;
+			        background-color:#F0FFF0;
+			        height: 4ex;
+		        }
+		        a {
+			        color: #8B0000; 
+			        background-color: transparent;
+			        text-decoration: none;
+		        }		
+		        a:link {
+			        color: #8B0000;
+			        background-color: transparent;
+			        text-decoration: none;
+		        }
+		        a:visited {
+			        color: #8B0000; 
+			        background-color: transparent;
+			        text-decoration:none;
+		        }
+		        a:active {
+			        color: #ff0000; 
+			        background-color: transparent;
+			        text-decoration:none;
+		        }
+		        a:hover {
+			        color: #ff0000; 
+			        background-color: transparent;
+			        text-decoration:none;
+		        }
+            div.header, div.section, div.items {
+	            margin-left:1em;margin-right:5px;
+            }
+            div.section_header {
+	            font-weight:bold;
+            }
+            div.header h2 {
+            margin-top:0;padding-top:0;margin-bottom:0;padding-bottom:0.5ex;
+            }
+            div.item {
+	            text-indent:-2ex;padding-left:4ex;padding-bottom:0.4ex;
+            }
+
+            div.item_compact {
+	            text-indent:-2ex;padding-left:4ex;padding-bottom:0.1ex;
+            }
+		</style>		
+	</head>
+	<body>
+	{% load humanize %}
+	<div style="padding:2ex">
+		<div>
+			<h2>Salicicola Photo Gallery &#8226; Animals <br/>
+			<span style="font-weight:normal">
+				We Came Across while Looking for Plants<br/>
+				{{total_images|intcomma}} images illustrating {{total_taxa}} taxa (at genus, species, or subspecies level)
+			</span>
+			{%if public%} {%else%} <br/>
+			<span style="font-weight:normal;font-size:85%" title="logged as {{request.user.username}}">
+Authorized to edit records and view unpublished photos
+			</span>
+			{%endif%}
+            </h2>           
+		</div>
+		<div>
+			<h2>Vertebrates</h2>
+		</div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Fishes
+        	</div>
+			<div class="item_compact">
+				<a href="/photodb/gallery/{{url_token}}/11550/">Scate</a> 
+<div style="padding-left:1em">
+    {{meta.11550.images}}
+    image{%if meta.11550.images == 1%}{%else%}s{%endif%} illustrating {{meta.11550.taxa}}
+    {%if meta.11550.taxa == 1%}taxon{%else%}taxa{%endif%}
+</div>
+
+			</div>
+		</div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Amphibians
+        	</div>
+			<div class="item_compact">
+				<a href="/photodb/gallery/{{url_token}}/12110/">Frogs, toads, and salamanders</a>
+				<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/12110/12110/">tomcat</a>]-->
+<div style="padding-left:1em">
+    {{meta.12110.images}}
+    image{%if meta.12110.images == 1%}{%else%}s{%endif%} illustrating {{meta.12110.taxa}}
+    {%if meta.12110.taxa == 1%}taxon{%else%}taxa{%endif%}
+</div>
+
+			</div>
+		</div>
+		<div class="section" style="margin-bottom:1ex">
+			<div class="section_header">
+        		Reptiles
+        	</div>
+        	<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/17040/">Snakes</a> 
+				<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/17040/17040/">tomcat</a>]--> 
+<div style="padding-left:1em">{{meta.17040.images}} images illustrating {{meta.17040.taxa}} taxa </div>
+
+			</div>
+			<div class="item_compact">
+            <a href="/photodb/gallery/{{url_token}}/17041/">Turtles</a>
+			<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/17041/17041/">tomcat</a>]--> 
+<div style="padding-left:1em">{{meta.17041.images}} images illustrating {{meta.17041.taxa}} taxa </div>
+			</div>
+
+			<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/302092/">Lizards</a>
+                <div style="padding-left:1em">{{meta.302092.images}} images illustrating {{meta.302092.taxa}} taxa </div>
+			</div>
+
+		</div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Birds
+        	</div>
+        	<div class="item_compact">
+                Birds [<a href="/photodb/gallery/{{url_token}}/11950/">in Alphabetic Order</a>] [<a href="/photodb/animals/birds/">by Family</a>]				
+        		<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/11950/11950/">tomcat</a>]--> 
+<div style="padding-left:1em">{{meta.11950.images}} images illustrating {{meta.11950.taxa}} taxa </div>
+        	</div>
+        </div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Mammals
+        	</div>
+        	<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/11938/">All mammals</a>
+        		<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/11938/11938/">tomcat</a>]--> 
+<div style="padding-left:1em">{{meta.11938.images}} images illustrating {{meta.11938.taxa}} taxa </div>
+        	</div>
+        </div>
+        
+        <div>
+			<h2>Invertebrates</h2>
+		</div>        
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+		       <div class="section_header">
+		       Sponges
+		       </div>
+		       <div class="item_compact">
+                   <a href="/photodb/gallery/{{url_token}}/301406/">Freshwater sponge</a>
+		           <!--[<a href="http://192.168.1.9:8080/photos/gallery/view/301406/301406/">tomcat</a>]-->
+<div style="padding-left:1em">
+    {{meta.301406.images}}
+    image{%if meta.301406.images == 1%}{%else%}s{%endif%} illustrating {{meta.301406.taxa}}
+    {%if meta.301406.taxa == 1%}taxon{%else%}taxa{%endif%}
+</div>
+
+<!--
+<div style="padding-left:1em">{{meta.301406.images}} images illustrating {{meta.301406.taxa}} taxa (at genus, species, or subspecies level)</div>-->
+		       </div>
+        </div>        
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Echinoderms
+        	</div>
+        	<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/14222/">Sea urchin</a>
+        		<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/14222/14222/">tomcat</a>]-->
+<div style="padding-left:1em">
+    {{meta.14222.images}}
+    image{%if meta.14222.images == 1%}{%else%}s{%endif%} illustrating {{meta.14222.taxa}}
+    {%if meta.14222.taxa == 1%}taxon{%else%}taxa{%endif%}
+</div>
+
+        	</div>
+        </div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Molluscs
+        	</div>
+        	<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/12112/">All molluscs</a> 
+        		<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/12112/12112/">tomcat</a>]--> 
+<div style="padding-left:1em">{{meta.12112.images}} images illustrating {{meta.12112.taxa}} taxa </div>
+        	</div>
+        </div>
+		<div class="section" style="margin-bottom:1ex;margin-top:1.0ex;">
+			<div class="section_header">
+        		Arthropods 
+        	</div>
+        	<div class="item_compact">
+            <a href="/photodb/gallery/{{url_token}}/301474/">Millipedes</a> 
+			<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/301474/301474/">tomcat</a>]--> 
+<div style="padding-left:1em">
+    {{meta.301474.images}}
+    image{%if meta.301474.images == 1%}{%else%}s{%endif%} illustrating {{meta.301474.taxa}}
+    {%if meta.301474.taxa == 1%}taxon{%else%}taxa{%endif%}
+</div>
+		</div>
+        	<div class="item_compact">
+                <a href="/photodb/gallery/{{url_token}}/301410/">Crabs, crayfish, acorn barnacle</a>
+        		<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/301410/301410/">tomcat</a>]-->  (Crustacea) 
+<div style="padding-left:1em">{{meta.301410.images}} images illustrating {{meta.301410.taxa}} taxa </div>
+        	</div>
+		<div class="item_compact">	
+            <a href="/photodb/gallery/{{url_token}}/301409/">Harvestmen, spiders, ticks, horseshoe crabs</a>	                
+			<!--[<a href="http://192.168.1.9:8080/photos/gallery/view/301409/301409/">tomcat</a>]--> (Chelicerata)
+<div style="padding-left:1em">{{meta.301409.images}} images illustrating {{meta.301409.taxa}} taxa </div>
+		</div>
+		<div class="item_compact">		                
+			<div class="section_header">Insects</div>
+            {% for order in insects.orders %}
+	          {%if order.pubimages %}
+		        <div class="item_compact">	
+				{%if order.name in family_views %} 
+					{{order.name}} &#8212; {{order.colnames}} [<a href="/photodb/gallery/{{url_token}}/{{order.pnid}}">in Alphabetic Order</a>]
+					[<a href="/photodb/animals/{{order.name|lower}}/">by Family</a>] 
+				{%else%}
+					<a href="/photodb/gallery/{{url_token}}/{{order.pnid}}">{{order.name}} &#8212; {{order.colnames}}</a>
+				{%endif%}
+			        <!--[<a href="http://192.168.1.9:8080/photos/gallery/view/{{order.pnid}}/{{order.pnid}}/">tomcat</a>]--> 
+<div style="padding-left:1em">
+    {{order.images}}
+    image{%if order.images == 1%}{%else%}s{%endif%} illustrating {{order.taxa}}
+    {%if order.taxa == 1%}taxon{%else%}taxa{%endif%}
+    
+</div>
+		        </div>
+		  {%endif%}
+            {%endfor%}
+		</div>
+        </div>
+      </div>
+    </body>
+</html>
+ 

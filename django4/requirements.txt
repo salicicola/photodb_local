@@ -1,0 +1,13 @@
+Django>=4.0
+pillow
+exifread
+django_random_id_model
+lxml
+geopandas
+numpy==1.20.3
+markdown
+
+
+
+
+
